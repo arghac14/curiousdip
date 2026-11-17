@@ -1,0 +1,19 @@
+/* A small camera flash fires at the moment the theme changes. */
+.theme-toggle{position:relative;width:46px;height:46px;min-width:46px;min-height:46px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);display:grid;place-items:center;box-shadow:inset 0 1px 2px #ffffff18,0 3px 12px #00000015;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.theme-toggle:hover{background:var(--card);border-color:var(--olive);transform:translateY(-2px);box-shadow:0 0 0 4px #c26b2014,0 4px 14px #00000020}
+.theme-toggle:focus-visible{outline:2px solid var(--olive);outline-offset:5px}
+.camera-icon{position:relative;display:block;width:27px;height:25px;color:var(--ink)}
+.camera-body{position:absolute;inset:8px 0 0;border:1.7px solid currentColor;border-radius:4px;background:var(--card)}
+.camera-body:before{content:'';position:absolute;left:4px;top:-5px;width:9px;height:4px;border:1.5px solid currentColor;border-bottom:0;border-radius:2px 2px 0 0;background:var(--card)}
+.camera-lens{position:absolute;left:8px;top:11px;width:11px;height:11px;border:1.5px solid currentColor;border-radius:50%;background:var(--soft);box-shadow:inset 0 0 0 2px var(--card)}
+.camera-lens:after{content:'';position:absolute;top:2px;right:2px;width:2px;height:2px;border-radius:50%;background:var(--olive)}
+.camera-flash{position:absolute;right:1px;top:1px;width:8px;height:5px;border:1px solid var(--olive);border-radius:2px;background:#f3bd62;box-shadow:0 0 4px #f3bd6240;transition:background .2s ease,box-shadow .2s ease}
+:root[data-theme=dark] .camera-flash{background:#635343;box-shadow:none}
+.camera-burst{position:absolute;right:-8px;top:-10px;width:25px;height:25px;pointer-events:none;background:#ffe5ad;clip-path:polygon(50% 0,59% 31%,85% 15%,69% 41%,100% 50%,69% 59%,85% 85%,59% 69%,50% 100%,41% 69%,15% 85%,31% 59%,0 50%,31% 41%,15% 15%,41% 31%);opacity:0;transform:scale(.2) rotate(-12deg)}
+.theme-toggle.is-switching .camera-burst{animation:camera-flash-burst .6s ease-out}
+.theme-toggle.is-switching .camera-flash{animation:camera-flash-charge .6s ease-out}
+.theme-toggle.is-switching .camera-body,.theme-toggle.is-switching .camera-lens{animation:camera-click .6s ease}
+@keyframes camera-flash-burst{0%,32%{opacity:0;transform:scale(.2) rotate(-12deg)}45%{opacity:1;transform:scale(1) rotate(0)}65%{opacity:.35;transform:scale(1.25) rotate(8deg)}100%{opacity:0;transform:scale(1.4) rotate(12deg)}}
+@keyframes camera-flash-charge{0%,100%{box-shadow:none}35%{background:#f0ad52;box-shadow:0 0 5px #f0ad52}45%,52%{background:#fff9e7;box-shadow:0 0 14px 5px #ffda8d90}}
+@keyframes camera-click{0%,100%{transform:translateY(0)}35%{transform:translateY(1px)}55%{transform:translateY(-1px)}}
+@media(prefers-reduced-motion:reduce){.theme-toggle,.camera-flash{transition:none}.theme-toggle:hover{transform:none}.theme-toggle.is-switching .camera-burst,.theme-toggle.is-switching .camera-flash,.theme-toggle.is-switching .camera-body,.theme-toggle.is-switching .camera-lens{animation:none}}

@@ -1,0 +1,9 @@
+/* A photograph develops in place, without changing its crop or layout. */
+.darkroom-pending{filter:grayscale(1) sepia(.16) brightness(.55) contrast(.85)}
+.darkroom-developing{animation:darkroom-develop 1.15s cubic-bezier(.2,.65,.25,1) var(--darkroom-delay,0ms) both;will-change:filter}
+@keyframes darkroom-develop{
+  0%{filter:grayscale(1) sepia(.16) brightness(.55) contrast(.85)}
+  45%{filter:grayscale(.55) sepia(.08) brightness(.83) contrast(.95)}
+  100%{filter:grayscale(0) sepia(0) brightness(1) contrast(1)}
+}
+@media(prefers-reduced-motion:reduce){.darkroom-pending,.darkroom-developing{filter:none;animation:none;will-change:auto}}

@@ -1,0 +1,20 @@
+const assert=require('assert'),fs=require('fs'),vm=require('vm');
+const source=fs.readFileSync('assets/app.js','utf8');
+const start=source.indexOf('const loadData =');
+const loader=source.slice(start,source.indexOf('loadData.then(',start))+'\nloadData;';
+const plain=value=>JSON.parse(JSON.stringify(value));
+(async()=>{
+  const file=vm.createContext({window:{},location:{protocol:'file:'},fetch(){throw Error('File mode must not fetch');}});
+  vm.runInContext(fs.readFileSync('data/preview-data.js','utf8'),file);
+  const expected=plain(file.window.CURIOUSDIP_PREVIEW);
+  assert.deepStrictEqual(plain(await vm.runInContext(loader,file)),expected);
+  const requested=[];
+  const http=vm.createContext({location:{protocol:'http:'},fetch:async url=>{requested.push(url);return {ok:true,json:async()=>JSON.parse(fs.readFileSync(url.replace('./',''),'utf8'))};}});
+  assert.deepStrictEqual(plain(await vm.runInContext(loader,http)),expected);
+  assert.equal(requested.length,5);
+  const missing=vm.createContext({window:{},location:{protocol:'file:'}});
+  await assert.rejects(vm.runInContext(loader,missing),/Missing direct-file/);
+  const broken=vm.createContext({location:{protocol:'http:'},fetch:async()=>({ok:false})});
+  await assert.rejects(vm.runInContext(loader,broken),/could not be loaded/);
+  console.log('HTTP JSON and direct-file snapshot loaders match; missing data reports errors.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

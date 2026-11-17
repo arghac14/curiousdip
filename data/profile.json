@@ -1,0 +1,31 @@
+{
+  "name": "Arghadip Chakraborty",
+  "email": "01argha@gmail.com",
+  "instagram": "https://www.instagram.com/curious.dip/",
+  "handle": "@curious.dip",
+  "intro": "I’m Arghadip. I make photographs, follow my curiosity, and collect stories along the way.",
+  "about": "CuriousDip is my space for looking a little closer — through photo series, personal essays, and notes on the things that catch my eye. I’m interested in the connection between a place, a moment, and the feeling it leaves behind.",
+  "aboutSections": [
+    {
+      "title": "Hi, I'm Arghadip 👋",
+      "paragraphs": [
+        "This is a place for photographs, personal stories, and the small observations that make an ordinary day worth remembering.",
+        "A face in a crowd, a quiet corner, or an unexpected change in the light can be the beginning of a story. Through this space, I hope to give those moments a little room to breathe."
+      ]
+    },
+    {
+      "title": "Following the curiosity",
+      "paragraphs": [
+        "Some stories begin with a plan. Others begin with a walk, an unfamiliar turning, or a detail that asks for a closer look. This journal makes space for both.",
+        "These are draft words for an introduction that will grow over time — a little about the places, people, and experiences behind the photographs, and the questions that keep me looking."
+      ]
+    },
+    {
+      "title": "More than a single frame",
+      "paragraphs": [
+        "A photograph can stand on its own, but a sequence of images can open a longer conversation. CuriousDip brings those frames together with words, allowing each story to find its own pace.",
+        "There is more to add here: the personal background, the journeys, and the moments that shaped this work. For now, these pages are an invitation to explore and stay curious."
+      ]
+    }
+  ]
+}
