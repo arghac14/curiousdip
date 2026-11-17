@@ -15,6 +15,6 @@ http.createServer((req, res) => {
     return;
   }
   const file = path.resolve(root, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
-  if (!file.startsWith(root + path.sep) || pathname.split('/').some(x => x.startsWith('.') || ['scripts','node_modules'].includes(x))) { res.writeHead(403).end(); return; }
+  if (!file.startsWith(root + path.sep) || pathname.split('/').some(x => x.startsWith('.') || ['scripts','node_modules','admin'].includes(x))) { res.writeHead(403).end(); return; }
   fs.readFile(file, (err, data) => { res.writeHead(err ? 404 : 200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream', 'Cache-Control':'no-store' }); res.end(err ? 'Not found' : data); });
 }).listen(4321, '127.0.0.1', () => console.log('CuriousDip: http://127.0.0.1:4321'));

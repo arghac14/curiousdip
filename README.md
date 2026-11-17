@@ -129,3 +129,12 @@ Use HTTPS YouTube watch, youtu.be, shorts or embed URLs. Only YouTube IDs are ex
 The contact form opens a prepared email draft; visitors review and send from their email app. It does not automatically send mail. Slideshow autoplay pauses when hidden or manually paused; reduced-motion users start paused. Search indexes title, overview, article text and series genres. Pinned items retain their array order while sorting applies to remaining matches.
 
 See `ROADMAP.md` for GitHub Pages, the separate CMS, Cloudinary and the later Cloudflare R2 migration.
+
+
+## Local admin and deployment
+
+R2 is the selected photo storage provider; Cloudinary is no longer planned. A local-only authoring panel lives in the ignored admin/ directory. Start it with npm run admin and open http://127.0.0.1:4322/. It has forms for series, blogs and videos, browser compression, R2 uploads and GitHub JSON commits. Its local README has connection instructions. The admin directory is deliberately absent from this public repository; back it up separately.
+
+New blog HTML is converted to plain text with paragraph/newline breaks. Videos use validated YouTube URLs. Runtime credentials stay in the local helper's memory. GitHub may use the existing Git Credential Manager sign-in. Publishing updates the remote JSON and starts Pages; it does not modify the local checkout. Pull remote changes before editing locally.
+
+npm run build validates the portfolio, regenerates preset indexes/snapshots and copies only index.html, assets/ and data/ into dist/. The GitHub Pages workflow runs on pushes to main, including admin-generated JSON commits, and deploys dist/. GitHub repository settings must use GitHub Actions as the Pages source. No separate hosting backend or R2 worker is required for this local admin upload flow.

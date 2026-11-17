@@ -21,7 +21,7 @@ Preset folders supply display pictures and page backgrounds. Content arrays are 
 
 **Complete when:** The portfolio is accessible through GitHub Pages and repository changes deploy automatically.
 
-## Stage 3 — Build the local CMS with Cloudinary first
+## Stage 3 — Build the local CMS with R2
 
 **Goal:** Publish content through a separate local application without manually editing portfolio JSON files.
 
@@ -37,12 +37,12 @@ Preset folders supply display pictures and page backgrounds. Content arrays are 
 
 ### Images
 
-- [ ] Use Cloudinary as the initial image upload and delivery provider.
-- [ ] Choose and document a secure Cloudinary upload flow; never embed a Cloudinary API secret in browser code.
+- [ ] Use Cloudflare R2 as the image upload and delivery provider.
+- [ ] Keep R2 S3 credentials in the local helper process; never expose the secret key in the portfolio.
 - [ ] Support multiple-image selection, browser-side resizing, and WebP conversion with configurable dimensions and quality.
 - [ ] Add upload progress, actionable errors, and retries that reuse stable image identities to avoid duplicate uploads.
 - [ ] Isolate upload and image URL handling behind a storage-provider interface.
-- [ ] Add an explicit provider configuration flag, initially set to Cloudinary. Add R2 support in Stage 4.
+- [ ] Use R2 directly; the previous Cloudinary-first plan is superseded.
 - [ ] Preserve provider information on existing image references so changing the flag does not break older posts.
 - [ ] Keep images when articles are updated or deleted; do not automatically delete stored assets.
 
@@ -56,7 +56,7 @@ Preset folders supply display pictures and page backgrounds. Content arrays are 
 - [ ] Show distinct states for local drafts, GitHub commits, and deployment outcomes. Do not claim content is live solely because a commit succeeded.
 - [ ] Verify that CMS commits trigger the existing GitHub Pages deployment workflow.
 
-**Complete when:** An article can be drafted, previewed, illustrated through Cloudinary, committed through the CMS, and deployed automatically. Editing, deletion, recovery, and failure handling have also been verified.
+**Complete when:** An article can be drafted, previewed, illustrated through R2, committed through the CMS, and deployed automatically. Editing, deletion, recovery, and failure handling have also been verified.
 
 ## Stage 4 — Add the custom domain and Cloudflare R2
 
@@ -92,3 +92,7 @@ Preset folders supply display pictures and page backgrounds. Content arrays are 
 - Phase 2 is in progress: initialize Git and create/push the new curiousdip repository, then configure GitHub Pages deployment.
 - No live deployment has been verified yet.
 - Phase 3 (local CMS) and Phase 4 (custom domain/R2) remain planned.
+
+## Updated implementation status
+
+Local admin forms, browser compression, R2 signing/upload code, GitHub API publishing, local drafts, validation and conflict/retry handling are implemented. R2 live upload/publish verification is pending the user’s bucket connection. A separate deployed Worker is not required: uploads originate from a localhost-only Node helper. GitHub Pages deployment is being configured. Cloudinary is no longer part of the plan.
