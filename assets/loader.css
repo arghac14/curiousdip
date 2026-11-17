@@ -1,0 +1,26 @@
+/* A lens finding its bayonet mount while the journal is prepared. */
+body.is-initializing{overflow:hidden}
+.boot-loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:var(--paper,#151311);color:var(--ink,#f6ecdf);opacity:1;transition:opacity .32s ease;isolation:isolate;overflow:hidden}
+.boot-loader:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 45%,#d38c3120,transparent 52%)}
+.boot-loader.is-ready{opacity:0;pointer-events:none}
+.boot-content{text-align:center;width:min(440px,90vw);padding:28px}
+.boot-wordmark{font-family:'Outfit',Arial,sans-serif;font-size:26px;letter-spacing:-1px;font-weight:600;margin:0 0 35px}.boot-wordmark span{font-weight:300}.boot-wordmark b{color:var(--olive,#f0ad52)}
+.boot-camera{display:block;width:100%;height:auto;overflow:visible;color:var(--ink,#f6ecdf)}
+.boot-camera .camera-shell{fill:var(--card,#1c1814);stroke:currentColor;stroke-width:1.5}
+.boot-camera .camera-detail{fill:none;stroke:currentColor;stroke-width:1;opacity:.4}
+.boot-camera .mount{fill:var(--paper,#151311);stroke:var(--olive,#f0ad52);stroke-width:1.8}
+.boot-camera .lens-barrel{fill:var(--card,#1c1814);stroke:currentColor;stroke-width:1.5}
+.boot-camera .lens-glass{fill:var(--soft,#241e18);stroke:var(--olive,#f0ad52);stroke-width:1.5}
+.boot-camera .lens-ring{fill:none;stroke:currentColor;stroke-width:1;opacity:.45}
+.boot-lens{animation:lens-dock 2.8s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.boot-connection{stroke:var(--olive,#f0ad52);stroke-width:1;stroke-dasharray:3 6;fill:none;animation:mount-guide 2.8s ease infinite}
+.boot-lock{stroke:var(--olive,#f0ad52);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:25;animation:mount-lock 2.8s ease infinite}
+.boot-status{font-family:'Outfit',Arial,sans-serif;font-size:23px;font-weight:400;letter-spacing:-.4px;margin:22px 0 10px}
+.boot-caption{font:10px/1.7 'DM Sans',Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted,#b5a594);margin:0}
+.boot-track{width:64px;height:2px;background:var(--line,#3b3127);margin:23px auto 0;overflow:hidden;border-radius:2px}
+.boot-track:after{content:'';display:block;width:25px;height:100%;background:var(--olive,#f0ad52);animation:docking-track 1.4s ease-in-out infinite}
+@keyframes lens-dock{0%,12%{transform:translateX(47px);opacity:.3}48%,77%{transform:translateX(0);opacity:1}91%,100%{transform:translateX(0);opacity:0}}
+@keyframes mount-guide{0%,20%{opacity:.5;stroke-dashoffset:18}48%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes mount-lock{0%,47%{opacity:0;stroke-dashoffset:25}64%,80%{opacity:1;stroke-dashoffset:0}92%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes docking-track{0%{transform:translateX(-26px)}100%{transform:translateX(65px)}}
+@media(prefers-reduced-motion:reduce){.boot-loader{transition:none}.boot-lens,.boot-connection,.boot-lock,.boot-track:after{animation:none}.boot-lens{transform:none;opacity:1}.boot-connection{opacity:0}.boot-lock{opacity:1;stroke-dashoffset:0}.boot-track:after{width:100%}}
