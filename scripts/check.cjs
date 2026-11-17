@@ -11,13 +11,14 @@ for(const name of ['photoseries','blog','videos']) {
   for(const row of raw[name]) {
     assert(Number.isSafeInteger(row.id)&&row.id>0&&!ids.has(row.id),'Unique positive numeric IDs required within each collection');ids.add(row.id);
     assert(row.title&&typeof row.subtext==='string'&&Number.isFinite(Date.parse(row.createdAt)));
-    assert(typeof row.isPinned==='boolean'&&typeof row.isSelectedStories==='boolean');
+    assert(typeof row.isPinned==='boolean'&&typeof row.isSelectedStories==='boolean'&&typeof row.isDeleted==='boolean');
     if(name==='videos')assert(ctx.CuriousDipData.youtubeID(row.video),'Valid HTTPS YouTube URL required');
     else {assert(Array.isArray(row.photos));for(const url of row.photos)assert(ctx.CuriousDipData.image(url).url===url,'Invalid photo URL');}
     if(name==='blog')assert(typeof row.content==='string');
     if(name==='photoseries')assert(row.genres.every(g=>['Festival','Street','Travel','Portraits','Documentary'].includes(g)));
   }
-  assert(raw[name].filter(row=>row.isPinned).length<=6,'At most six pins per collection');
+  assert(raw[name].filter(row=>!row.isDeleted&&row.isPinned).length<=4,'At most four active pins per collection');
+  assert(raw[name].filter(row=>!row.isDeleted&&row.isSelectedStories).length<=3,'At most three active selections per collection');
 }
 for(const folder of Object.values(raw.presets))for(const file of folder)assert(fs.existsSync(decodeURIComponent(file)),'Preset missing: '+file);
 const data=ctx.CuriousDipData.normalize(raw,()=>0);
@@ -44,4 +45,13 @@ const plan=ctx.CuriousDipData.planBackgrounds(mapped.backgroundPresets,()=>picks
 assert.equal(picks,6,'Assign all six page backgrounds once');
 assert.equal(plan['/'][0].url,mapped.backgroundPresets[0].url);
 assert.equal(plan['/series'][0].url,mapped.backgroundPresets[1].url);
+const deleted=JSON.parse(JSON.stringify(raw));
+deleted.photoseries[0].isDeleted=true;deleted.blog[0].isDeleted=true;deleted.videos[0].isDeleted=true;
+const hidden=ctx.CuriousDipData.normalize(deleted,()=>0);
+assert(!hidden.items.some(row=>row.type==='series'&&row.id===deleted.photoseries[0].id),'Deleted series must not reach listings or detail routes');
+assert(!hidden.items.some(row=>row.type==='blog'&&row.id===deleted.blog[0].id),'Deleted blogs must not reach detail routes');
+assert(!hidden.videos.some(row=>row.id===deleted.videos[0].id),'Deleted videos must not reach Home or Videos');
+const priority=JSON.parse(JSON.stringify(raw));priority.photoseries[0].pinOrder=4;priority.photoseries[0].selectedStoryOrder=3;
+const ranked=ctx.CuriousDipData.normalize(priority,()=>0).items.find(row=>row.type==='series'&&row.id===priority.photoseries[0].id);
+assert.equal(ranked.pinOrder,4);assert.equal(ranked.featureOrder,3);
 console.log('Data mapping, flags, IDs, article layout, preset selection and URL checks passed.');

@@ -44,7 +44,7 @@ function card(item, index = 0, pinned = false, showCategory = false) {
   return `<article class="story-card"><a class="card-image" href="${link(item)}">${picture(item.cover, '', index < 2)}<span class="image-arrow" aria-hidden="true">↗</span>${pinned?'<span class="pin-badge">↗ Pinned</span>':''}</a><div class="card-meta"><span>${esc(itemGenres(item).join(' / '))}</span><span>${item.type==='blog'?item.readMinutes+' min read':'Photo series'}</span></div><h3><a href="${link(item)}">${esc(item.title)}</a></h3><p>${esc(item.description)}</p><span class="card-date">${date(item.date)}</span></article>`;
 }
 function sectionHeading(kicker, title, href, label) { return `<div class="section-heading"><div><p class="eyebrow">${kicker}</p><h2>${title}</h2></div>${href?`<a class="text-link" href="${href}">${label} <span>↗</span></a>`:''}</div>`; }
-function publishedVideos(){return (content.videos||[]).filter(video=>video.status==='published'&&/^[\w-]{11}$/.test(video.youtubeId));}
+function publishedVideos(){return (content.videos||[]).filter(video=>video.status==='published'&&/^[\w-]{11}$/.test(video.youtubeId)).sort((a,b)=>Number(!!b.pinned)-Number(!!a.pinned)||(a.pinned&&b.pinned?a.pinOrder-b.pinOrder:0));}
 function videoThumbnail(video){return `https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`;}
 function videoCard(video){return `<article class="home-video-card"><a class="video-thumbnail" href="#/videos?watch=${encodeURIComponent(video.id)}" aria-label="Watch ${esc(video.title)}"><img src="${videoThumbnail(video)}" alt="${esc(video.title)} — video thumbnail" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a><div class="video-card-copy"><h4><a href="#/videos?watch=${encodeURIComponent(video.id)}">${esc(video.title)}</a></h4><p>${esc(video.overview)}</p></div></article>`;}
 function videosPage(){
@@ -52,7 +52,7 @@ function videosPage(){
   main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">STORIES IN MOTION</p><h1>A different<br>way of <em>seeing.</em></h1><p>Moving images, longer moments, and stories worth sitting with.</p></section></div><section class="videos-list wrap" aria-label="Videos">${videos.map((video,index)=>`<article class="video-entry" id="video-${esc(video.id)}"><div class="video-player">${location.protocol==='file:'?`<a class="video-thumbnail" href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${esc(video.title)} on YouTube"><img src="${videoThumbnail(video)}" alt="${esc(video.title)}" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a>`:`<iframe src="https://www.youtube-nocookie.com/embed/${video.youtubeId}" title="${esc(video.title)} — YouTube player" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`}</div><div class="video-overview"><h2>${esc(video.title)}</h2><p>${esc(video.overview)}</p><a class="text-link" href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>${location.protocol==='file:'?'<p class="video-sample-note">For embedded playback, open this site through the local HTTP preview.</p>':''}</div></article>`).join('')||'<p class="empty-state">New videos are on their way.</p>'}</section>`;
 }
 function home() {
-  const slides = content.items.filter(i=>i.type==='series'&&i.pinned).slice(0,6);
+  const slides = content.items.filter(i=>i.type==='series'&&i.pinned).sort((a,b)=>a.pinOrder-b.pinOrder).slice(0,4);
   const featured = content.items.filter(i=>i.featured).sort((a,b)=>a.featureOrder-b.featureOrder);
   const featuredSeries=featured.filter(i=>i.type==='series').slice(0,3);
   const featuredBlogs=featured.filter(i=>i.type==='blog').slice(0,3);
@@ -97,7 +97,7 @@ function listing(type) {
   function renderResults() {
     const query=$('#search').value.trim().toLowerCase();
     const filtered=items.filter(i=>(tag==='All'||itemGenres(i).includes(tag))&&searchText(i).includes(query));
-    const pins=items.filter(i=>i.pinned).sort((a,b)=>a.pinOrder-b.pinOrder).slice(0,6).map(i=>i.id);
+    const pins=items.filter(i=>i.pinned).sort((a,b)=>a.pinOrder-b.pinOrder).slice(0,4).map(i=>i.id);
     const ordered=[...filtered].sort((a,b)=>{const ap=pins.includes(a.id),bp=pins.includes(b.id);if(ap!==bp)return ap?-1:1;if(ap&&bp)return a.pinOrder-b.pinOrder;return $('#sort').value==='title'?a.title.localeCompare(b.title):$('#sort').value==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date);});
     $('#results').innerHTML=ordered.length?ordered.map((i,n)=>card(i,n,pins.includes(i.id))).join(''):'<div class="empty-state"><h2>No stories found.</h2><p>Try another word or clear your filters.</p><button id="clear-filters" class="button">Clear filters ↗</button></div>';
     $$('.blogs-grid .blog-image-frame img').forEach(fitHomePhoto);

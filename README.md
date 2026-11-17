@@ -44,18 +44,18 @@ Preset images require no hand-written captions or JSON entries. Supported format
 | Home DP and blog author avatar | First image in `displaypictures`, in filename order |
 | About's three alternating rows | Remaining display pictures in filename order, cycling as needed; reuse the DP until more are supplied |
 | Landing background | At initial load, randomly assign one `homeBgSlideShows` image to each page and preload/decode the chosen images. Reuse each page’s loaded background throughout navigation; reassign on full reload |
-| Home foreground slideshow | First photo of each pinned photo series, in JSON array order; up to six; rotates every three seconds |
+| Home foreground slideshow | First photo of each pinned photo series, in JSON array order; up to four; rotates every three seconds |
 | Selected Stories: Photo Series | First three series with `isSelectedStories: true` |
 | Selected Stories: Blogs | First three blogs with `isSelectedStories: true` |
 | Selected Stories: Videos | First three videos with `isSelectedStories: true` |
-| Series and blog indexes | All respective JSON entries; up to six pinned first, then remaining entries; search and visitor sorting |
+| Series and blog indexes | All respective JSON entries; up to four pinned first, then remaining entries; search and visitor sorting |
 | Series genre filters | `genres` array; a series can belong to multiple fixed genres |
 | Series detail | `#/series/{id}`: title, subtext and photos in array order, four per desktop row |
 | Blog detail | `#/blogs/{id}`: title, first three photos, text, fourth photo, text, fifth photo |
 | Videos | All videos, one YouTube embed per row with title and subtext |
 | About text and contact values | `profile.json` |
 
-Every content file is a JSON **array of objects**. IDs are stable positive integers, unique within each file. Keep existing IDs when editing, because links use them. Array order determines pin order, slideshow order and Selected Stories order. `isPinned` and `isSelectedStories` are independent booleans. Select no more than six pins per collection. Fewer than three selections show fewer cards.
+Every content file is a JSON **array of objects**. IDs are stable positive integers, unique within each file. Keep existing IDs when editing, because links use them. Optional pinOrder and selectedStoryOrder fields determine the order of active selections. The admin puts new selections first and renumbers the remaining selections. Array order is the fallback when these fields are absent. `isPinned` and `isSelectedStories` are independent booleans. Select no more than four pins per collection. Fewer than three selections show fewer cards.
 
 The first photo is the thumbnail/cover. Frames are 4:5: portraits fill and crop centrally; landscapes fit on white. DP images use a circular crop. Plain text is escaped, never interpreted as HTML.
 
@@ -72,6 +72,7 @@ The first photo is the thumbnail/cover. Frames are 4:5: portraits fill and crop 
       "assets/dynamic/sample-portrait.svg"
     ],
     "genres": ["Festival", "Documentary"],
+    "isDeleted": false,
     "isPinned": true,
     "isSelectedStories": true,
     "createdAt": "2026-11-18T12:00:00Z"
@@ -97,6 +98,7 @@ Fixed genres: `Festival`, `Street`, `Travel`, `Portraits`, `Documentary`. Preser
       "assets/dynamic/sample-landscape.svg",
       "assets/dynamic/sample-portrait.svg"
     ],
+    "isDeleted": false,
     "isPinned": true,
     "isSelectedStories": true,
     "createdAt": "2026-11-18T12:00:00Z"
@@ -115,6 +117,7 @@ Blog `content` is plain text for now. Separate paragraphs with `\n\n`. The provi
     "title": "Big Buck Bunny",
     "subtext": "A sample film for the video layout.",
     "video": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "isDeleted": false,
     "isPinned": true,
     "isSelectedStories": true,
     "createdAt": "2026-11-18T12:00:00Z"
@@ -138,3 +141,12 @@ R2 is the selected photo storage provider; Cloudinary is no longer planned. A lo
 New blog HTML is converted to plain text with paragraph/newline breaks. Videos use validated YouTube URLs. Runtime credentials stay in the local helper's memory. GitHub may use the existing Git Credential Manager sign-in. Publishing updates the remote JSON and starts Pages; it does not modify the local checkout. Pull remote changes before editing locally.
 
 npm run build validates the portfolio, regenerates preset indexes/snapshots and copies only index.html, assets/ and data/ into dist/. The GitHub Pages workflow runs on pushes to main, including admin-generated JSON commits, and deploys dist/. GitHub repository settings must use GitHub Actions as the Pages source. No separate hosting backend or R2 worker is required for this local admin upload flow.
+
+
+## Dashboard, flags and soft deletion
+
+The ignored local admin includes a minimal dashboard that fetches all three collections from GitHub, previews entries, searches title/overview/blog content, sorts by date/title/selection order, and filters by type, pin, Selected Stories and deleted status. Quick actions edit, pin, select, soft-delete or restore an item.
+
+Every record has isDeleted (false by default). Deleted records remain in their original JSON array with all text and photo URLs intact, but the public adapter excludes them from all listings, Home, videos and detail routes. Deleting clears its pin and Selected Stories flags; restoring leaves those flags off. R2 objects are never deleted.
+
+Limits are FOUR active pins and THREE active Selected Stories per content type. Pinning/selecting a new item gives it first priority. If full, the final item by saved pinOrder/selectedStoryOrder is automatically unflagged in the same GitHub commit. The review dialog names every replacement before confirmation, and file SHA checks prevent a stale preview from overwriting a newer change. The same rules apply to publishing through the editor.

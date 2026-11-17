@@ -13,7 +13,10 @@
     ],
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-24T12:00:00Z"
+    "createdAt": "2026-10-24T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
   },
   {
     "id": 10,
@@ -29,7 +32,10 @@
     ],
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-23T12:00:00Z"
+    "createdAt": "2026-10-23T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   },
   {
     "id": 11,
@@ -45,7 +51,10 @@
     ],
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-22T12:00:00Z"
+    "createdAt": "2026-10-22T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 3,
+    "selectedStoryOrder": 3
   },
   {
     "id": 12,
@@ -61,7 +70,10 @@
     ],
     "isPinned": true,
     "isSelectedStories": false,
-    "createdAt": "2026-09-21T12:00:00Z"
+    "createdAt": "2026-09-21T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 4,
+    "selectedStoryOrder": null
   },
   {
     "id": 13,
@@ -75,9 +87,12 @@
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=85",
       "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=85"
     ],
-    "isPinned": true,
+    "isPinned": false,
     "isSelectedStories": false,
-    "createdAt": "2026-09-20T12:00:00Z"
+    "createdAt": "2026-09-20T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": null,
+    "selectedStoryOrder": null
   },
   {
     "id": 14,
@@ -91,9 +106,12 @@
       "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=85",
       "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85"
     ],
-    "isPinned": true,
+    "isPinned": false,
     "isSelectedStories": false,
-    "createdAt": "2026-09-19T12:00:00Z"
+    "createdAt": "2026-09-19T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": null,
+    "selectedStoryOrder": null
   },
   {
     "id": 15,
@@ -109,7 +127,10 @@
     ],
     "isPinned": false,
     "isSelectedStories": false,
-    "createdAt": "2026-08-18T12:00:00Z"
+    "createdAt": "2026-08-18T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": null,
+    "selectedStoryOrder": null
   },
   {
     "id": 16,
@@ -125,6 +146,9 @@
     ],
     "isPinned": false,
     "isSelectedStories": false,
-    "createdAt": "2026-08-17T12:00:00Z"
+    "createdAt": "2026-08-17T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": null,
+    "selectedStoryOrder": null
   }
 ]

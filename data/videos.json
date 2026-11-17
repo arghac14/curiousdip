@@ -6,7 +6,10 @@
     "video": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-24T12:00:00Z"
+    "createdAt": "2026-10-24T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
   },
   {
     "id": 2,
@@ -15,7 +18,10 @@
     "video": "https://www.youtube.com/watch?v=eRsGyueVLvQ",
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-23T12:00:00Z"
+    "createdAt": "2026-10-23T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   },
   {
     "id": 3,
@@ -24,6 +30,9 @@
     "video": "https://www.youtube.com/watch?v=R6MlUcmOul8",
     "isPinned": true,
     "isSelectedStories": true,
-    "createdAt": "2026-10-22T12:00:00Z"
+    "createdAt": "2026-10-22T12:00:00Z",
+    "isDeleted": false,
+    "pinOrder": 3,
+    "selectedStoryOrder": 3
   }
 ]

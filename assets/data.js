@@ -39,7 +39,7 @@ globalThis.CuriousDipData = (() => {
         if(photos[4])blocks.push({type:'image',image:photos[4]});
         photos.slice(5).forEach(photo=>blocks.push({type:'image',image:photo}));
       }
-      return {...row,type,description:row.subtext,date:row.createdAt.slice(0,10),tags:[],genres:row.genres||[],status:'published',pinned:row.isPinned,pinOrder:index+1,featured:row.isSelectedStories,featureOrder:index,cover:photos[0],photos,openingImages:photos.slice(0,3),blocks,readMinutes:Math.max(1,Math.ceil((row.content||'').split(/\s+/).length/200))};
+      return {...row,type,description:row.subtext,date:row.createdAt.slice(0,10),tags:[],genres:row.genres||[],status:'published',pinned:row.isPinned,pinOrder:row.pinOrder??index+1,featured:row.isSelectedStories,featureOrder:row.selectedStoryOrder??index,cover:photos[0],photos,openingImages:photos.slice(0,3),blocks,readMinutes:Math.max(1,Math.ceil((row.content||'').split(/\s+/).length/200))};
     }
     return {
       profile:{...raw.profile,portrait,aboutSections:raw.profile.aboutSections.map((section,index)=>({...section,image:image(aboutPhotos.length?aboutPhotos[index%aboutPhotos.length]:portraits[0],raw.profile.name)}))},
@@ -47,8 +47,8 @@ globalThis.CuriousDipData = (() => {
       homeBackgrounds:pickBackground(backgrounds.map(url=>image(url,'')),random),
       pageBackgrounds:planBackgrounds(backgrounds.map(url=>image(url,'')),random),
       seriesGenres:['Festival','Street','Travel','Portraits','Documentary'],
-      items:[...raw.photoseries.map((row,i)=>item(row,i,'series')),...raw.blog.map((row,i)=>item(row,i,'blog'))],
-      videos:raw.videos.map((row,index)=>({...row,overview:row.subtext,youtubeId:youtubeID(row.video),status:'published',pinned:row.isPinned,featured:row.isSelectedStories,featureOrder:index}))
+      items:[...raw.photoseries.filter(row=>!row.isDeleted).map((row,i)=>item(row,i,'series')),...raw.blog.filter(row=>!row.isDeleted).map((row,i)=>item(row,i,'blog'))],
+      videos:raw.videos.filter(row=>!row.isDeleted).map((row,index)=>({...row,overview:row.subtext,youtubeId:youtubeID(row.video),status:'published',pinned:row.isPinned,pinOrder:row.pinOrder??index+1,featured:row.isSelectedStories,featureOrder:row.selectedStoryOrder??index}))
     };
   }
   return {normalize,image,youtubeID,pickBackground,planBackgrounds};
