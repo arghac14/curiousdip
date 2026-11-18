@@ -9,7 +9,7 @@
     "createdAt": "2026-11-18T20:22:00.000Z",
     "publishId": "d7c36ae0-571c-4d6c-b3db-a1828bff1a24",
     "video": "https://www.youtube.com/watch?v=34DrAF5cjFg",
-    "pinOrder": 1,
+    "pinOrder": 2,
     "selectedStoryOrder": 1
   },
   {
@@ -17,12 +17,12 @@
     "title": "A city that celebrates Death | Varanasi",
     "subtext": "Beyond the rituals and religious beliefs, Kashi offers a different perspective on life, death and everything in between.",
     "isDeleted": false,
-    "isPinned": false,
+    "isPinned": true,
     "isSelectedStories": false,
     "createdAt": "2026-11-18T20:11:00.000Z",
-    "publishId": "4366afc4-eaeb-4ae6-8a36-e493a681d529",
+    "publishId": "b45c9008-3555-4f3e-aabe-595bafddda94",
     "video": "https://www.youtube.com/watch?v=dLh4iWc_q0w",
-    "pinOrder": null,
+    "pinOrder": 1,
     "selectedStoryOrder": null
   },
   {
@@ -35,7 +35,7 @@
     "createdAt": "2026-11-17T22:52:00.000Z",
     "publishId": "06959099-d363-411a-a157-df0f3c53b294",
     "video": "https://www.youtube.com/watch?v=Cc3V0nRmrzM",
-    "pinOrder": 2,
+    "pinOrder": 3,
     "selectedStoryOrder": 2
   }
 ]
