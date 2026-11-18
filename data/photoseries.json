@@ -5,9 +5,9 @@
     "subtext": "A folk legacy from the land of Bengal.",
     "isDeleted": false,
     "isPinned": true,
-    "isSelectedStories": false,
+    "isSelectedStories": true,
     "createdAt": "2026-11-18T17:34:00.000Z",
-    "publishId": "9d87ffa5-45c6-455a-8838-6f7e619bf7c8",
+    "publishId": "82e06a53-564d-45f4-8123-f872773bcc38",
     "photos": [
       "https://res.cloudinary.com/arghac14/image/upload/v1795023334/curiousdip/photos/66373afc03a448e26271b9421767c8460c0af4c8255e1a177d6a603b8bfeead0.webp",
       "https://res.cloudinary.com/arghac14/image/upload/v1795023309/curiousdip/photos/bcd2c485ca3a1fbd7661f4b35d0be6bf4bdaaa2d63dd08a4c85630c9d46cbbcb.webp",
@@ -28,7 +28,7 @@
       "Documentary"
     ],
     "pinOrder": 1,
-    "selectedStoryOrder": null
+    "selectedStoryOrder": 1
   },
   {
     "id": 1,
@@ -47,6 +47,6 @@
       "Festival"
     ],
     "pinOrder": 2,
-    "selectedStoryOrder": 1
+    "selectedStoryOrder": 2
   }
 ]
