@@ -1,5 +1,37 @@
 [
   {
+    "id": 5,
+    "title": "Frames from Jama Masjid",
+    "subtext": "The beauty of Jama Masjid through my lens.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T19:54:00.000Z",
+    "publishId": "5b27b74e-3015-4f07-9941-8441bb5dfc28",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795037999/curiousdip/photos/969d29c54f5e937288874b9abdf73dbc034f261f1911bb63de46baa7f4a3733f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038001/curiousdip/photos/bf2b0d8244dd6572a7eefdb26214e389c18cfe78fcd0b895205b5e02cb153611.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038002/curiousdip/photos/33f4a294e2508ab487a763fc326aedc43a25f71facb7322fafe481f623e50058.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038004/curiousdip/photos/1c88ee91a794a9f455cfbbb5837c26c3bbed87e6394d1c84900f9b07baceae15.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038006/curiousdip/photos/71dc576ecc7116ae9134940b8dd1d9b224a3451cfdb375547a2cea57a9c36fbb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038007/curiousdip/photos/e4109809a1faffab47df35660fb714894c931a27e285fe476f7e041507597609.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038009/curiousdip/photos/9ad6725b50bfe25a0049134ed68b058b34d91fa103edde0b05dfe4c60072aecd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038011/curiousdip/photos/0b2704714884d20574e42d4e8342c506194105649a5bafa93f639c9ce6f990b4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038013/curiousdip/photos/0cb78573d745a248b2a5268f13bcf5de4a9d2caa1fa360e2299e941243664169.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038015/curiousdip/photos/127929c5d9e2fbe2d944445264e13df818bfeaf20dd2b4aa0d3b27978fe2076a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038016/curiousdip/photos/c50489be88edfb4c87056a2509bf0272ae5a57aaf591c8ffd80e31ddfc5ed826.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038018/curiousdip/photos/99eebbfed6341d3349c0c9546ffb9a3ca520eeb08cdb5265ff9aec005bb06b55.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038020/curiousdip/photos/3d486a7892bca15635e26dd50b26a62257268a51f59e2184a09d211aed50051a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038022/curiousdip/photos/631f029a7a7cac9cde1738085f5a8bbd4c21f025c32791c196824adda0d756fb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038023/curiousdip/photos/c62646c3ffcb3a995932a4d53faa8de67e0abf4795909ff829586bb176169ad0.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 4,
     "title": "Faces of India",
     "subtext": "A billion stories, one face at a time.",
