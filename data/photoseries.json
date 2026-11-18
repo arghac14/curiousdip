@@ -1,5 +1,42 @@
 [
   {
+    "id": 3,
+    "title": "Postcards from LADAKH",
+    "subtext": "No other place like Ladakh!",
+    "isDeleted": false,
+    "isPinned": true,
+    "isSelectedStories": true,
+    "createdAt": "2026-11-18T17:35:00.000Z",
+    "publishId": "e4f9e8d6-d365-4833-b712-68c268fdadc1",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031434/curiousdip/photos/93dea81ce0b5322c45f96b9d5b0b0bec233a151f11320d2122cacc1675dbf9ac.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031436/curiousdip/photos/be6223dfe32addc3b848411e2d31ce70c006c74a4c9df631c751929b5968e5da.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031438/curiousdip/photos/3358abd6034ec0499c942b65b83f10bdf4e408e06b90d63d491fb8f4311e736f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031441/curiousdip/photos/4d58b66bdd62c5777600ec1d232f000624c25503984918619f1c6325eeba9082.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031444/curiousdip/photos/86c9cebc614725057821f598dfec84797fe12f8a0802f55d42173da65807f080.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031446/curiousdip/photos/0180eb37ba989acaaf46816d807dc04d3fd94b93a6b03ae7b0122cd1d374c9e9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031449/curiousdip/photos/92b6c7e9e855b0db4a17607592b9524a11dc0cc69e9ed9967363e67e99f93705.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031451/curiousdip/photos/de34710e89e2d6da052710eeca01b56baa14fe1c7ef8a6fe3b3ef18ae5520d8b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031453/curiousdip/photos/b3e14d1f0dd625df8c888a8870e80dcf17d677710e370ca1e55cff30c347ec82.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031456/curiousdip/photos/070168db85a2346d892abf72bcf90a04eea42d25b9e3cdf295f84a2ee4a41ca4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031458/curiousdip/photos/f1ca89b91510921558b347ec00a7fe672e83c8700bfd21333c652ec7a669bc83.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031461/curiousdip/photos/62f08ed9de28bb928abd7a8c989da17405fe6a052b026cc5cb88cbcfd62f9729.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031464/curiousdip/photos/49a2d9c1b7c85be3fde45826402aae3dc3551ee4fc1e4cce954a0dd2b91cbf04.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031466/curiousdip/photos/478980ea410a99b2f6c3ddd62303d29910180cbd952040659f3801abada52614.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031468/curiousdip/photos/3f1585675b264a959eb976763a91a7b6d9cfc33e1737f8fd55c0f3e621d910a1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031470/curiousdip/photos/b2d94c570da9dfd52abe17e55a6c8608fb34c32faa8a09603042a53aafef354d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031473/curiousdip/photos/d784311665ea53c72408d2559189abeab72aa83d3a88fce30ad79df458dcd45d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031475/curiousdip/photos/f7b4d29971b765872e805c3211d8c60534c3aac13ea52b279c38b255c0e7f1cb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031477/curiousdip/photos/4340cfa23ab88de8c8c38d73f5294f699398d1f624eea4332db14f169f1d67d2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031479/curiousdip/photos/d4db2dfcc14d67fc9e8f9de51af454f32afac48715f57526529eb2d1edc0a8d9.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
+  },
+  {
     "id": 2,
     "title": "Chhau Dance",
     "subtext": "A folk legacy from the land of Bengal.",
@@ -27,8 +64,8 @@
     "genres": [
       "Documentary"
     ],
-    "pinOrder": 1,
-    "selectedStoryOrder": 1
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   },
   {
     "id": 1,
@@ -56,7 +93,7 @@
     "genres": [
       "Festival"
     ],
-    "pinOrder": 2,
-    "selectedStoryOrder": 2
+    "pinOrder": 3,
+    "selectedStoryOrder": 3
   }
 ]
