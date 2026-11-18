@@ -32,16 +32,26 @@
   },
   {
     "id": 1,
-    "title": "Chhath Mahaparv",
-    "subtext": "aastha ka mahaparv",
+    "title": "Chhath Mahaparv 2026",
+    "subtext": "Chhath, an emotion for millions and a part of the identity of Bihar, Jharkhand and UP. A festival of faith, love and devotion.",
     "isDeleted": false,
     "isPinned": true,
     "isSelectedStories": true,
     "createdAt": "2026-11-18T17:29:00.000Z",
-    "publishId": "69fbe564-762c-442f-b05f-bc1248ea4df9",
+    "publishId": "264356e0-b469-494d-b534-d859a936ff18",
     "photos": [
       "https://res.cloudinary.com/arghac14/image/upload/v1795022976/curiousdip/photos/d50c4ce7fdf8cdbe105a6952afa39f34c1d702500c063268598a8e238e26e733.webp",
-      "https://res.cloudinary.com/arghac14/image/upload/v1795022978/curiousdip/photos/6cc12e449f5e34912aead67db597a80bfed27b29eabccbfddc8fd89d0cfced3b.webp"
+      "https://res.cloudinary.com/arghac14/image/upload/v1795022978/curiousdip/photos/6cc12e449f5e34912aead67db597a80bfed27b29eabccbfddc8fd89d0cfced3b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031293/curiousdip/photos/22d33d467b4978bc37a36cdae9ec270c0e0c33f118e1146ab71309bcc99ed2af.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031295/curiousdip/photos/ab0dd6d8e44154ed99d073519c54d95915001730e693789c7dd6fd28961ff999.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031298/curiousdip/photos/1e3b1af095d0323e31ef7f39ce7da4d8e9a3c5809131c2ea9af22434e60b3f28.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031301/curiousdip/photos/7fb7cae65ca6d52bdcb0096520a18c723f576b8b52e7389d65cee4ca1ceef77d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031303/curiousdip/photos/317a3d6e876f9cdd17f1abf85b1e5a6ab2ad2bc52d738bde5f6e9fc8d7952c8f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031306/curiousdip/photos/60458018e2e188ab793e246380e16f1843cc13b24ecc259117bcdfdba330f193.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031308/curiousdip/photos/2093670f5f19903c82c19b628facf2882ec036ad28863daca1d42ff46e84d7e3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031311/curiousdip/photos/e8fd2d1ff7ee05c0921d34a6c0daf58ac0307d715282e1b12576b70c38754432.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031313/curiousdip/photos/b6b61db1d35dd1e6baec7cf1ba7b4d36bd305d70118ffab963a8207f01f2af93.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031315/curiousdip/photos/751e54194b30255de8ae37ac50293ccd0faec49d9be80f72798883c0c9d547bc.webp"
     ],
     "genres": [
       "Festival"
