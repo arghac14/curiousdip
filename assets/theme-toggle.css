@@ -16,4 +16,16 @@
 @keyframes camera-flash-burst{0%,32%{opacity:0;transform:scale(.2) rotate(-12deg)}45%{opacity:1;transform:scale(1) rotate(0)}65%{opacity:.35;transform:scale(1.25) rotate(8deg)}100%{opacity:0;transform:scale(1.4) rotate(12deg)}}
 @keyframes camera-flash-charge{0%,100%{box-shadow:none}35%{background:#f0ad52;box-shadow:0 0 5px #f0ad52}45%,52%{background:#fff9e7;box-shadow:0 0 14px 5px #ffda8d90}}
 @keyframes camera-click{0%,100%{transform:translateY(0)}35%{transform:translateY(1px)}55%{transform:translateY(-1px)}}
+/* Keep the compact navigation controls aligned at phone and tablet widths. */
+@media(max-width:1050px){
+  .site-header{display:grid;grid-template-columns:minmax(0,1fr) auto 36px;align-items:center;column-gap:12px}
+  .site-header>.wordmark{grid-column:1;grid-row:1;justify-self:start;white-space:nowrap}
+  .site-header .menu-button{grid-column:2;grid-row:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin:0;padding:0 4px;line-height:1;white-space:nowrap;font-size:12px}
+  .site-header .menu-button>span{display:block;position:relative;flex:none;width:16px;height:12px;font-size:0;line-height:0;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat}
+  .site-header .theme-toggle{grid-column:3;grid-row:1;width:36px;height:36px;min-width:36px;min-height:36px;align-self:center;box-shadow:inset 0 1px 2px #ffffff10}
+  .site-header .theme-toggle:hover{transform:none;box-shadow:inset 0 1px 2px #ffffff10}
+  .site-header .camera-icon{transform:scale(.74);transform-origin:center}
+  .site-header nav{top:calc(100% - 1px)}
+}
+@media(max-width:360px){.site-header{column-gap:8px}.site-header .menu-button{font-size:11px;gap:6px;padding-inline:2px}}
 @media(prefers-reduced-motion:reduce){.theme-toggle,.camera-flash{transition:none}.theme-toggle:hover{transform:none}.theme-toggle.is-switching .camera-burst,.theme-toggle.is-switching .camera-flash,.theme-toggle.is-switching .camera-body,.theme-toggle.is-switching .camera-lens{animation:none}}

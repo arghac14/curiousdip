@@ -153,6 +153,8 @@ Limits are FOUR active pins and THREE active Selected Stories per content type. 
 
 ## Conversations and unique views
 
+Photo Series, Blogs and Videos show up to eight results per page. Search, genre filters and sorting apply to the entire collection before pagination. Changing these controls resets to page one; the `page` query parameter in the hash URL preserves the current page on reload. Pagination appears only when there is more than one page. Home's Selected Stories rows are unchanged.
+
 Videos use the same thumbnail cards on Home and the Videos page, with three cards
 per desktop row and responsive smaller grids. The Videos search matches titles
 and overviews. Play buttons and titles open the YouTube watch URL directly;

@@ -76,21 +76,38 @@ function videoCard(video,listing=false){
   const href='https://www.youtube.com/watch?v='+encodeURIComponent(video.youtubeId),heading=listing?'h2':'h4';
   return `<article class="home-video-card ${listing?'video-list-card':''}" ${listing?'id="video-'+esc(video.id)+'"':''}><a class="video-thumbnail" href="${href}" aria-label="Watch ${esc(video.title)} on YouTube"><img src="${videoThumbnail(video)}" alt="${esc(video.title)} — video thumbnail" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a><div class="video-card-copy"><${heading}><a href="${href}">${esc(video.title)}</a></${heading}><p>${esc(video.overview)}</p></div></article>`;
 }
+function pagination(items,requested){
+  const pages=Math.max(1,Math.ceil(items.length/8));
+  const parsed=Number(requested),page=Math.min(pages,Number.isSafeInteger(parsed)&&parsed>0?parsed:1),start=(page-1)*8;
+  return {page,pages,total:items.length,start,end:Math.min(start+8,items.length),items:items.slice(start,start+8)};
+}
+function paginationControls(state,onPage){
+  const nav=$('#catalog-pagination');nav.hidden=state.pages<=1;
+  if(nav.hidden){nav.innerHTML='';return;}
+  const numbers=[...new Set([1,state.page-1,state.page,state.page+1,state.pages])].filter(n=>n>0&&n<=state.pages).sort((a,b)=>a-b);
+  const button=(page,label,current=false,disabled=false)=>`<button type="button" data-page="${page}" ${current?'aria-current="page"':''} ${disabled?'disabled':''} aria-label="${typeof label==='number'?'Page '+label:label+' page'}">${label}</button>`;
+  nav.innerHTML=`<p>Showing ${state.start+1}–${state.end} of ${state.total}</p><div class="pagination-buttons">${button(state.page-1,'Previous',false,state.page===1)}${numbers.map((page,index)=>(index&&page>numbers[index-1]+1?'<span aria-hidden="true">…</span>':'')+button(page,page,page===state.page)).join('')}${button(state.page+1,'Next',false,state.page===state.pages)}</div>`;
+  nav.onclick=event=>{const button=event.target.closest('button[data-page]');if(!button||button.disabled)return;const page=Number(button.dataset.page);if(page!==state.page&&page>=1&&page<=state.pages)onPage(page);};
+}
 function videosPage(){
   const videos=publishedVideos(),params=new URLSearchParams(location.hash.split('?')[1]||'');
-  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">STORIES IN MOTION</p><h1>A different<br>way of <em>seeing.</em></h1><p>Moving images, longer moments, and stories worth sitting with.</p></section></div><section class="videos-catalog wrap" aria-label="Videos"><div class="listing-tools video-listing-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search videos by title or overview…" aria-label="Search videos" value="${esc(params.get('q')||'')}"><kbd>/</kbd></label><p id="video-result-count" role="status"></p></div><div id="video-results" class="videos-grid"></div></section>`;
+  let page=params.get('page');
+  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">STORIES IN MOTION</p><h1>A different<br>way of <em>seeing.</em></h1><p>Moving images, longer moments, and stories worth sitting with.</p></section></div><section class="videos-catalog wrap" aria-label="Videos"><div class="listing-tools video-listing-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search videos by title or overview…" aria-label="Search videos" value="${esc(params.get('q')||'')}"><kbd>/</kbd></label><p id="video-result-count" role="status"></p></div><div id="video-results" class="videos-grid"></div><nav id="catalog-pagination" class="catalog-pagination" aria-label="Videos pages" hidden></nav></section>`;
   function renderVideos(){
     videoViewStops.splice(0).forEach(stop=>stop());
     const query=$('#search').value.trim().toLowerCase();
     const matches=videos.filter(video=>[video.title,video.overview].join(' ').toLowerCase().includes(query));
+    const paged=pagination(matches,page);page=paged.page;
     $('#video-result-count').textContent=query?matches.length+' of '+videos.length+' videos':videos.length+' '+(videos.length===1?'video':'videos');
-    $('#video-results').innerHTML=matches.length?matches.map(video=>videoCard(video,true)).join(''):!videos.length?'<p class="content-empty">No content yet.</p>':'<div class="empty-state"><h2>No videos found.</h2><p>Try another title or word from the overview.</p><button id="clear-video-search" class="button">Clear search</button></div>';
-    matches.forEach(video=>{const card=document.getElementById('video-'+video.id);if(card)videoViewStops.push(CuriousDipViews.track({type:'video',id:video.id},card));});
-    if($('#clear-video-search'))$('#clear-video-search').onclick=()=>{$('#search').value='';renderVideos();$('#search').focus();};
+    $('#video-results').innerHTML=matches.length?paged.items.map(video=>videoCard(video,true)).join(''):!videos.length?'<p class="content-empty">No content yet.</p>':'<div class="empty-state"><h2>No videos found.</h2><p>Try another title or word from the overview.</p><button id="clear-video-search" class="button">Clear search</button></div>';
+    paged.items.forEach(video=>{const card=document.getElementById('video-'+video.id);if(card)videoViewStops.push(CuriousDipViews.track({type:'video',id:video.id},card));});
+    if($('#clear-video-search'))$('#clear-video-search').onclick=()=>{$('#search').value='';page=1;renderVideos();$('#search').focus();};
     const next=new URLSearchParams(location.hash.split('?')[1]||'');if(query)next.set('q',$('#search').value.trim());else next.delete('q');
+    if(page>1)next.set('page',page);else next.delete('page');
+    paginationControls(paged,nextPage=>{page=nextPage;renderVideos();$('#video-results').scrollIntoView({block:'start',behavior:reducedMotion.matches?'instant':'smooth'});});
     history.replaceState(null,'','#/videos'+(next.toString()?'?'+next:''));
   }
-  $('#search').oninput=renderVideos;renderVideos();
+  $('#search').oninput=()=>{page=1;renderVideos();};renderVideos();
 }
 function homeEmpty(type) {
   const available=type==='video'?publishedVideos().length:content.items.some(item=>item.type===type);
@@ -133,8 +150,8 @@ function listing(type) {
   const items=content.items.filter(i=>i.type===type), isBlog=type==='blog';
   const filters=isBlog?['All']:['All',...content.seriesGenres];
   const params=new URLSearchParams(location.hash.split('?')[1]||'');
-  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">${isBlog?'THE JOURNAL':'COLLECTED THROUGH THE LENS'}</p><h1>${isBlog?'Words, walks<br>& <em>wonderings.</em>':'One frame.<br>A thousand <em>stories.</em>'}</h1><p>${isBlog?'Notes on photography, the creative process, and the things that stay with us.':'Places, passing moments, and the threads that connect them. A collection of photo series.'}</p></section></div><section class="listing wrap"><div class="listing-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search ${isBlog?'blogs':'photo series'}…" aria-label="Search titles and content" value="${esc(params.get('q')||'')}"><kbd>/</kbd></label><label class="sort-field">Sort by <select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div>${isBlog?'':`<div class="tag-row" role="group" aria-label="${isBlog?'Filter by topic':'Filter by genre'}">${filters.map(tag=>`<button data-tag="${esc(tag)}" aria-pressed="false">${esc(tag)}</button>`).join('')}</div>`}<div class="results-heading"><span id="result-count" role="status"></span><span>PINNED STORIES APPEAR FIRST ↗</span></div><div id="results" class="listing-grid"></div></section>`;
-  let tag=params.get('tag')||'All';
+  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">${isBlog?'THE JOURNAL':'COLLECTED THROUGH THE LENS'}</p><h1>${isBlog?'Words, walks<br>& <em>wonderings.</em>':'One frame.<br>A thousand <em>stories.</em>'}</h1><p>${isBlog?'Notes on photography, the creative process, and the things that stay with us.':'Places, passing moments, and the threads that connect them. A collection of photo series.'}</p></section></div><section class="listing wrap"><div class="listing-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search ${isBlog?'blogs':'photo series'}…" aria-label="Search titles and content" value="${esc(params.get('q')||'')}"><kbd>/</kbd></label><label class="sort-field">Sort by <select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div>${isBlog?'':`<div class="tag-row" role="group" aria-label="${isBlog?'Filter by topic':'Filter by genre'}">${filters.map(tag=>`<button data-tag="${esc(tag)}" aria-pressed="false">${esc(tag)}</button>`).join('')}</div>`}<div class="results-heading"><span id="result-count" role="status"></span><span>PINNED STORIES APPEAR FIRST ↗</span></div><div id="results" class="listing-grid"></div><nav id="catalog-pagination" class="catalog-pagination" aria-label="${isBlog?'Blogs':'Photo series'} pages" hidden></nav></section>`;
+  let tag=params.get('tag')||'All',page=params.get('page');
   if(isBlog)$('#results').classList.add('blogs-grid');
   else $('#results').classList.add('series-grid');
   if(!filters.includes(tag))tag='All';
@@ -144,18 +161,21 @@ function listing(type) {
     const filtered=items.filter(i=>(tag==='All'||itemGenres(i).includes(tag))&&searchText(i).includes(query));
     const pins=items.filter(i=>i.pinned).sort((a,b)=>a.pinOrder-b.pinOrder).slice(0,4).map(i=>i.id);
     const ordered=[...filtered].sort((a,b)=>{const ap=pins.includes(a.id),bp=pins.includes(b.id);if(ap!==bp)return ap?-1:1;if(ap&&bp)return a.pinOrder-b.pinOrder;return $('#sort').value==='title'?a.title.localeCompare(b.title):$('#sort').value==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date);});
-    $('#results').innerHTML=ordered.length?ordered.map((i,n)=>card(i,n,pins.includes(i.id))).join(''):!items.length?'<div class="empty-state"><h2>No content yet.</h2><p>New stories will appear here.</p></div>':'<div class="empty-state"><h2>No stories found.</h2><p>Try another word or clear your filters.</p><button id="clear-filters" class="button">Clear filters ↗</button></div>';
+    const paged=pagination(ordered,page);page=paged.page;
+    $('#results').innerHTML=ordered.length?paged.items.map((i,n)=>card(i,n,pins.includes(i.id))).join(''):!items.length?'<div class="empty-state"><h2>No content yet.</h2><p>New stories will appear here.</p></div>':'<div class="empty-state"><h2>No stories found.</h2><p>Try another word or clear your filters.</p><button id="clear-filters" class="button">Clear filters ↗</button></div>';
     $$('.blogs-grid .blog-image-frame img').forEach(fitHomePhoto);
     $$('.series-grid .card-image img').forEach(fitHomePhoto);
     CuriousDipDarkroom.refresh();
     $('#result-count').textContent=`${ordered.length} ${isBlog?'blog'+(ordered.length===1?'':'s'):'photo series'}${query?' matching “'+$('#search').value.trim()+'”':''}`;
     $$('.tag-row button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tag===tag)));
     const p=new URLSearchParams();if(query)p.set('q',$('#search').value.trim());if(tag!=='All')p.set('tag',tag);if($('#sort').value!=='newest')p.set('sort',$('#sort').value);
+    if(page>1)p.set('page',page);
+    paginationControls(paged,nextPage=>{page=nextPage;renderResults();$('#results').scrollIntoView({block:'start',behavior:reducedMotion.matches?'instant':'smooth'});});
     history.replaceState(null,'',`#/${isBlog?'blogs':'series'}${p.toString()?'?'+p:''}`);
-    if($('#clear-filters'))$('#clear-filters').onclick=()=>{$('#search').value='';tag='All';renderResults();};
+    if($('#clear-filters'))$('#clear-filters').onclick=()=>{$('#search').value='';tag='All';page=1;renderResults();};
   }
-  $('#search').oninput=renderResults;$('#sort').onchange=renderResults;
-  $$('.tag-row button').forEach(b=>b.onclick=()=>{tag=b.dataset.tag;renderResults();});renderResults();
+  $('#search').oninput=()=>{page=1;renderResults();};$('#sort').onchange=()=>{page=1;renderResults();};
+  $$('.tag-row button').forEach(b=>b.onclick=()=>{tag=b.dataset.tag;page=1;renderResults();});renderResults();
 }
 function searchText(item) { return [item.title,item.description,...item.tags,...(item.genres||[]),...item.blocks.flatMap(b=>[b.text||'',...(b.items||[]),b.image?.caption||'',b.image?.alt||'',...(b.images||[]).flatMap(i=>[i.alt,i.caption])])].join(' ').toLowerCase(); }
 function photoBlock(image, note, cls='') {
