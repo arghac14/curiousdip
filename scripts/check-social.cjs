@@ -27,7 +27,7 @@ const sdk={
   addDoc:async(ref,row)=>{if(writeFailure)throw {code:'permission-denied'};storedComments.push({id:'new-comment',...row});},
   deleteDoc:async ref=>{storedComments=storedComments.filter(row=>!ref.endsWith('/'+row.id));}
 };
-const ctx=vm.createContext({document:{createElement:tag=>new Node(tag)},CURIOUSDIP_FIREBASE:{projectId:'test'},confirm:()=>true,IntersectionObserver:class{constructor(fn){this.fn=fn;observers.push(this);}observe(){}disconnect(){observerCalls++;}},sdkImport:async()=>sdk});
+const ctx=vm.createContext({CuriousDipViews:{mount:()=>()=>{}},document:{createElement:tag=>new Node(tag)},CURIOUSDIP_FIREBASE:{projectId:'test'},confirm:()=>true,IntersectionObserver:class{constructor(fn){this.fn=fn;observers.push(this);}observe(){}disconnect(){observerCalls++;}},sdkImport:async()=>sdk});
 const source=fs.readFileSync('assets/social.js','utf8').replace("import(base+'firebase-'+name+'.js')",'sdkImport(name)');
 vm.runInContext(source,ctx);
 const flush=async()=>{for(let n=0;n<8;n++)await new Promise(resolve=>setImmediate(resolve));};

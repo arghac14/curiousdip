@@ -26,17 +26,18 @@ globalThis.CuriousDipSocial=(()=>{
     })().catch(error=>{backendPromise=null;throw error;});
     return backendPromise;
   }
-  function mount(parent,item){
+  function mount(parent,item,visibilityTarget){
     if(!parent||!Number.isSafeInteger(item.id)||!['series','blog','video'].includes(item.type))return;
     if(!globalThis.CURIOUSDIP_FIREBASE?.projectId)return;
     const root=make('section',undefined,'social-section');root.setAttribute('aria-label','Likes and comments');
     const header=make('div',undefined,'social-heading'),heading=make('h2','What caught your eye?'),actions=make('div',undefined,'social-actions');
-    const like=make('button','♡ Like'),login=make('button','Sign in with Google'),status=make('p','Loading conversation…','social-status'),account=make('p','','social-account');
+    const like=make('button','♡ Like'),login=make('button','Sign in with Google'),status=make('p','Loading conversation…','social-status'),account=make('p','','social-account'),viewCount=make('span','— views','social-views');
     like.type=login.type='button';like.setAttribute('aria-pressed','false');like.disabled=login.disabled=true;
     const list=make('ol',undefined,'social-comments'),more=make('button','Load more comments'),retry=make('button','Try again');more.hidden=retry.hidden=true;more.type=retry.type='button';
     const form=make('form',undefined,'social-form'),label=make('label','Leave a comment'),textarea=make('textarea'),submit=make('button','Post comment');
     textarea.id='comment-'+item.type+'-'+item.id;label.htmlFor=textarea.id;textarea.required=true;textarea.maxLength=2000;textarea.placeholder='What caught your eye?';submit.type='submit';form.append(label,textarea,submit);form.hidden=true;
-    status.setAttribute('role','status');actions.append(like,login);header.append(heading,actions);root.append(header,account,form,status,retry,list,more);parent.append(root);
+    status.setAttribute('role','status');actions.append(viewCount,like,login);header.append(heading,actions);root.append(header,account,form,status,retry,list,more);parent.append(root);
+    const stopViews=CuriousDipViews.mount(viewCount,item,visibilityTarget);
     let ready=false,busy=false,liked=false,total=0,cursor=null,hasMore=false,identityVersion=0;
     const key=item.type+'-'+item.id,path=['stories',key];
     const active=()=>root.isConnected&&views.has(view);
@@ -95,7 +96,7 @@ globalThis.CuriousDipSocial=(()=>{
       try{const user=backend.auth.currentUser;await backend.addDoc(reference('comments'),{uid:user.uid,name:user.displayName||'Visitor',text,createdAt:backend.serverTimestamp()});textarea.value='';try{await loadComments(true);note('Your comment is posted.');}catch{note('Your comment is posted. Reload to refresh the conversation.');}}catch(error){note(errorText(error)+' Your draft has been kept.');}finally{submit.disabled=false;}
     };
     more.onclick=async()=>{more.disabled=true;try{await loadComments();}catch(error){note(errorText(error));}finally{more.disabled=false;}};retry.onclick=start;
-    const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();start();}},{rootMargin:'150px'});observer.observe(root);view.disconnect=()=>observer.disconnect();
+    const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();start();}},{rootMargin:'150px'});observer.observe(root);view.disconnect=()=>{observer.disconnect();stopViews();};
   }
   function reset(){for(const view of views)view.disconnect();views.clear();}
   return {mount,reset};

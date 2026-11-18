@@ -205,7 +205,7 @@ function route(focus=true){
   }
   if(path==='/videos')publishedVideos().forEach(video=>{
     const entry=document.getElementById('video-'+video.id);
-    if(entry){const holder=document.createElement('div');holder.className='video-discussion';entry.after(holder);CuriousDipSocial.mount(holder,{type:'video',id:video.id});}
+    if(entry){const holder=document.createElement('div');holder.className='video-discussion';entry.after(holder);CuriousDipSocial.mount(holder,{type:'video',id:video.id},entry);}
   });
   const background=content.pageBackgrounds[path]?.[0];
   const backdrop=$('.home-backdrop');

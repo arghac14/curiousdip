@@ -11,6 +11,15 @@ service cloud.firestore {
     function validStory(story) {
       return story.matches('(series|blog|video)-[1-9][0-9]*');
     }
+    match /stories/{story}/views/{uid} {
+      allow read: if validStory(story);
+      allow create: if validStory(story) && request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'anonymous'
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['createdAt'])
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
     match /stories/{story}/likes/{uid} {
       allow read: if validStory(story);
       allow create: if validStory(story) && signedIn() && request.auth.uid == uid
