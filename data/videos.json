@@ -1,5 +1,18 @@
 [
   {
+    "id": 4,
+    "title": "Mokshadayini Kashi",
+    "subtext": "A story of how Maya has never reached Kashi,",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T20:25:00.000Z",
+    "publishId": "d1ea9894-832f-42e5-855a-316b950dd76f",
+    "video": "https://www.youtube.com/watch?v=tlgMj_53dSU",
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 3,
     "title": "Widow Holi | Vrindavan",
     "subtext": "In the streets of Vrindavan, widows break age-old traditions and reclaim the colours of life through Holi.",
