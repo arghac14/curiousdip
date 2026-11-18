@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Chhath Mahaparv",
+    "subtext": "aastha ka mahaparv",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T17:29:00.000Z",
+    "publishId": "c5f6bdc8-760b-4045-b55f-26007e9b02b2",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795022976/curiousdip/photos/d50c4ce7fdf8cdbe105a6952afa39f34c1d702500c063268598a8e238e26e733.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795022978/curiousdip/photos/6cc12e449f5e34912aead67db597a80bfed27b29eabccbfddc8fd89d0cfced3b.webp"
+    ],
+    "genres": [
+      "Festival"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  }
+]
