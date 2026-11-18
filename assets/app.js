@@ -4,7 +4,7 @@ const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const main = $('#main');
 function fitHomePhoto(image) {
-  if(image.matches('.home-slideshow .slide-photo img, .home-story-image img, .blog-image-frame img, .series-grid .card-image img, .series-photo-grid img, .blog-photo img') && image.naturalWidth && image.naturalHeight) {
+  if(image.matches('.home-slideshow .slide-photo img, .home-story-image img, .blog-image-frame img, .series-grid .card-image img, .series-photo-grid img, .blog-photo img, #lightbox img') && image.naturalWidth && image.naturalHeight) {
     image.dataset.orientation=image.naturalWidth>image.naturalHeight?'landscape':'portrait';
   }
 }
@@ -147,7 +147,9 @@ function contact() {
 }
 async function copyText(text, button, success) { const label=button.textContent;try{await navigator.clipboard.writeText(text);button.textContent=success;$('#announcement').textContent='Copied to clipboard';setTimeout(()=>{if(button.isConnected)button.textContent=label;},2200);}catch{button.textContent='Copy unavailable';$('#announcement').textContent='Clipboard unavailable. Select and copy the address or browser URL manually.';} }
 function openPhoto(index, trigger) {photoIndex=index;lastFocus=trigger;renderPhoto();$('#lightbox').showModal();document.body.classList.add('modal-open');}
-function renderPhoto(){const image=gallery[photoIndex];$('#lightbox img').src=imageURL(image,2400);$('#lightbox img').alt=image.alt;$('#lightbox figcaption').textContent=`${photoIndex+1} / ${gallery.length} — ${image.caption||image.alt}`;}
+const viewerPhoto=$('#lightbox img');
+viewerPhoto.addEventListener('load',()=>fitHomePhoto(viewerPhoto));
+function renderPhoto(){const image=gallery[photoIndex];delete viewerPhoto.dataset.orientation;viewerPhoto.src=imageURL(image,2400);viewerPhoto.alt=image.alt;if(viewerPhoto.complete)fitHomePhoto(viewerPhoto);$('#lightbox figcaption').textContent=`${photoIndex+1} / ${gallery.length} — ${image.caption||image.alt}`;}
 function closePhoto(){$('#lightbox').close();}
 $('.lightbox-close').onclick=closePhoto;
 $('.lightbox-prev').onclick=()=>{photoIndex=(photoIndex-1+gallery.length)%gallery.length;renderPhoto();};

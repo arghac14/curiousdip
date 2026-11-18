@@ -21,6 +21,9 @@ h1,h2{font-weight:400;letter-spacing:-2px}h1{font-size:clamp(48px,5.5vw,80px)}h2
 /* Keep empty collection artwork within the same warm palette. */
 .genre-empty.genre-travel .genre-image{filter:saturate(.8) brightness(1.08)}.genre-empty.genre-festival .genre-image{filter:saturate(1.2)}.genre-empty.genre-documentary .genre-image{filter:grayscale(.8)}
 #lightbox::backdrop{background:#100e0c}#lightbox figcaption{color:#c9b8a3}.lightbox-close,.lightbox-prev,.lightbox-next{color:#fff4e4}
+/* Keep full-size portraits at their natural ratio, without a white mat. */
+#lightbox img{aspect-ratio:auto;background:transparent}
+#lightbox img[data-orientation="landscape"]{aspect-ratio:4/5;background:#fff}
 
 /* Compact Photo Series index, with borderless 4:5 thumbnails. */
 .listing-grid.series-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 24px}
