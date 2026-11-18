@@ -1,5 +1,41 @@
 [
   {
+    "id": 28,
+    "title": "Women's day 2026",
+    "subtext": "Stories of quiet strength and grace through my lens.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:30:00.000Z",
+    "publishId": "eb19ffca-d8d4-4d02-946e-59260c2ca43b",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041171/curiousdip/photos/78bf04335a138b90e5555c10fb576c9ce800491f5ce01bab7498c77c656757da.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039912/curiousdip/photos/4c081467c4778faef74b15d634ab3f37bdd1bf1c6600de4eaf94bcf3a68dabca.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041176/curiousdip/photos/8aa10ffb427045581395164f0e37ec26735f65c6e9c87c9d1bdbc9f6ed189da0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041178/curiousdip/photos/24c74f99374b817b4dfdace63cb7d992e487bef28230a4330c38634dcd6fea0c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041180/curiousdip/photos/f92fda88ebb0f9cf38ae78af79c3d4b25b3ad7fce296a527af8ada1e3c772552.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038463/curiousdip/photos/75805e4a14dbfe21ab49c17418e24c54405758d29213bddd29a289c21924246c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041184/curiousdip/photos/5ed047ae63c00c01d27d3e3f8c9da4e9b4ce651f1173c45230f9cb7b14ec154c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039858/curiousdip/photos/11270de5ecf39a88661adbe4f9dee426fbed99755c78c49a4448d3c62e283e27.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041188/curiousdip/photos/d699db45d8af817d7292d16daed607fc9f1ced740548eb433bedcce5ee5ccfe5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041190/curiousdip/photos/6991d1ba3c811edf70222a56cc20c8b810a06294574b400568998c733a9edff5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041192/curiousdip/photos/c05a520ef89de2a4a7301f0218bcec513a1bb7e340eba9b0cfa13ef65f275ef5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038009/curiousdip/photos/9ad6725b50bfe25a0049134ed68b058b34d91fa103edde0b05dfe4c60072aecd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041196/curiousdip/photos/014b3129c2735813e45e4049697bae41dabc53a8d563f58a129ff2fc9baf0d1f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041198/curiousdip/photos/352abcbeb64f3921ff1a61a4f3be04c319c50627befc7c640c83efaa2baed971.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031659/curiousdip/photos/7cfd2e3002b93b8f880af7a7e533f7ba5d0f1f6c09510ea59f6a77d7f6b92c3a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041202/curiousdip/photos/d59deab00f3fda7d346682a18b6016928c983ed71849e8fed5d3977f0d19274e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041204/curiousdip/photos/abfbaf9efdc222f87487792fc62e4c8813d96229d94cd4f2ff706c1ecd5f5f06.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041206/curiousdip/photos/a0de9f37834822704ac622381c18dcaaf73874efcbdc7a0b41c2de0cb9956531.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041208/curiousdip/photos/ec3366b6bfc489cf3df3a72d08bb770a0a322111577f4f5252e60cdc7c922a1c.webp"
+    ],
+    "genres": [
+      "Portraits"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 27,
     "title": "Streets of Mumbai",
     "subtext": "Street photos of Mumbai",
