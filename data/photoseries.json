@@ -1,5 +1,42 @@
 [
   {
+    "id": 27,
+    "title": "Streets of Mumbai",
+    "subtext": "Street photos of Mumbai",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:29:00.000Z",
+    "publishId": "182f19f0-5e69-4ed4-9593-61f3fbfdd569",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041049/curiousdip/photos/e1464cf12253ca7ca16b1ffcc5ad6aa74384c804fd6b553122812c604f08022c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041053/curiousdip/photos/5177e4ba1e485a47c482ecca8a6becf1f53933fc1ff50df22c44959c1b5793b1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041055/curiousdip/photos/e8aa711fcc44633c8592ef33db8294f0d3deaabd52da1971f97966368f988584.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041057/curiousdip/photos/02fed8ff6625410613bfb696cd384258223dfefae821af51cf67f570b7ab94cc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041059/curiousdip/photos/0f0666c985689e43dc003ed92691b32f3dba2a834cd416b4a678f3a03493eade.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041061/curiousdip/photos/710fce79a064250281e37f4a88502cbdf6056696411c0b2cb3e3e35b668d499f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041063/curiousdip/photos/700e2f278d44af56e9cd73359266589df596a380d6c397ead9714db136a84bf7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041065/curiousdip/photos/4939580c29e67aa6f0145dd889824446ca321f3bbbde63eec43197cec97f71f0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041067/curiousdip/photos/9083f282bd9f724994eb38510b3d537c461267cf15246c97719785aaeda22f55.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041069/curiousdip/photos/5ce63e88ce7094f8b8605b29667f4ad57440a3ec779fa79477070817f1c10b9b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041071/curiousdip/photos/acd6d8334c1eec3cde37d6e665147a415cb0e8394ec7d1b1c18afdf55a8d63dd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041073/curiousdip/photos/274e7c4efa912d0a6fe5beaf0f1eaa83b55426cfd4f0aad8fc9e181043375437.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041075/curiousdip/photos/1a09b5c70d213de2da4de99755da8cd6659e34405467b2fbc3c66f5911def717.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041078/curiousdip/photos/2135638c5e771fa14f9c9a65abb8fe61af63c8d8d77d677ba31d2ba43b443728.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041080/curiousdip/photos/9dffdd19a9c5478ad38810589e4d6c0138c3e8dd07d6241b5ec87c41107db059.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041083/curiousdip/photos/4a27b893b90eaa86109195fba6614d6f415881c0fa2b86328335563b9273e01f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041086/curiousdip/photos/6d7d1b5fac9a853aba1a6a6e1be5570dea4d4715f81242cbb8b012d163b06efc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041089/curiousdip/photos/6edad45083480645eb41b497d371893f71d19e5f9717e85be522299b46bbe62a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041091/curiousdip/photos/63df3db1316e165560f5a32c5747eb7040fec5415bd574b4d305db6aaa57f44b.webp"
+    ],
+    "genres": [
+      "Street",
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 26,
     "title": "Varanasi After the Dark",
     "subtext": "Quiet frames from Varanasi after the dark.",
