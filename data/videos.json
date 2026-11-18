@@ -1,5 +1,18 @@
 [
   {
+    "id": 3,
+    "title": "Widow Holi | Vrindavan",
+    "subtext": "In the streets of Vrindavan, widows break age-old traditions and reclaim the colours of life through Holi.",
+    "isDeleted": false,
+    "isPinned": true,
+    "isSelectedStories": true,
+    "createdAt": "2026-11-18T20:22:00.000Z",
+    "publishId": "d7c36ae0-571c-4d6c-b3db-a1828bff1a24",
+    "video": "https://www.youtube.com/watch?v=34DrAF5cjFg",
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
+  },
+  {
     "id": 2,
     "title": "A city that celebrates Death | Varanasi",
     "subtext": "Beyond the rituals and religious beliefs, Kashi offers a different perspective on life, death and everything in between.",
@@ -22,7 +35,7 @@
     "createdAt": "2026-11-17T22:52:00.000Z",
     "publishId": "06959099-d363-411a-a157-df0f3c53b294",
     "video": "https://www.youtube.com/watch?v=Cc3V0nRmrzM",
-    "pinOrder": 1,
-    "selectedStoryOrder": 1
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   }
 ]
