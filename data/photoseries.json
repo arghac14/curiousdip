@@ -4,10 +4,10 @@
     "title": "Chhau Dance",
     "subtext": "A folk legacy from the land of Bengal.",
     "isDeleted": false,
-    "isPinned": false,
+    "isPinned": true,
     "isSelectedStories": false,
     "createdAt": "2026-11-18T17:34:00.000Z",
-    "publishId": "20ba50f6-e7c6-4a84-b6bd-c32db73afaa7",
+    "publishId": "9d87ffa5-45c6-455a-8838-6f7e619bf7c8",
     "photos": [
       "https://res.cloudinary.com/arghac14/image/upload/v1795023334/curiousdip/photos/66373afc03a448e26271b9421767c8460c0af4c8255e1a177d6a603b8bfeead0.webp",
       "https://res.cloudinary.com/arghac14/image/upload/v1795023309/curiousdip/photos/bcd2c485ca3a1fbd7661f4b35d0be6bf4bdaaa2d63dd08a4c85630c9d46cbbcb.webp",
@@ -27,7 +27,7 @@
     "genres": [
       "Documentary"
     ],
-    "pinOrder": null,
+    "pinOrder": 1,
     "selectedStoryOrder": null
   },
   {
@@ -46,7 +46,7 @@
     "genres": [
       "Festival"
     ],
-    "pinOrder": 1,
+    "pinOrder": 2,
     "selectedStoryOrder": 1
   }
 ]
