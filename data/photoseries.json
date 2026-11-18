@@ -1,5 +1,38 @@
 [
   {
+    "id": 24,
+    "title": "Postcards from Sikkim",
+    "subtext": "Frames from my Sikkim trip.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:26:00.000Z",
+    "publishId": "6fb39bef-6ba0-4f54-87eb-a2ed1fe4ab14",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040855/curiousdip/photos/350d8bb643a8c87dc4ac7c52e33a029efd7488da7b36e2917a3b352f30e10219.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040857/curiousdip/photos/0edbe313057f2bede2963432b82eb475cd750d1b050e600d79fd7d3979e61c17.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040859/curiousdip/photos/8130b725c887c1530f9fd8a552b95c8b82d2fc88c532422a2249f06e5387a833.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040860/curiousdip/photos/f32d31e3234d988704f2ef3045451a132a3ac4b949aee247deb5f74eaa3aac91.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040862/curiousdip/photos/72a5ab49e039dc0fc7c8be5a8c8ec5092349902a138a94093b085fd772773b7d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040864/curiousdip/photos/6af8fdba6d8d2766422b828c67e2574ccc34236b756ad319077387e6d146751a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040866/curiousdip/photos/48857fc44a198086e655d65c04f11fece8fbf48e3ef007eebc551988056285ae.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040868/curiousdip/photos/88d8178cca2a792904a769500cc488348b98794e765a8d498c76fa71f01d5cb7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040870/curiousdip/photos/207b0104adf93d91f39dbdf3b4ccf918fecdb447c43c6fe7e9aaefe6bba09a4b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040872/curiousdip/photos/6730c94f390bb93e3cb361786b124f23214b94714d4861e1490df5c6aeb66c88.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040873/curiousdip/photos/7acfd0a4905f052a1575060534fea601f326d5a64370bd9f34be5a548b68b468.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040875/curiousdip/photos/163730918e0bdf0485e0c2719f7d63e6cad573d2e56dd466ae0612147ec07927.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040877/curiousdip/photos/71610908dd79c94fbc616e83efd569dcb6e86c8a4589481e348043c549b844cb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040879/curiousdip/photos/cad8ad122a5d5902c165f0d3c98cf93fae577854ffd8ac676edec06885988359.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040880/curiousdip/photos/c6d3ba5fb9b370382360979a660c0c9e2a5aee00ac5ec59693edf11cb48e25df.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040882/curiousdip/photos/c0dd346275c43760a52013958814cf5717fe9d967c9b5833f1774c70413455e0.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 23,
     "title": "Shayan Aarthi, Bengaluru Ganesh Utsava",
     "subtext": "Shayan Aarthi, Bengaluru Ganesh Utsava",
