@@ -1,4 +1,6 @@
 // Public Firebase web configuration. Never put service-account keys here.
+// View recording stays active; this flag only controls the public counter.
+globalThis.CURIOUSDIP_FEATURES = Object.freeze({showViews: false});
 globalThis.CURIOUSDIP_FIREBASE = {
   projectId: 'curiousdip-59217',
   appId: '1:577300380080:web:666344fd0a95649cb0be75',

@@ -52,6 +52,11 @@ unlinked. Deploy Auth/Firestore only; portfolio hosting stays on GitHub Pages.
 
 ## Unique views
 
+`CURIOUSDIP_FEATURES.showViews` in `assets/firebase-config.js` is **false**:
+public view counts are hidden until the owner asks to enable them. This only
+controls display; tracking remains active. The local admin dashboard always
+shows views and likes independently of this flag.
+
 The `curiousdip-views` Firebase app uses its own anonymous session with local
 persistence, separate from Google sign-in for likes and comments. One browser
 counts once per series, blog or video, regardless of reloads or Google sign-out.

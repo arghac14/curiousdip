@@ -32,6 +32,7 @@ globalThis.CuriousDipSocial=(()=>{
     const root=make('section',undefined,'social-section');root.setAttribute('aria-label','Likes and comments');
     const header=make('div',undefined,'social-heading'),heading=make('h2','What caught your eye?'),actions=make('div',undefined,'social-actions');
     const like=make('button','♡ Like'),login=make('button','Sign in with Google'),status=make('p','Loading conversation…','social-status'),account=make('p','','social-account'),viewCount=make('span','— views','social-views');
+    viewCount.hidden=globalThis.CURIOUSDIP_FEATURES?.showViews!==true;
     like.type=login.type='button';like.setAttribute('aria-pressed','false');like.disabled=login.disabled=true;
     const list=make('ol',undefined,'social-comments'),more=make('button','Load more comments'),retry=make('button','Try again');more.hidden=retry.hidden=true;more.type=retry.type='button';
     const form=make('form',undefined,'social-form'),label=make('label','Leave a comment'),textarea=make('textarea'),submit=make('button','Post comment');

@@ -6,7 +6,7 @@ class Node {
   setAttribute(key,value){this.attributes[key]=value;}
   focus(){this.focused=true;}
 }
-const observers=[];let observerCalls=0,writeFailure=false,storedComments=[],likes=new Set(),authListener;
+const observers=[];let observerCalls=0,writeFailure=false,storedComments=[],likes=new Set(),authListener,tracked=0;
 const user={uid:'alice',displayName:'Alice',email:'alice@example.com',emailVerified:true};
 const auth={currentUser:null,async authStateReady(){}};
 const ref=(db,...path)=>path.join('/');
@@ -27,7 +27,7 @@ const sdk={
   addDoc:async(ref,row)=>{if(writeFailure)throw {code:'permission-denied'};storedComments.push({id:'new-comment',...row});},
   deleteDoc:async ref=>{storedComments=storedComments.filter(row=>!ref.endsWith('/'+row.id));}
 };
-const ctx=vm.createContext({CuriousDipViews:{mount:()=>()=>{}},document:{createElement:tag=>new Node(tag)},CURIOUSDIP_FIREBASE:{projectId:'test'},confirm:()=>true,IntersectionObserver:class{constructor(fn){this.fn=fn;observers.push(this);}observe(){}disconnect(){observerCalls++;}},sdkImport:async()=>sdk});
+const ctx=vm.createContext({CuriousDipViews:{mount:()=>{tracked++;return()=>{};}},document:{createElement:tag=>new Node(tag)},CURIOUSDIP_FIREBASE:{projectId:'test'},confirm:()=>true,IntersectionObserver:class{constructor(fn){this.fn=fn;observers.push(this);}observe(){}disconnect(){observerCalls++;}},sdkImport:async()=>sdk});
 const source=fs.readFileSync('assets/social.js','utf8').replace("import(base+'firebase-'+name+'.js')",'sdkImport(name)');
 vm.runInContext(source,ctx);
 const flush=async()=>{for(let n=0;n<8;n++)await new Promise(resolve=>setImmediate(resolve));};
@@ -35,6 +35,7 @@ function find(root,match){if(match(root))return root;for(const child of root.chi
 (async()=>{
   const parent=new Node('main');ctx.CuriousDipSocial.mount(parent,{type:'series',id:1});
   assert.equal(parent.children.length,1);assert.equal(likes.size,0);
+  assert(find(parent,node=>node.className==='social-views').hidden,'Public view counts default to hidden');assert.equal(tracked,1,'Hiding public counts must not stop tracking');
   observers[0].fn([{isIntersecting:true}]);await flush();
   const root=parent.children[0],button=text=>find(root,node=>node.tag==='button'&&node.textContent===text);
   const like=button('♡ 0 likes');assert(like&&!like.disabled);await like.onclick();assert.equal(likes.size,0,'Anonymous visitors cannot like');
@@ -51,5 +52,6 @@ function find(root,match){if(match(root))return root;for(const child of root.chi
   await button('Delete').onclick();await button('Confirm delete').onclick();assert.equal(storedComments.length,0);
   await button('Sign out').onclick();assert(form.hidden);
   ctx.CuriousDipSocial.reset();assert(observerCalls>=2,'Route cleanup disconnects observers');
+  ctx.CURIOUSDIP_FEATURES={showViews:true};const enabled=new Node('main');ctx.CuriousDipSocial.mount(enabled,{type:'blog',id:1});assert.equal(find(enabled,node=>node.className==='social-views').hidden,false,'An explicit feature flag enables the counter');ctx.CuriousDipSocial.reset();
   console.log('Social checks passed: anonymous access, account-bound likes/unlikes, safe comment text, retained drafts, delete, sign-out and route cleanup.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
