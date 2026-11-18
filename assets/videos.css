@@ -1,33 +1,17 @@
-/* Videos keep their native widescreen proportions. */
-.home-video-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+/* Shared thumbnail cards for selected videos and the video catalogue. */
+.home-video-row,.videos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .home-video-card{background:var(--card);border:1px solid var(--line);min-width:0;overflow:hidden;border-radius:8px}
 .video-thumbnail{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#151311}
 .video-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-.video-thumbnail:hover img{transform:scale(1.025)}
+.video-thumbnail:hover img,.video-thumbnail:focus-visible img{transform:scale(1.025)}
 .video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#151311d9;color:#fff5e6;border:1px solid #ffffff65;font-size:18px;padding-left:3px}
 .video-card-copy{padding:20px}
-.video-card-copy .eyebrow{color:var(--olive);font-size:8px;margin-bottom:10px}
-.video-card-copy h4{font:500 25px/1.3 var(--serif);letter-spacing:-.5px;margin:0 0 12px}
+.video-card-copy h2,.video-card-copy h4{font:500 25px/1.3 var(--serif);letter-spacing:-.5px;margin:0 0 12px}
+.video-card-copy h2 a:hover,.video-card-copy h4 a:hover{color:var(--olive)}
 .video-card-copy>p:last-child{font-size:12px;color:var(--muted);line-height:1.8}
-.videos-list{display:grid;grid-template-columns:minmax(0,1fr);gap:38px;padding-bottom:80px}
-.video-entry{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:center;gap:40px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden;scroll-margin-top:28px}
-.video-player{min-width:0;aspect-ratio:16/9;background:#151311;align-self:center}
-.video-player iframe{display:block;width:100%;height:100%;border:0}
-.video-overview{padding:30px 30px 30px 0}
-.video-overview>.eyebrow{color:var(--olive);font-size:9px;margin-bottom:18px}
-.video-overview h2{font-size:36px;letter-spacing:-1px;margin-bottom:20px}
-.video-overview>p:not(.eyebrow){font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:15px}
-.video-overview .video-credit{font-size:11px!important;color:var(--ink)!important}
-.video-overview .video-sample-note{font-size:10px!important;margin-block:12px}
-.video-overview .text-link{font-size:11px}
-@media(max-width:1050px){.video-entry{gap:25px;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}.video-overview{padding:24px 24px 24px 0}.video-overview h2{font-size:30px}.video-overview>p:not(.eyebrow){font-size:12px}}
-@media(max-width:900px){.home-video-row{grid-template-columns:repeat(2,minmax(0,1fr))}.video-entry{grid-template-columns:1fr;gap:0}.video-overview{padding:28px}.video-player{width:100%}}
-@media(max-width:760px){.home-video-row{grid-template-columns:1fr}.video-card-copy h4{font-size:24px}.video-overview{padding:23px}.video-overview h2{font-size:30px}.videos-list{gap:25px;padding-bottom:50px}.video-player iframe{min-height:0}}
-@media(prefers-reduced-motion:reduce){.video-thumbnail img{transition:none}}
-
-/* Slightly smaller viewing cards, with only title and overview beside the player. */
-.videos-list{max-width:1120px;gap:30px;padding-top:48px}
-.video-entry{gap:30px}
-.video-overview h2{font-size:32px}
-@media(max-width:760px){.video-entry{gap:0}.video-overview h2{font-size:29px}}
-@media(max-width:760px){.videos-list{padding-top:30px}}
+.videos-catalog{padding-block:36px 80px}.video-listing-tools{margin-bottom:28px}.video-listing-tools .search-field{max-width:530px}.video-listing-tools>p{font-size:12px;color:var(--muted);white-space:nowrap}.video-list-card{scroll-margin-top:30px}.videos-grid>.empty-state{grid-column:1/-1}
+@media(max-width:1000px){.videos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.home-video-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.home-video-row{grid-template-columns:1fr}.video-card-copy h2,.video-card-copy h4{font-size:24px}.videos-catalog{padding-block:22px 50px}.video-listing-tools{margin-bottom:22px}}
+@media(max-width:600px){.videos-grid{grid-template-columns:1fr;gap:25px}}
+@media(prefers-reduced-motion:reduce){.video-thumbnail img{transition:none}.video-thumbnail:hover img,.video-thumbnail:focus-visible img{transform:none}}

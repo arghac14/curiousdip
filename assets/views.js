@@ -19,7 +19,8 @@ globalThis.CuriousDipViews=(()=>{
     })().catch(error=>{backendPromise=null;throw error;});
     return backendPromise;
   }
-  async function count(item){
+  async function count(item,readTotal=true){
+    if(preview&&!readTotal)return null;
     const sdk=await connect(),key=item.type+'-'+item.id,collection=sdk.collection(sdk.db,'stories',key,'views');
     if(!preview){
       const uid=sdk.auth.currentUser?.uid;if(!uid)throw Error('Visitor storage unavailable');
@@ -34,13 +35,14 @@ globalThis.CuriousDipViews=(()=>{
       }
       await recorded.get(token);
     }
+    if(!readTotal)return null;
     const total=await sdk.getCountFromServer(collection);
     return total.data().count;
   }
   function mount(output,item,visibilityTarget){
     let cancelled=false,observer;
     if(output){output.textContent='— views';output.title='Unique browsers. Repeat visits in the same browser count once.'+(preview?' Local previews are not counted.':'');}
-    const run=()=>{if(cancelled)return;return count(item).then(total=>{
+    const run=()=>{if(cancelled)return;return count(item,!!output).then(total=>{
       if(cancelled||!output?.isConnected)return;
       output.textContent=total+' '+(total===1?'view':'views');output.setAttribute('aria-label',total+' unique '+(total===1?'view':'views'));
     }).catch(()=>{if(!cancelled&&output)output.title='View count is temporarily unavailable.';});};

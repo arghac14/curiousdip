@@ -153,6 +153,12 @@ Limits are FOUR active pins and THREE active Selected Stories per content type. 
 
 ## Conversations and unique views
 
+Videos use the same thumbnail cards on Home and the Videos page, with three cards
+per desktop row and responsive smaller grids. The Videos search matches titles
+and overviews. Play buttons and titles open the YouTube watch URL directly;
+phones can hand the link to the YouTube app when installed and permitted by the
+device's link preferences, otherwise the web player opens.
+
 Google sign-in, likes and comments use Firebase while the portfolio stays on GitHub Pages. Unique-browser view tracking remains active, but the public counter is disabled with `CURIOUSDIP_FEATURES.showViews: false` in `assets/firebase-config.js`. Do not enable it until requested. The local admin dashboard shows per-item views and likes; use Refresh content & counts for current totals. See [FIREBASE.md](FIREBASE.md) for setup, security rules, tracking behavior and tests.
 
 The initial loading illustration uses an a6700-style mirrorless camera with an interchangeable lens that docks and twists into its mount. It follows light/dark themes and reduced-motion preferences.

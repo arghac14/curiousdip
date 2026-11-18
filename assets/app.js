@@ -59,10 +59,25 @@ function card(item, index = 0, pinned = false, showCategory = false) {
 function sectionHeading(kicker, title, href, label) { return `<div class="section-heading"><div><p class="eyebrow">${kicker}</p><h2>${title}</h2></div>${href?`<a class="text-link" href="${href}">${label} <span>↗</span></a>`:''}</div>`; }
 function publishedVideos(){return (content.videos||[]).filter(video=>video.status==='published'&&/^[\w-]{11}$/.test(video.youtubeId)).sort((a,b)=>Number(!!b.pinned)-Number(!!a.pinned)||(a.pinned&&b.pinned?a.pinOrder-b.pinOrder:0));}
 function videoThumbnail(video){return `https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`;}
-function videoCard(video){return `<article class="home-video-card"><a class="video-thumbnail" href="#/videos?watch=${encodeURIComponent(video.id)}" aria-label="Watch ${esc(video.title)}"><img src="${videoThumbnail(video)}" alt="${esc(video.title)} — video thumbnail" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a><div class="video-card-copy"><h4><a href="#/videos?watch=${encodeURIComponent(video.id)}">${esc(video.title)}</a></h4><p>${esc(video.overview)}</p></div></article>`;}
+function videoCard(video,listing=false){
+  const href='https://www.youtube.com/watch?v='+encodeURIComponent(video.youtubeId),heading=listing?'h2':'h4';
+  return `<article class="home-video-card ${listing?'video-list-card':''}" ${listing?'id="video-'+esc(video.id)+'"':''}><a class="video-thumbnail" href="${href}" aria-label="Watch ${esc(video.title)} on YouTube"><img src="${videoThumbnail(video)}" alt="${esc(video.title)} — video thumbnail" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a><div class="video-card-copy"><${heading}><a href="${href}">${esc(video.title)}</a></${heading}><p>${esc(video.overview)}</p></div></article>`;
+}
 function videosPage(){
-  const videos=publishedVideos();
-  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">STORIES IN MOTION</p><h1>A different<br>way of <em>seeing.</em></h1><p>Moving images, longer moments, and stories worth sitting with.</p></section></div><section class="videos-list wrap" aria-label="Videos">${videos.map((video,index)=>`<article class="video-entry" id="video-${esc(video.id)}"><div class="video-player">${location.protocol==='file:'?`<a class="video-thumbnail" href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${esc(video.title)} on YouTube"><img src="${videoThumbnail(video)}" alt="${esc(video.title)}" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a>`:`<iframe src="https://www.youtube-nocookie.com/embed/${video.youtubeId}" title="${esc(video.title)} — YouTube player" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`}</div><div class="video-overview"><h2>${esc(video.title)}</h2><p>${esc(video.overview)}</p><a class="text-link" href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>${location.protocol==='file:'?'<p class="video-sample-note">For embedded playback, open this site through the local HTTP preview.</p>':''}</div></article>`).join('')||'<p class="content-empty">No content yet.</p>'}</section>`;
+  const videos=publishedVideos(),params=new URLSearchParams(location.hash.split('?')[1]||'');
+  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap"><p class="eyebrow">STORIES IN MOTION</p><h1>A different<br>way of <em>seeing.</em></h1><p>Moving images, longer moments, and stories worth sitting with.</p></section></div><section class="videos-catalog wrap" aria-label="Videos"><div class="listing-tools video-listing-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search videos by title or overview…" aria-label="Search videos" value="${esc(params.get('q')||'')}"><kbd>/</kbd></label><p id="video-result-count" role="status"></p></div><div id="video-results" class="videos-grid"></div></section>`;
+  function renderVideos(){
+    videoViewStops.splice(0).forEach(stop=>stop());
+    const query=$('#search').value.trim().toLowerCase();
+    const matches=videos.filter(video=>[video.title,video.overview].join(' ').toLowerCase().includes(query));
+    $('#video-result-count').textContent=query?matches.length+' of '+videos.length+' videos':videos.length+' '+(videos.length===1?'video':'videos');
+    $('#video-results').innerHTML=matches.length?matches.map(video=>videoCard(video,true)).join(''):!videos.length?'<p class="content-empty">No content yet.</p>':'<div class="empty-state"><h2>No videos found.</h2><p>Try another title or word from the overview.</p><button id="clear-video-search" class="button">Clear search</button></div>';
+    matches.forEach(video=>{const card=document.getElementById('video-'+video.id);if(card)videoViewStops.push(CuriousDipViews.track({type:'video',id:video.id},card));});
+    if($('#clear-video-search'))$('#clear-video-search').onclick=()=>{$('#search').value='';renderVideos();$('#search').focus();};
+    const next=new URLSearchParams(location.hash.split('?')[1]||'');if(query)next.set('q',$('#search').value.trim());else next.delete('q');
+    history.replaceState(null,'','#/videos'+(next.toString()?'?'+next:''));
+  }
+  $('#search').oninput=renderVideos;renderVideos();
 }
 function homeEmpty(type) {
   const available=type==='video'?publishedVideos().length:content.items.some(item=>item.type===type);
@@ -79,7 +94,7 @@ function home() {
     </div><section class="section home-selected wrap">${sectionHeading('A FEW THINGS TO SPEND TIME WITH','Selected <em>stories.</em>')}
       <section class="home-story-section" aria-labelledby="home-series-title"><div class="home-row-heading"><h3 id="home-series-title">Photo Series</h3><a class="text-link" href="#/series">All photo series ↗</a></div><div class="home-stories-grid">${featuredSeries.map(item=>`<article class="home-story-card"><a class="home-story-image" href="${link(item)}" aria-label="Explore ${esc(item.title)}">${picture(item.cover)}</a><div class="home-story-copy"><h4><a href="${link(item)}">${esc(item.title)}</a></h4><p>${esc(item.description)}</p><a class="home-story-link" href="${link(item)}">View series ↗</a></div></article>`).join('')||homeEmpty('series')}</div></section>
       <section class="home-story-section" aria-labelledby="home-blogs-title"><div class="home-row-heading"><h3 id="home-blogs-title">Blogs</h3><a class="text-link" href="#/blogs">All blogs ↗</a></div><div class="home-blog-row">${featuredBlogs.map((item,index)=>card(item,index,false,false)).join('')||homeEmpty('blog')}</div></section>
-      <section class="home-story-section" aria-labelledby="home-videos-title"><div class="home-row-heading"><h3 id="home-videos-title">Videos</h3><a class="text-link" href="#/videos">All videos ↗</a></div><div class="home-video-row">${featuredVideos.map(videoCard).join('')||homeEmpty('video')}</div></section>
+      <section class="home-story-section" aria-labelledby="home-videos-title"><div class="home-row-heading"><h3 id="home-videos-title">Videos</h3><a class="text-link" href="#/videos">All videos ↗</a></div><div class="home-video-row">${featuredVideos.map(video=>videoCard(video)).join('')||homeEmpty('video')}</div></section>
       </section>
     <section class="contact-strip wrap"><p class="eyebrow">LET’S MAKE A CONNECTION</p><h2>A story to share?<br><a href="#/contact">I’m all <em>ears.</em> ↗</a></h2></section>`;
   slideIndex=0;
@@ -220,10 +235,7 @@ function route(focus=true){
     const type=parts[0]==='series'?'series':'blog',item=content.items.find(item=>item.type===type&&String(item.id)===parts[1]);
     if(item)CuriousDipSocial.mount($('.series-detail, .blog-article'),{type,id:item.id});
   }
-  if(path==='/videos')publishedVideos().forEach(video=>{
-    const entry=document.getElementById('video-'+video.id);
-    if(entry)videoViewStops.push(CuriousDipViews.track({type:'video',id:video.id},entry));
-  });
+
   const background=content.pageBackgrounds[path]?.[0];
   const backdrop=$('.home-backdrop');
   if(backdrop&&background){const image=backgroundImages.get(background.url);if(image)backdrop.replaceChildren(image);}
