@@ -4,23 +4,22 @@ body.is-initializing{overflow:hidden}
 .boot-loader:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 45%,#d38c3120,transparent 52%)}
 .boot-loader.is-ready{opacity:0;pointer-events:none}
 .boot-content{text-align:center;width:min(440px,90vw);padding:28px}
-.boot-wordmark{font-family:'Outfit',Arial,sans-serif;font-size:26px;letter-spacing:-1px;font-weight:600;margin:0 0 35px}.boot-wordmark span{font-weight:300}.boot-wordmark b{color:var(--olive,#f0ad52)}
+.boot-wordmark{font-family:'Outfit',Arial,sans-serif;font-size:26px;letter-spacing:-1px;font-weight:600;margin:0 0 16px}.boot-wordmark span{font-weight:300}.boot-wordmark b{color:var(--olive,#f0ad52)}
 .boot-camera{display:block;width:100%;height:auto;overflow:visible;color:var(--ink,#f6ecdf)}
-.boot-camera .camera-shell{fill:var(--card,#1c1814);stroke:currentColor;stroke-width:1.5}
-.boot-camera .camera-detail{fill:none;stroke:currentColor;stroke-width:1;opacity:.4}
-.boot-camera .mount{fill:var(--paper,#151311);stroke:var(--olive,#f0ad52);stroke-width:1.8}
-.boot-camera .lens-barrel{fill:var(--card,#1c1814);stroke:currentColor;stroke-width:1.5}
-.boot-camera .lens-glass{fill:var(--soft,#241e18);stroke:var(--olive,#f0ad52);stroke-width:1.5}
-.boot-camera .lens-ring{fill:none;stroke:currentColor;stroke-width:1;opacity:.45}
-.boot-lens{animation:lens-dock 2.8s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
-.boot-connection{stroke:var(--olive,#f0ad52);stroke-width:1;stroke-dasharray:3 6;fill:none;animation:mount-guide 2.8s ease infinite}
-.boot-lock{stroke:var(--olive,#f0ad52);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:25;animation:mount-lock 2.8s ease infinite}
+.camera-ground{fill:#000;opacity:.14}.camera-shell{fill:url(#boot-body-metal);stroke:#696a6d;stroke-width:1.2}.camera-top{fill:#303134;stroke:#626368;stroke-width:.8}.camera-grip{fill:url(#boot-grip-rubber);stroke:#626368;stroke-width:1}.camera-grip-texture{fill:url(#boot-grip-texture)}
+.camera-detail{fill:none;stroke:#65666a;stroke-width:.7}.camera-strap{fill:none;stroke:#9a9ca2;stroke-width:3}.camera-dial{fill:#121315;stroke:#595b60;stroke-width:1}.camera-dial-ribs{fill:none;stroke:#9c9ea2;stroke-width:1}.camera-shutter-base{fill:#252629;stroke:#67696e;stroke-width:.8}.camera-shutter{fill:#3f4145;stroke:#9a9ca2;stroke-width:.8}
+.camera-brand{font:bold 15px Georgia,serif;letter-spacing:.5px;fill:#e6e5e2}.camera-alpha{font:22px Georgia,serif;fill:#e6e5e2}.camera-model{font:7px Arial,sans-serif;letter-spacing:1px;fill:#c1c0bd}.camera-lamp{fill:#9a9b95;stroke:#c9c9c1;stroke-width:.7}
+.boot-camera .mount{fill:#16171a;stroke:url(#boot-mount-metal);stroke-width:7}.mount-inner{fill:#0a0b0e;stroke:#51535a;stroke-width:1.5}.mount-bayonet{fill:none;stroke:#c4c1bb;stroke-width:3}.mount-contacts{fill:#c7a367}.mount-index{fill:#f1ede4}.camera-sensor-frame{fill:#101116;stroke:#55585e;stroke-width:1}.camera-sensor{fill:url(#boot-sensor);stroke:#789287;stroke-width:.7}
+.boot-camera .lens-barrel{fill:#17181b;stroke:#71737a;stroke-width:1.6}.lens-knurling{fill:none;stroke:#62646b;stroke-width:4;stroke-dasharray:1 2}.lens-rim{fill:#1b1c20;stroke:#5b5d65;stroke-width:1}.boot-camera .lens-ring{fill:none;stroke:#4b4c52;stroke-width:1}.boot-camera .lens-glass{fill:url(#boot-optical-glass);stroke:#597169;stroke-width:1.5}.lens-inner-ring{fill:none;stroke:#b7a0a9;stroke-width:.7;opacity:.4}.lens-iris{fill:#090d13;stroke:#71817b;stroke-width:.7;opacity:.8}.lens-reflection{fill:none;stroke:#d3e5e9;stroke-width:2;stroke-linecap:round;opacity:.42}.lens-index{stroke:var(--olive,#f0ad52);stroke-width:2;stroke-linecap:round}.lens-lettering{font:4px Arial,sans-serif;letter-spacing:1px;fill:#b1b2b7}
+.boot-lens{animation:lens-dock 3.4s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center;filter:drop-shadow(3px 7px 5px #0005)}
+.boot-connection{stroke:var(--olive,#f0ad52);stroke-width:1;stroke-dasharray:3 6;fill:none;animation:mount-guide 3.4s ease infinite}
+.boot-lock{stroke:var(--olive,#f0ad52);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:25;animation:mount-lock 3.4s ease infinite}
 .boot-status{font-family:'Outfit',Arial,sans-serif;font-size:23px;font-weight:400;letter-spacing:-.4px;margin:22px 0 10px}
 .boot-caption{font:10px/1.7 'DM Sans',Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted,#b5a594);margin:0}
 .boot-track{width:64px;height:2px;background:var(--line,#3b3127);margin:23px auto 0;overflow:hidden;border-radius:2px}
 .boot-track:after{content:'';display:block;width:25px;height:100%;background:var(--olive,#f0ad52);animation:docking-track 1.4s ease-in-out infinite}
-@keyframes lens-dock{0%,12%{transform:translateX(47px);opacity:.3}48%,77%{transform:translateX(0);opacity:1}91%,100%{transform:translateX(0);opacity:0}}
-@keyframes mount-guide{0%,20%{opacity:.5;stroke-dashoffset:18}48%,100%{opacity:0;stroke-dashoffset:0}}
-@keyframes mount-lock{0%,47%{opacity:0;stroke-dashoffset:25}64%,80%{opacity:1;stroke-dashoffset:0}92%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes lens-dock{0%,10%{transform:translate(76px,-27px) scale(1.08) rotate(-24deg);opacity:.75}43%{transform:translate(0,0) scale(1) rotate(-24deg);opacity:1}61%,84%{transform:translate(0,0) scale(1) rotate(0deg);opacity:1}96%,100%{transform:translate(0,0) scale(1) rotate(0deg);opacity:0}}
+@keyframes mount-guide{0%,20%{opacity:.5;stroke-dashoffset:18}43%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes mount-lock{0%,55%{opacity:0;stroke-dashoffset:25}68%,85%{opacity:1;stroke-dashoffset:0}96%,100%{opacity:0;stroke-dashoffset:0}}
 @keyframes docking-track{0%{transform:translateX(-26px)}100%{transform:translateX(65px)}}
 @media(prefers-reduced-motion:reduce){.boot-loader{transition:none}.boot-lens,.boot-connection,.boot-lock,.boot-track:after{animation:none}.boot-lens{transform:none;opacity:1}.boot-connection{opacity:0}.boot-lock{opacity:1;stroke-dashoffset:0}.boot-track:after{width:100%}}

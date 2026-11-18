@@ -9,3 +9,4 @@ Thumbs.db
 .codex/
 .agents/
 /admin/
+/admin/secrets.json

@@ -136,17 +136,23 @@ See `ROADMAP.md` for GitHub Pages, the separate CMS, Cloudinary and the later Cl
 
 ## Local admin and deployment
 
-R2 is the selected photo storage provider; Cloudinary is no longer planned. A local-only authoring panel lives in the ignored admin/ directory. Start it with npm run admin and open http://127.0.0.1:4322/. It has forms for series, blogs and videos, browser compression, R2 uploads and GitHub JSON commits. Its local README has connection instructions. The admin directory is deliberately absent from this public repository; back it up separately.
+Cloudinary is the selected photo storage provider. A local-only authoring panel lives in the ignored admin/ directory. Start it with npm run admin and open http://127.0.0.1:4322/. It has forms for series, blogs and videos, browser compression, Cloudinary uploads and GitHub JSON commits. Its local README has connection instructions. The admin directory is deliberately absent from this public repository; back it up separately.
 
-New blog HTML is converted to plain text with paragraph/newline breaks. Videos use validated YouTube URLs. Runtime credentials stay in the local helper's memory. GitHub may use the existing Git Credential Manager sign-in. Publishing updates the remote JSON and starts Pages; it does not modify the local checkout. Pull remote changes before editing locally.
+New blog HTML is converted to plain text with paragraph/newline breaks. Videos use validated YouTube URLs. Cloudinary credentials and optional upload-preset/folder settings are read from the ignored admin/secrets.json file; the helper never exposes them to the browser. GitHub may use the existing Git Credential Manager sign-in. After GitHub confirms a submission, the form resets and shows a receipt with deployment status. The helper also attempts a safe fast-forward pull and refreshes the local preview snapshot; a local sync failure is reported separately from a successful remote commit.
 
-npm run build validates the portfolio, regenerates preset indexes/snapshots and copies only index.html, assets/ and data/ into dist/. The GitHub Pages workflow runs on pushes to main, including admin-generated JSON commits, and deploys dist/. GitHub repository settings must use GitHub Actions as the Pages source. No separate hosting backend or R2 worker is required for this local admin upload flow.
+npm run build validates the portfolio, regenerates preset indexes/snapshots and copies only index.html, assets/ and data/ into dist/. The GitHub Pages workflow runs on pushes to main, including admin-generated JSON commits, and deploys dist/. GitHub repository settings must use GitHub Actions as the Pages source. No deployed backend is required for this local admin upload flow.
 
 
 ## Dashboard, flags and soft deletion
 
 The ignored local admin includes a minimal dashboard that fetches all three collections from GitHub, previews entries, searches title/overview/blog content, sorts by date/title/selection order, and filters by type, pin, Selected Stories and deleted status. Quick actions edit, pin, select, soft-delete or restore an item.
 
-Every record has isDeleted (false by default). Deleted records remain in their original JSON array with all text and photo URLs intact, but the public adapter excludes them from all listings, Home, videos and detail routes. Deleting clears its pin and Selected Stories flags; restoring leaves those flags off. R2 objects are never deleted.
+Every record has isDeleted (false by default). Deleted records remain in their original JSON array with all text and photo URLs intact, but the public adapter excludes them from all listings, Home, videos and detail routes. Deleting clears its pin and Selected Stories flags; restoring leaves those flags off. Cloud media is never automatically deleted.
 
 Limits are FOUR active pins and THREE active Selected Stories per content type. Pinning/selecting a new item gives it first priority. If full, the final item by saved pinOrder/selectedStoryOrder is automatically unflagged in the same GitHub commit. The review dialog names every replacement before confirmation, and file SHA checks prevent a stale preview from overwriting a newer change. The same rules apply to publishing through the editor.
+
+## Conversations and unique views
+
+Google sign-in, likes and comments use Firebase while the portfolio stays on GitHub Pages. Unique-browser view tracking remains active, but the public counter is disabled with `CURIOUSDIP_FEATURES.showViews: false` in `assets/firebase-config.js`. Do not enable it until requested. The local admin dashboard shows per-item views and likes; use Refresh content & counts for current totals. See [FIREBASE.md](FIREBASE.md) for setup, security rules, tracking behavior and tests.
+
+The initial loading illustration uses an a6700-style mirrorless camera with an interchangeable lens that docks and twists into its mount. It follows light/dark themes and reduced-motion preferences.
