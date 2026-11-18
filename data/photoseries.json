@@ -1,5 +1,33 @@
 [
   {
+    "id": 8,
+    "title": "Durga Dashami 2026",
+    "subtext": "Frames from Durga Dashami 2-26",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T21:55:00.000Z",
+    "publishId": "0c42697b-bd3b-4529-b5ed-c08bfe83d623",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039113/curiousdip/photos/737aa27c5efcacaa961a6bdc911c1e2c6d53eee1be37894d2f1b987109cde75d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039115/curiousdip/photos/9619c5fbafb02f7570f71e278d89be2450e58fbcb0ee15c5067d4fa369a65229.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039117/curiousdip/photos/ae500a4a67bdc809b28e49b8ca0b0d1eec52a73027f70a0cd8f0853d88dce897.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039120/curiousdip/photos/3790187d0dbc5cfc597faa4ddd338042a02c24626b60f17bb1a1f91b42ffb12a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039122/curiousdip/photos/66d0723b4fac1b7c207bd0a9bb064b6f5d4dd68dbe97e9ecc1ad2c34c962b21f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039125/curiousdip/photos/912e3b278bc7876abe797be5075d69e2b0cf8be53016e861001f4d78d7ca2fe3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039127/curiousdip/photos/ba5c5dfbe1d780bfaae4e0b0f873a7aefafea8523e4bcbe428afab2725394bcf.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039129/curiousdip/photos/591b49c50fd9002e93df40c3a0b3eb3612f30b6457013cc3e2a58faef4ad61ba.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039131/curiousdip/photos/d054eeef249ce05b2f6bdf2cb190b64c83b88e3bd80beeb978a36ec2161d5c66.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039133/curiousdip/photos/b4492fc2d7a8632cb046eb02448a6e5aaab87b17b284517e97f65a2653d185c1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039135/curiousdip/photos/c7aaa3088d178c88ab592ec5e09a54e53956b8e1ae42749803f546f7f2195ce4.webp"
+    ],
+    "genres": [
+      "Festival"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 7,
     "title": "CJP Student Protest Bangalore",
     "subtext": "Frames from the student protest on the Freedom park ground, Bangalore",
