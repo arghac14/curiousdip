@@ -10,7 +10,7 @@
     "publishId": "d7c36ae0-571c-4d6c-b3db-a1828bff1a24",
     "video": "https://www.youtube.com/watch?v=34DrAF5cjFg",
     "pinOrder": 2,
-    "selectedStoryOrder": 1
+    "selectedStoryOrder": 2
   },
   {
     "id": 2,
@@ -18,12 +18,12 @@
     "subtext": "Beyond the rituals and religious beliefs, Kashi offers a different perspective on life, death and everything in between.",
     "isDeleted": false,
     "isPinned": true,
-    "isSelectedStories": false,
+    "isSelectedStories": true,
     "createdAt": "2026-11-18T20:11:00.000Z",
-    "publishId": "b45c9008-3555-4f3e-aabe-595bafddda94",
+    "publishId": "634401f5-1273-4eaf-b67d-ec228a0ea17a",
     "video": "https://www.youtube.com/watch?v=dLh4iWc_q0w",
     "pinOrder": 1,
-    "selectedStoryOrder": null
+    "selectedStoryOrder": 1
   },
   {
     "id": 1,
@@ -36,6 +36,6 @@
     "publishId": "06959099-d363-411a-a157-df0f3c53b294",
     "video": "https://www.youtube.com/watch?v=Cc3V0nRmrzM",
     "pinOrder": 3,
-    "selectedStoryOrder": 2
+    "selectedStoryOrder": 3
   }
 ]
