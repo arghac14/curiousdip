@@ -186,6 +186,7 @@ async function prepareBackgrounds() {
   selected.forEach(image=>{if(!backgroundImages.has(image.url))backgroundImages.set(image.url,fallback);});
 }
 function route(focus=true){
+  CuriousDipSocial.reset();
   clearInterval(slideTimer);closeMenu();if($('#lightbox').open)closePhoto();
   const path=location.hash.slice(1).split('?')[0]||'/';const parts=path.split('/').filter(Boolean);
 
@@ -198,6 +199,14 @@ function route(focus=true){
   else if(['blogs','series'].includes(parts[0])&&parts.length===1){listing(parts[0]==='blogs'?'blog':'series');title=parts[0]==='blogs'?'Blogs':'Photo series';}
   else if(['blogs','series'].includes(parts[0])&&parts.length===2){let key;try{key=decodeURIComponent(parts[1]);}catch{key='';}const type=parts[0]==='blogs'?'blog':'series';const item=/^[1-9]\d*$/.test(key)?content.items.find(i=>i.type===type&&i.id===Number(key)):null;if(item){detail(item);title=item.title;}else notFound();}
   else if(path==='/about'){about();title='About Arghadip';}else if(path==='/contact'){contact();title='Contact';}else notFound();
+  if(parts.length===2&&['series','blogs'].includes(parts[0])){
+    const type=parts[0]==='series'?'series':'blog',item=content.items.find(item=>item.type===type&&String(item.id)===parts[1]);
+    if(item)CuriousDipSocial.mount($('.series-detail, .blog-article'),{type,id:item.id});
+  }
+  if(path==='/videos')publishedVideos().forEach(video=>{
+    const entry=document.getElementById('video-'+video.id);
+    if(entry){const holder=document.createElement('div');holder.className='video-discussion';entry.after(holder);CuriousDipSocial.mount(holder,{type:'video',id:video.id});}
+  });
   const background=content.pageBackgrounds[path]?.[0];
   const backdrop=$('.home-backdrop');
   if(backdrop&&background){const image=backgroundImages.get(background.url);if(image)backdrop.replaceChildren(image);}

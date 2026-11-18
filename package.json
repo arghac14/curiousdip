@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run photos && node scripts/serve.cjs",
     "photos": "node scripts/bundle-preview.cjs",
-    "check": "node --check assets/app.js && node --check assets/loader.js && node --check assets/data.js && node --check assets/darkroom.js && node scripts/check-presets.cjs && npm run photos && node scripts/check.cjs && node scripts/check-backgrounds.cjs && node scripts/check-loading.cjs && node scripts/check-loader.cjs",
+    "check": "node --check assets/app.js && node --check assets/loader.js && node --check assets/data.js && node --check assets/darkroom.js && node --check assets/social.js && node scripts/check-social.cjs && node scripts/check-presets.cjs && npm run photos && node scripts/check.cjs && node scripts/check-backgrounds.cjs && node scripts/check-loading.cjs && node scripts/check-loader.cjs",
     "admin": "node admin/server.cjs",
     "build": "npm run check && node scripts/build.cjs && node scripts/check-build.cjs"
   }
