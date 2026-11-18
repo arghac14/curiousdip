@@ -1,5 +1,32 @@
 [
   {
+    "id": 17,
+    "title": "Kudremukh",
+    "subtext": "Frames from Kudremukh Trek on Western Ghats.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:15:00.000Z",
+    "publishId": "1614a3c0-ef03-4514-8adf-4d0a5faaae55",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040190/curiousdip/photos/5385b174638491ae509a58741d13796680aaab0324ac00eaa5b39c40d764274c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040192/curiousdip/photos/0c42d5fa515f204649a49b27bb18f8fa5ff9f458fd283337c451c265242c3b6a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040194/curiousdip/photos/46479e5a99f9f887c69886b9382126e5f9e843b0198efaffb194951c2e2a47ad.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040197/curiousdip/photos/550ed0b7f0642875bd24644f28992e076d9279fdf0e625dd9972c804a8b9d2bc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040199/curiousdip/photos/34918bf0f107d79ace55113d81ce120500fcd477f3c15ef318be03ff5ef79c37.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040203/curiousdip/photos/651df7c8f2d9cf4dde5761e33e172c61e56da207ffee0136af70c0691d480504.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040205/curiousdip/photos/bf27999b8aac7fe5223f2d2f6d400b62f2d7f2def569017ae7227475d17fa9b4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040207/curiousdip/photos/4ef139ef9d9181256154df3dcee24c3a692bd15ded87f642a7f1057d84986bd5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040210/curiousdip/photos/6b1928808650f60ad6c52113a31c2e68fa028ca4a535deaccc6fb3c4c87516d4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040212/curiousdip/photos/5d046378804d11aae41ef5a7898b51b6bc161f12af5921bb0944e816001f7d6c.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 16,
     "title": "KR Market, Bangalore",
     "subtext": "Frames from KR Market, Bangalore",
