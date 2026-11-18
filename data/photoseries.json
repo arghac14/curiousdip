@@ -1,5 +1,41 @@
 [
   {
+    "id": 18,
+    "title": "Making of Maa Durga | Kumortuli 2026",
+    "subtext": "Making of Maa Durga",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:16:00.000Z",
+    "publishId": "4045ce68-e255-4cb6-a0ea-20a6b6ca7017",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040265/curiousdip/photos/14a8264ea7e2e38c93df6547d2164efee3d2b8bd7cc9a9130f287ed89466d870.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040278/curiousdip/photos/fbf51e13fecbe25fc06d77a4f8519e9decbb1dbbd3a6a120e241a6ca1f866248.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040292/curiousdip/photos/462470b16f4cd37489772815e6c7ad16738442b15f7f15e30a3742503f424e30.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040304/curiousdip/photos/670fe519b194609400dbc606ebf81a2dd0d4a0087005ba7d1c4445299f819f7f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040306/curiousdip/photos/964108774dbbddb3a1c330856eddf8456a24b24d4b16a92f1035bf81a2dfadb4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040308/curiousdip/photos/02a3f4d6ce31d2219674f7d65fce34b5c98158be4b50e8e2dd63659a46339a12.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040310/curiousdip/photos/28939761905dad1087c6a1226b4a41995cec3d8b4fee2a6d35a84b603c3adff4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040312/curiousdip/photos/c9c19f712b573c4941b604fe5ab3a52656b7c3706901c0c788c68c8d0fe092d8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040474/curiousdip/photos/be6c9f88eb7194c4d9f3e50163222eae8300d89fd591cf7003c3e68a87fcbf84.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040476/curiousdip/photos/f3358c124b3c01d16578b9a374c8835191ce028a50e2acfc9d46744f8cab242a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040478/curiousdip/photos/8455de389c903b0cabcefcd09195cf702d3a0044310965a1f1e1c0c02a4a05c3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040481/curiousdip/photos/0373880483ffbb6f72a1d21a6e1547472b568cf6817abdaecff015629c19b6a8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040483/curiousdip/photos/50bb17b872b0528c907c641ae9ce6aec9dd635a306b8dae727299085013aa38d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040485/curiousdip/photos/149feed7a615ef78e868010b2341dc4f78b101d678f35c027bfaa471932aa067.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040486/curiousdip/photos/69ca163ea7c471378e95deb89613cb18e2cc64e1f0e3b7f77217562685d05ed0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040488/curiousdip/photos/e2b181b9d5d163f18e7d9ecbb3a95816c7e5afbbaebb68a2e2dff512cd580aa8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040490/curiousdip/photos/ba5d935f2dd6a50f3edd0c14992320a031177a63bf26f0a4b0a837c3cddfe4fe.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040492/curiousdip/photos/1d35be0b46e48d6294f00ca4147890e775a3435ac8ed0f13f979d1885a04306b.webp"
+    ],
+    "genres": [
+      "Festival",
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 17,
     "title": "Kudremukh",
     "subtext": "Frames from Kudremukh Trek on Western Ghats.",
