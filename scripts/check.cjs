@@ -45,6 +45,18 @@ const plan=ctx.CuriousDipData.planBackgrounds(mapped.backgroundPresets,()=>picks
 assert.equal(picks,6,'Assign all six page backgrounds once');
 assert.equal(plan['/'][0].url,mapped.backgroundPresets[0].url);
 assert.equal(plan['/series'][0].url,mapped.backgroundPresets[1].url);
+const backgroundPool=Array.from({length:10},(_,index)=>({url:'background-'+index}));
+for(const draw of [()=>0,()=>0.99,Math.random]){
+  const assignments=ctx.CuriousDipData.planBackgrounds(backgroundPool,draw);
+  const urls=Object.values(assignments).map(images=>images[0].url);
+  assert.equal(urls.length,6);assert.equal(new Set(urls).size,6,'Every page must get a different background when enough images exist');
+}
+assert.equal(backgroundPool.length,10,'Assigning pages must not consume the source list');
+const duplicates=ctx.CuriousDipData.planBackgrounds([...backgroundPool,backgroundPool[0]],()=>0);
+assert.equal(new Set(Object.values(duplicates).map(images=>images[0].url)).size,6,'Duplicate source URLs must not repeat across pages');
+assert(Object.values(ctx.CuriousDipData.planBackgrounds([])).every(images=>images.length===0),'An empty folder must remain safe');
+const shortPlan=Object.values(ctx.CuriousDipData.planBackgrounds(backgroundPool.slice(0,2),()=>0)).map(images=>images[0].url);
+assert.equal(shortPlan[0],shortPlan[2],'Only reuse images after exhausting a small folder');
 const deleted=JSON.parse(JSON.stringify(raw));
 deleted.photoseries[0].isDeleted=true;deleted.blog[0].isDeleted=true;deleted.videos[0].isDeleted=true;
 const hidden=ctx.CuriousDipData.normalize(deleted,()=>0);

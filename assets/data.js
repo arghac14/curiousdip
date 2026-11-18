@@ -22,7 +22,14 @@ globalThis.CuriousDipData = (() => {
     return images.length?[images[Math.floor(random()*images.length)]]:[];
   }
   function planBackgrounds(images, random=Math.random) {
-    return Object.fromEntries(['/','/series','/blogs','/videos','/about','/contact'].map(page=>[page,pickBackground(images,random)]));
+    const unique=[...new Map(images.map(image=>[image.url,image])).values()];
+    let available=[];
+    return Object.fromEntries(['/','/series','/blogs','/videos','/about','/contact'].map(page=>{
+      if(!available.length)available=[...unique];
+      if(!available.length)return [page,[]];
+      const index=Math.floor(random()*available.length);
+      return [page,available.splice(index,1)];
+    }));
   }
   function normalize(raw, random=Math.random) {
     const portraits=raw.presets.displaypictures;
