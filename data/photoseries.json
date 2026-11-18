@@ -1,5 +1,33 @@
 [
   {
+    "id": 20,
+    "title": "Mullick Ghat Flower Market, Kolkata",
+    "subtext": "Chaotic frames from one of the largest and oldest flower markets in Asia.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:21:00.000Z",
+    "publishId": "4a2e20f3-01b1-47be-8185-dd41fba3d713",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040607/curiousdip/photos/9dd26149d96aa759ffa356a6cb24c39f89b1384c07c4a142eca8df55fad9cf13.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040609/curiousdip/photos/99f2f5263ce9d8f5929d40ce5f518626ed0fdface84dd79c2bb65cc97dff158f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040611/curiousdip/photos/707fc6cc3fe8443e4b15649f0389cc9abb321372c299c8871c0ff83321e36de4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040613/curiousdip/photos/86d31ab36fcf1b4e6776eeca958e25fb01e3d52cacd9a704207b50be430b7e78.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040615/curiousdip/photos/b73ec13290ea26e6c84c82afc1db970b967eca29c9b6a521466801a77d77f7b1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040618/curiousdip/photos/5db36e12876d4ab23883ef7a27bca6d8df9bd9181c7be37f28748a496f64ff37.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040620/curiousdip/photos/f524ecb84af065eff1c4351d38b86bd41bdf5f05c3d51ecf4644b996384b04e6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040623/curiousdip/photos/ef29b3120b6e685ba212f3aafa14b6f76af4f93288add75061c5e2c24ad7f4a2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040625/curiousdip/photos/3b4c31bcba13f6053b4b6e143f42a23e84f6d59fbeb7d78c12841dc5fa199984.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040627/curiousdip/photos/76f6cea4a4e1d69116c1a5bc8337727cbf5387692ffa6445380336587d257334.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040629/curiousdip/photos/71151edb24cda46509fc23c57648a2d55732f107884671e884c2abf386c17b53.webp"
+    ],
+    "genres": [
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 19,
     "title": "Marine Lines Stories",
     "subtext": "Frames from Marine Lines, Mumbai",
