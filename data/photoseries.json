@@ -1,5 +1,38 @@
 [
   {
+    "id": 21,
+    "title": "Pottery Town, Bangalore",
+    "subtext": "Frames from Pottery Town of Bangalore",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:24:00.000Z",
+    "publishId": "bc039f97-8aae-40ad-9f84-fb39237dc8d3",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040729/curiousdip/photos/2f8f4be468e20ad4d76d5fa81af5427aeee71ae3e8e4beea765e61b30bd13a8e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040731/curiousdip/photos/13cfb4bb737f1a3e90a6bab06b75939eea6eccf0746d453d1f252cd6e8a6dd3d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040733/curiousdip/photos/5b7c357ecb286c0b8a7a53740dfcb4b3dca12ab0bcfa0d9cd85302b8d3349021.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040735/curiousdip/photos/3827e5ec8472a6adcd95445ab7ad56f21d53693fc611324c29e9f82a9d87293c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040737/curiousdip/photos/87294561656c968f56c26eaf80e3cdf8d811969c2a20964a38df2609b0647283.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040739/curiousdip/photos/830ffade90995154243c60013cdb86c402ef8d80ed1dcf5bf2a59d06a83f2979.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040741/curiousdip/photos/2e37ce2d0b8ec57ae2d60778b14ff34cb8111c99dc0f70e26d3044385c18b7b4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040743/curiousdip/photos/30fe40f06c88b05764e35d690fa33c1bb99061358f413fa822a65870540b89b5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040745/curiousdip/photos/6c0d92456c8c797cb7d365e7a95e337132ff32f845c62a68c67ee236e6fa2f69.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040747/curiousdip/photos/b743bdcf7e9ac3480e95728fd839a4f35dcd23143764ed90220fd1591deaa95c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040750/curiousdip/photos/ca877b7d371ee435f381fa6ad01a162d49f5dbb61a340aeb683b39a181637746.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040752/curiousdip/photos/acb32d1e2871d5ded021f7acd8d26f6ef0b11028fcad9f3ba2fe2435df18a881.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040755/curiousdip/photos/0500e7f1328a76dee237fad9f004706bb84b3428f22506dcc902bdd17310fe83.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040757/curiousdip/photos/9b6fbfa79774813f92677529a51bdd35a84f111edd92623f0115b5d7983fac0e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040759/curiousdip/photos/a68046f02a3e6c03880a133514ab5e80326ae8f54d1399c9a6d7afaf1295121b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040761/curiousdip/photos/974ac4242b9588d8ae3bbe4999ef7e6e068ddad54938dd5bc3804262bd4255a8.webp"
+    ],
+    "genres": [
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 20,
     "title": "Mullick Ghat Flower Market, Kolkata",
     "subtext": "Chaotic frames from one of the largest and oldest flower markets in Asia.",
