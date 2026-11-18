@@ -1,5 +1,35 @@
 [
   {
+    "id": 6,
+    "title": "Adalaj Ni Bav",
+    "subtext": "Frames from Adalaj Stepwell in Gurajat, India",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T21:40:00.000Z",
+    "publishId": "3a0f25cb-7343-45db-a322-922bdbfba237",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038452/curiousdip/photos/517c63b2a6b5e881730f241c8d8073f50358e3a3438deb968f232111831188b3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038454/curiousdip/photos/752338d479dc545bf7c5c468fc47bbf71ab71eed96b9b3d568043bc7c4cacc06.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038456/curiousdip/photos/326e49e04d0389181bfad599b5842ac7d91339e6da97ce4442900dd8d5a71661.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038459/curiousdip/photos/ea88311f8c3d9e87c10d4e1903271358bb8928a027178faf16f6bff8014f8941.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038461/curiousdip/photos/5f6dcba21ceadd5a0b90cd7aa29941cda740b0ed05bbb030f6f2bc8befe3c574.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038463/curiousdip/photos/75805e4a14dbfe21ab49c17418e24c54405758d29213bddd29a289c21924246c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038465/curiousdip/photos/1c4c956ed9297f6902595f9007bdc71a602b38301a2281aad6fe44df7a9bc0cf.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038467/curiousdip/photos/cc68313bf35b033b0a44f689bcf7e784ce2c9b5a28226224080dedbb59bd1823.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038469/curiousdip/photos/9821069a1e2136e8ef7b309a2229f597c7e3f198e0d52c2cd457e6d8c3b12ae9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038471/curiousdip/photos/b225e0e9a5930d3fdeec4763e672674f6cb03534f8b08ce8c4e8ff8b73aab1b6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038473/curiousdip/photos/a4e23fb45825480cdd65d276412d89bccdbb910769176b223b38e5e61e330962.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038475/curiousdip/photos/276f8b9f3bbdd58655d90373816273324f28d43ee710a3fea19a0f44959b9cce.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038477/curiousdip/photos/27e34bf4f77106bf012d64a10a66c96719c8fa8cb1d34c5ec713f6a37533e578.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 5,
     "title": "Frames from Jama Masjid",
     "subtext": "The beauty of Jama Masjid through my lens.",
