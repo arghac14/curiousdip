@@ -1,5 +1,42 @@
 [
   {
+    "id": 13,
+    "title": "Frames from Varanasi Ganga Aarti",
+    "subtext": "Divine Varanasi Ganga aarti",
+    "isDeleted": false,
+    "isPinned": true,
+    "isSelectedStories": true,
+    "createdAt": "2026-11-18T22:11:00.000Z",
+    "publishId": "ba0a3457-b793-4f1e-a35f-0c4f3f239b2c",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039983/curiousdip/photos/6ac80a23a676846c64931552c640b6d922721bdbadfb459f851f911d8d2b3b0a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039985/curiousdip/photos/257a865c5de202e011a9a539eb75e2a2a75b7b6138c06edf2b97674b5894e266.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039987/curiousdip/photos/215cb6d44b06743856f96efc181ca912d95e5accef50eed794c404cfc2e53d47.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039989/curiousdip/photos/5a7b52fb9b5ee2cef421e72d5000ebf15eca3b8f31f43ae79e5da3e15c38fd4e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039991/curiousdip/photos/ffbc84d189f9ee339f8dfecee11baac8f0e0a7ca867aeb81e952252bf2eb5edd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039993/curiousdip/photos/939064d9908652a5c8b47ee8a58d1d6392ea27d1368edf6ed240a40491925b6e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039995/curiousdip/photos/433f2b003640a3005da7df648a3860ec26ace8ec74cca2764b1907166c4984c3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039997/curiousdip/photos/e1eb6563106072a9cc2ee39966445eaabb45a4f0bab92e0a3f886a1c8f6f421f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039999/curiousdip/photos/ffd4dba46ae2196e65e8ea2b75f593d0b2e0b2f6836ed018e5da3beec44ff6fb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040001/curiousdip/photos/8c32e213990a3cff83aaaaa5fb6238bf6865180e255e74291aae62186ddc6b17.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040003/curiousdip/photos/c1e777f1eda09cf453c7fbe17bc930cfddbdf73e86467c2a496b87783576dffd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040005/curiousdip/photos/1515dfd9535843ca36f2d0c6de228f0fccd329f6c052481fa96d9617f312dee7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040008/curiousdip/photos/40fb30453997b3173af1c55776494993f4875bdfc7b7160ae4f92b474d9bf8c0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040010/curiousdip/photos/1c4e4d45a5aadf85fc0d6b7866d350668504b0ae12123f2c6b556d51c608e46e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040012/curiousdip/photos/15d3ceccd6602e03d7607ee07de3d17470e94801d2f4f867f7485872587650ff.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040014/curiousdip/photos/37c629966dc7baa2d377223d87224ada248184d7d63901f5a847a91fff3107ab.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040016/curiousdip/photos/a2b7588b49f0a3514bd1b506a10ee7c55edee857adf062933f1b6d35015be3e5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040018/curiousdip/photos/6cd2ee0c665df443defc47ab83d2fb2b61230d72c009ced38475462f83b43cc6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040020/curiousdip/photos/02296c9ba629805999207ceb334507a0930cdd2506faa69311aa3853e12a6098.webp"
+    ],
+    "genres": [
+      "Travel",
+      "Documentary"
+    ],
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
+  },
+  {
     "id": 12,
     "title": "Faces of Braj Holi",
     "subtext": "Portraits from Braj Holi",
@@ -282,8 +319,8 @@
     "genres": [
       "Portraits"
     ],
-    "pinOrder": 1,
-    "selectedStoryOrder": 1
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   },
   {
     "id": 3,
@@ -319,8 +356,8 @@
     "genres": [
       "Travel"
     ],
-    "pinOrder": 2,
-    "selectedStoryOrder": 2
+    "pinOrder": 3,
+    "selectedStoryOrder": 3
   },
   {
     "id": 2,
@@ -328,7 +365,7 @@
     "subtext": "A folk legacy from the land of Bengal.",
     "isDeleted": false,
     "isPinned": true,
-    "isSelectedStories": true,
+    "isSelectedStories": false,
     "createdAt": "2026-11-18T17:34:00.000Z",
     "publishId": "82e06a53-564d-45f4-8123-f872773bcc38",
     "photos": [
@@ -350,8 +387,8 @@
     "genres": [
       "Documentary"
     ],
-    "pinOrder": 3,
-    "selectedStoryOrder": 3
+    "pinOrder": 4,
+    "selectedStoryOrder": null
   },
   {
     "id": 1,
