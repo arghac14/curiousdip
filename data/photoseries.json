@@ -1,5 +1,36 @@
 [
   {
+    "id": 25,
+    "title": "Taj Mahal, Agra",
+    "subtext": "Frames from the Taj.",
+    "isDeleted": false,
+    "isPinned": true,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:27:00.000Z",
+    "publishId": "6c0dd5d1-150d-4897-b2d9-3e968eb014a9",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040945/curiousdip/photos/3d1cdd27f386179b377950cc471160ef0437957b417566a0263f51b7faf45be9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040947/curiousdip/photos/a6954c6508b248ce52361c341b550e2004396a4e63bf4aa2e7e81876fc40e595.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040949/curiousdip/photos/6643ea8cce74662b8b4e61e93091128090bce3456bb036cc8dfc0b403fd8a779.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040951/curiousdip/photos/c21bbdf5ee107f1e768c584d6bed5f5ad2d13a6e584c76808c7d14e4e98650e5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040953/curiousdip/photos/ee7571de504f180a3e1d21c38cb4bfd334287c3fa766f389522f15d11f98f13b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040957/curiousdip/photos/2b1671c7e9ed272348161c1fc8d05c3dadebe5a7ae4ca67a1cc050cce7143d5e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040958/curiousdip/photos/4e26ca260b8450a04f93a7f2495501de88c1bbc9342f7cfa1322897442eccc12.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040960/curiousdip/photos/62d6443bf8ec65af599e59b04c4feeedf7473156fa8ba7da23267dc4e94c53ca.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040963/curiousdip/photos/d9e51c37f8da1005665a05acb6b81f9cfc1d0cae3db5a71e218b49949c4da5ba.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040965/curiousdip/photos/8ee74a360798ce2f07d8b55015f6948a6382b87079b73c3c019f4b40498298ed.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040967/curiousdip/photos/da7e665cbb185feedf76fd884fce3505808afe45a193a52f2b23a33c9f9d89f2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040969/curiousdip/photos/217dcae14a550698584101f3b7967686ba1e310067eb9e0586d3c95acfc44683.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040971/curiousdip/photos/9fbd28b4676ce3250361756eccc1c16a73b18b8c37549cb04ba68af1cfda2abb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040973/curiousdip/photos/fcccdf8fa31b1f56857eeb9edd7b3f49f546ca3d7ea8996aefefe5f969dcb45a.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": 1,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 24,
     "title": "Postcards from Sikkim",
     "subtext": "Frames from my Sikkim trip.",
@@ -381,7 +412,7 @@
       "Travel",
       "Documentary"
     ],
-    "pinOrder": 1,
+    "pinOrder": 2,
     "selectedStoryOrder": 1
   },
   {
@@ -667,7 +698,7 @@
     "genres": [
       "Portraits"
     ],
-    "pinOrder": 2,
+    "pinOrder": 3,
     "selectedStoryOrder": 2
   },
   {
@@ -704,7 +735,7 @@
     "genres": [
       "Travel"
     ],
-    "pinOrder": 3,
+    "pinOrder": 4,
     "selectedStoryOrder": 3
   },
   {
@@ -712,7 +743,7 @@
     "title": "Chhau Dance",
     "subtext": "A folk legacy from the land of Bengal.",
     "isDeleted": false,
-    "isPinned": true,
+    "isPinned": false,
     "isSelectedStories": false,
     "createdAt": "2026-11-18T17:34:00.000Z",
     "publishId": "82e06a53-564d-45f4-8123-f872773bcc38",
@@ -735,7 +766,7 @@
     "genres": [
       "Documentary"
     ],
-    "pinOrder": 4,
+    "pinOrder": null,
     "selectedStoryOrder": null
   },
   {
