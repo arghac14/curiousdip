@@ -1,5 +1,42 @@
 [
   {
+    "id": 14,
+    "title": "Ganesh Chathurthi Bangalore 2026",
+    "subtext": "Ganesh Chathurthi celebration across Bangalore.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:12:00.000Z",
+    "publishId": "a8948d86-2fa4-41ec-946e-65c31becfe6b",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040050/curiousdip/photos/14a7d1657f5e384a61be6059bfd9202ddc0f8f542080e47522e9496fc1b5a1c2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040052/curiousdip/photos/36d49c80362f6992560937fd3a49f624f0a858508111b2e6c372354a2173de12.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040054/curiousdip/photos/f8f94e731fce0e42aab93795284451fb23783710fbabbf59a7579acc863486eb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040056/curiousdip/photos/9687a150513b20c5fcb28c4890d80ee1e8c8c8fefd22b2c36b574cbb1b77524b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040058/curiousdip/photos/bb937b8a5b0dcefc2bef28f7a439e8e82788b65cfaacdd502914eb1a66d789df.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040061/curiousdip/photos/9f92e7eb805a76fafd1d3b398ba6712cba81835d371c837628110dd4a3727b00.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040063/curiousdip/photos/6fe21fe8c02835106fb68c3015592b3e604ef8ab90e689ae1ca3ddf2788e6f55.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040065/curiousdip/photos/8a6d773471a1922c4e0b61ffcfbd94090e0ebb1d56be31ef16a6f602d4fa212b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040067/curiousdip/photos/ef52958fa321e17629a3139e5d239e43260a5c6557526b796a222334eccfe4cc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040069/curiousdip/photos/58006a1759a67f4989db90401e0427d1c1d73d2e5e55dfbb45d87e3e8a69dded.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040071/curiousdip/photos/360ce33cf22c9d864f92e57496d61b039524fb8b9e2ea3087666afef83e86f05.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040073/curiousdip/photos/4068896a662f32a3ba2f68fc12aca9d6bfecd0600e51e7b190e1797069271585.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040075/curiousdip/photos/f3711dc29464085e278747d44eee028a421665ac35e49be1bc9235ea213ba7f9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040077/curiousdip/photos/f10ffe28d8dd533c345bcf2cffaedb304f68eef8b2d30ad91cef251cd2dae822.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040080/curiousdip/photos/90073e86c5c3172631f6f3fe1d3bfe8396ecfd421251797edc5397b6c61c9042.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040083/curiousdip/photos/fbdda3e393f86e9fc89471688a64e767ff2b615b780104b62a7e2d8e86a61d2a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040085/curiousdip/photos/c7c1d1b3a258df1eea92bd0141af489735e132bed9504da3bed0299824924f55.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040087/curiousdip/photos/af3472909553a39e9ce7a28ce833ed3b0b23df1da2408e4cc8e0b9b589e95bb4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040089/curiousdip/photos/dba03b677f08dcbcaf13a24c3cca26476fe4f5bd52b1748692eec58632b8dde6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040091/curiousdip/photos/ffefcd20ac796becb05ad90b7fdcfc0ebca39b7d51c49c34c15e6a586d5ee30f.webp"
+    ],
+    "genres": [
+      "Festival"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 13,
     "title": "Frames from Varanasi Ganga Aarti",
     "subtext": "Divine Varanasi Ganga aarti",
