@@ -1,5 +1,42 @@
 [
   {
+    "id": 4,
+    "title": "Faces of India",
+    "subtext": "A billion stories, one face at a time.",
+    "isDeleted": false,
+    "isPinned": true,
+    "isSelectedStories": true,
+    "createdAt": "2026-11-18T19:53:00.000Z",
+    "publishId": "ccdab31e-f43c-4c8c-afcb-270867ad7d61",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031657/curiousdip/photos/f52f2676b629dc60e8026b5edb3b051c26540cc2f1db19cb7f08bc416f21501e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031659/curiousdip/photos/7cfd2e3002b93b8f880af7a7e533f7ba5d0f1f6c09510ea59f6a77d7f6b92c3a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031662/curiousdip/photos/2a6b2d31ddc67e9e20e965a0a060b67a622408aa9ac52d0fcdf50e4fa5423ae0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031664/curiousdip/photos/8b4d0ac2ec4916f3bd7c786a7f70d454a58b9e35978f67539d32f3615d709274.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031666/curiousdip/photos/ca0fd54ca731c52fbf4cb57637107744188410dd657278c778ce64a3e377a7fc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031668/curiousdip/photos/46b5a1ba188b74be0c5e31020ddbeff6e50038fbd17307da8395e11448995e08.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031670/curiousdip/photos/f2e69b47c6be68155b56eab61b1e40034e0df19f94f0269d0f0317dda0b17917.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031672/curiousdip/photos/e1ca24c47171bf14fd3a8bfbb91404ab340152b32e08bd2263c3b6eea19c9bb3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031674/curiousdip/photos/42f87665b31e737bf1a53a542d93b6137e9ef411d17b653c4949223d4d03e25c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031676/curiousdip/photos/f002ed4f259578aed7c2e5dee79d77c0fa603f39caa5fc7599da4e4a4e52f122.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031678/curiousdip/photos/b5b0b089050f355ed1b0ab3c0ba5f139ff2949959bb57b27c1e34aa5c90f61d3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031680/curiousdip/photos/44a1e60bbae1a5813d593b83b2505cc542d03713ea29d35d95ed9fb09b4ef021.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031683/curiousdip/photos/bb8de31a1506f073e7e6947c6fcad700170784b2e9dafc330efe9c567525e612.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031684/curiousdip/photos/3e53c81ece235bfc1d97d7ce3c8bf2b3ea71113094958c4ed4f487534c6c7dcc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031686/curiousdip/photos/3c0f7cb1323f57eb8f35c5dbcd5f68ec6f39704f5d8cf98b5c7b1b3d22953263.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031688/curiousdip/photos/38efba2a9ea6328dc28a8db006d65ec19cfe5880d5d90d3aa04b8df509ac0ae2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031690/curiousdip/photos/331e8c267799a4cf7ecd6e53d629b99c7d930e32ac2930ed7f045d36afd4d676.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031692/curiousdip/photos/853f71b6d69d92e4531f7b1ebfb7ae686b9fe37ec7091704829403695b0d4673.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031694/curiousdip/photos/9cb760e10258b4aa4d7b3adb57d0c1358754f4023655fdbcd956ca59d8eb42ec.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031695/curiousdip/photos/404dc7da334824726a5691aab320d6549ff43f92fcde01635c4cf8084ee1e7a0.webp"
+    ],
+    "genres": [
+      "Portraits"
+    ],
+    "pinOrder": 1,
+    "selectedStoryOrder": 1
+  },
+  {
     "id": 3,
     "title": "Postcards from LADAKH",
     "subtext": "No other place like Ladakh!",
@@ -33,8 +70,8 @@
     "genres": [
       "Travel"
     ],
-    "pinOrder": 1,
-    "selectedStoryOrder": 1
+    "pinOrder": 2,
+    "selectedStoryOrder": 2
   },
   {
     "id": 2,
@@ -64,8 +101,8 @@
     "genres": [
       "Documentary"
     ],
-    "pinOrder": 2,
-    "selectedStoryOrder": 2
+    "pinOrder": 3,
+    "selectedStoryOrder": 3
   },
   {
     "id": 1,
@@ -73,7 +110,7 @@
     "subtext": "Chhath, an emotion for millions and a part of the identity of Bihar, Jharkhand and UP. A festival of faith, love and devotion.",
     "isDeleted": false,
     "isPinned": true,
-    "isSelectedStories": true,
+    "isSelectedStories": false,
     "createdAt": "2026-11-18T17:29:00.000Z",
     "publishId": "264356e0-b469-494d-b534-d859a936ff18",
     "photos": [
@@ -93,7 +130,7 @@
     "genres": [
       "Festival"
     ],
-    "pinOrder": 3,
-    "selectedStoryOrder": 3
+    "pinOrder": 4,
+    "selectedStoryOrder": null
   }
 ]
