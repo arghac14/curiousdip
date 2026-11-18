@@ -1,5 +1,39 @@
 [
   {
+    "id": 11,
+    "title": "Varanasi early morning stories",
+    "subtext": "Early morning photowalk on the ghats of Varanasi",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:09:00.000Z",
+    "publishId": "47441837-336c-4c32-b23e-78f41b618be1",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039854/curiousdip/photos/a5e48849975ce5a57423ee842b8c017cac7d7e14844b6d62dd7e67c2e3180b35.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039856/curiousdip/photos/7bd433f9002ac15a07011ef2c229e2845a5a631ac81db347a30f05f5e8296300.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039858/curiousdip/photos/11270de5ecf39a88661adbe4f9dee426fbed99755c78c49a4448d3c62e283e27.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039860/curiousdip/photos/657a46be020477f405e657464112484fcd310dcf751f38ce5ba61aa1a0a61e65.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039861/curiousdip/photos/be2ee6300eb5088aa6c3dc4dfe61aebd5fa0ca4e5cdc1d83c4d78e94bced954c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039863/curiousdip/photos/f31a453acab30704d16b0e3b8aa64bb09555b08b5346a221bd2d75ea06e0cfd2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039865/curiousdip/photos/dcc36c8f02c60003b02219c3a4ca274e923c383ebb6c028375c13d576dc4216e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039867/curiousdip/photos/d456870e9cd42f9ef202b6e5153b388096f7af5e68aec58ab940d6205552cfe4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039869/curiousdip/photos/2a1609b0d5d23cf8e834a44e21348ef347f89f84ec0b5926c88d74d5d969fa87.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039871/curiousdip/photos/79944ad6c02f32d4502c43f7142fc619f9f39eb456a593dd9fe602141925f2bd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039872/curiousdip/photos/27df1cc67f0847f5d3849a4e66abb72c6385dbea7059d7377b985f4969e970e5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039875/curiousdip/photos/5bb588fdce0ab6a38bb3216a0f8b4c80b1f163fa2568b5759690767b904d3180.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039877/curiousdip/photos/51a88f7d7040e2697553630bc60aa4b9a290dcbfcc04e165426ae1276f5a478a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039879/curiousdip/photos/07bdcd8ed55c5bb22a0bf1e52c32ee5729beccf1b49077bcb2ecc6d3ba39788b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039880/curiousdip/photos/940346ec4ace72e3cacd46ee6798e983ed1c9b92746e27572474ab3a668cd304.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039883/curiousdip/photos/c7b6442b5171b2e468e5df3236510e2a45d3bdd4094afce674638428ed3b3aac.webp"
+    ],
+    "genres": [
+      "Street",
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 10,
     "title": "Doors of North Kerala",
     "subtext": "Capturing heritage wooden doors of North Kolkata",
