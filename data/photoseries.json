@@ -1,5 +1,37 @@
 [
   {
+    "id": 2,
+    "title": "Chhau Dance",
+    "subtext": "test",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T17:34:00.000Z",
+    "publishId": "65a1ec78-8930-4e63-b8fc-2d5fa9ee9b20",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023309/curiousdip/photos/bcd2c485ca3a1fbd7661f4b35d0be6bf4bdaaa2d63dd08a4c85630c9d46cbbcb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023311/curiousdip/photos/097f25da56d9e3e1a71fc19aa5357e8abe7056d2cf8d0141f05f8546e00c1d64.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023313/curiousdip/photos/6f5381509c35dced28a7d90348272e9b57e4be98a48a42cdbf0a2a71fcfe87d6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023316/curiousdip/photos/a3704b41c6bf71bab7044a26dc820eed81f06bc999c59e75596837a6d39e86d7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023318/curiousdip/photos/2f1dca809402e7b3e6d0f581df0e8a2a63ef455e05cd97c82b6726b9afa38e5b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023320/curiousdip/photos/391cecae5358f0f20a7520052caac34d8e1e8e4841fcb33d0966cebbd8e96803.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023323/curiousdip/photos/e7ab00fe7adebac9ccdc63146f9dde98fb0a8ce767001c5f9ade729600c23ced.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023325/curiousdip/photos/12882c48a43dd14ca984d7ac6eb0b3d98533ee2c7ab14fdedc6cd77502699f25.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023327/curiousdip/photos/7686673ba8dcbc5d9f6e8997b43ab24770ac78d9f51c2872f516e4d13bdaf8cd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023329/curiousdip/photos/02e20314b3a78a1fc6fcb9b3e850d960b694872d9e17a2054cd15423a8e68d3a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023331/curiousdip/photos/d533fc93e756602e5cb61ae63b95d66a7ff0c66c53685e801b156c6dbb9da549.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023334/curiousdip/photos/66373afc03a448e26271b9421767c8460c0af4c8255e1a177d6a603b8bfeead0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023336/curiousdip/photos/373b1ae74da9499b845bf83bac868890290da696c7003170eda17844e3961054.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023338/curiousdip/photos/81fdbc4c80ec662dd1e147e7e957d9db830c78ddbecea2a44fab6d894ff15026.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795023340/curiousdip/photos/62e5d6c3c000700f0b4baf3b476be5a3439e1b25554511672842676fb02bbaea.webp"
+    ],
+    "genres": [
+      "Documentary"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 1,
     "title": "Chhath Mahaparv",
     "subtext": "aastha ka mahaparv",
