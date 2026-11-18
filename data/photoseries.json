@@ -1,5 +1,35 @@
 [
   {
+    "id": 10,
+    "title": "Doors of North Kerala",
+    "subtext": "Capturing heritage wooden doors of North Kolkata",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:07:00.000Z",
+    "publishId": "40051bf5-5535-4914-8b7c-1c5453dcf09e",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039753/curiousdip/photos/79073256b0c670eb7ea97156368a517b7f22c6043340d1ab504d8e5814591f8e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039755/curiousdip/photos/b301240744e1892a3ed911a000441c9d0ad9310381beb620bbfc117573866c38.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039757/curiousdip/photos/791c5f29c3a08d40e8d2fb24a1153fe269793d865e416abcd9c43a912406d00d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039759/curiousdip/photos/cdab3c9ed1db87050915c25267152e57095f1903e2aa3b5aebc680240758b75f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039761/curiousdip/photos/fd65861a653361c1005ac279fcb0fafa10735a1bebc890b5f7d4cd052b724046.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039764/curiousdip/photos/82e697e30f2ba8e843df5abcaabdff069e1c9dde33c519dd20196b6dd8114b54.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039766/curiousdip/photos/9b1539cf2ca5f8f09458a6875bc7a26b6334a45b7ec229cf971d91006a78b967.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039769/curiousdip/photos/a99450e9adbe2381ad225f89ab65a3ceb3a01914b031c5ad95669497c7d25a3f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039772/curiousdip/photos/5294b2fa0eb72feaf3cebb55a0e26504571ad34408dab7f0b6aeb34fb58f9a06.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039774/curiousdip/photos/a995e2b94701fce12549fdfd728f7b89c8d642d57c3bd92d49a396be0dfdcf6c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039777/curiousdip/photos/a21127bc3ab20dee8683eb1347efbfafd7f827eb6adec21021c1d51a6cb57656.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039779/curiousdip/photos/8d1e5f5b0552ceb91c21652ddb21bc2cceecf9a58999cb8fadc257027032ea2f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039781/curiousdip/photos/e8828e416ad35e50565c66f78f5f6108be10ce19e691ec7c0165600765ea189b.webp"
+    ],
+    "genres": [
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 9,
     "title": "Diwali 2026",
     "subtext": "Streets photos from Diwali 2026",
