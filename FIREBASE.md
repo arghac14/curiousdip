@@ -1,5 +1,9 @@
 # CuriousDip conversations
 
+Public comments appear on photo series and blog detail pages. Videos use a
+compact like/sign-in row without a comment section; unique view tracking still
+applies to all three types.
+
 The portfolio stays on GitHub Pages. Firebase Authentication handles Google sign-in;
 Firestore Standard stores likes, comments and unique views. No Cloud Functions, Cloud Storage,
 or paid billing account is needed for this integration.

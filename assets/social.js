@@ -29,7 +29,8 @@ globalThis.CuriousDipSocial=(()=>{
   function mount(parent,item,visibilityTarget){
     if(!parent||!Number.isSafeInteger(item.id)||!['series','blog','video'].includes(item.type))return;
     if(!globalThis.CURIOUSDIP_FIREBASE?.projectId)return;
-    const root=make('section',undefined,'social-section');root.setAttribute('aria-label','Likes and comments');
+    const showComments=item.type!=='video';
+    const root=make('section',undefined,'social-section'+(showComments?'':' social-section-video'));root.setAttribute('aria-label',showComments?'Likes and comments':'Video likes');
     const header=make('div',undefined,'social-heading'),heading=make('h2','What caught your eye?'),actions=make('div',undefined,'social-actions');
     const like=make('button','♡ Like'),login=make('button','Sign in with Google'),status=make('p','Loading conversation…','social-status'),account=make('p','','social-account'),viewCount=make('span','— views','social-views');
     viewCount.hidden=globalThis.CURIOUSDIP_FEATURES?.showViews!==true;
@@ -37,7 +38,10 @@ globalThis.CuriousDipSocial=(()=>{
     const list=make('ol',undefined,'social-comments'),more=make('button','Load more comments'),retry=make('button','Try again');more.hidden=retry.hidden=true;more.type=retry.type='button';
     const form=make('form',undefined,'social-form'),label=make('label','Leave a comment'),textarea=make('textarea'),submit=make('button','Post comment');
     textarea.id='comment-'+item.type+'-'+item.id;label.htmlFor=textarea.id;textarea.required=true;textarea.maxLength=2000;textarea.placeholder='What caught your eye?';submit.type='submit';form.append(label,textarea,submit);form.hidden=true;
-    status.setAttribute('role','status');actions.append(viewCount,like,login);header.append(heading,actions);root.append(header,account,form,status,retry,list,more);parent.append(root);
+    heading.hidden=!showComments;
+    status.setAttribute('role','status');actions.append(viewCount,like,login);header.append(heading,actions);
+    if(showComments)root.append(header,account,form,status,retry,list,more);else root.append(header,status,retry);
+    parent.append(root);
     const stopViews=CuriousDipViews.mount(viewCount,item,visibilityTarget);
     let ready=false,busy=false,liked=false,total=0,cursor=null,hasMore=false,identityVersion=0;
     const key=item.type+'-'+item.id,path=['stories',key];
@@ -81,7 +85,7 @@ globalThis.CuriousDipSocial=(()=>{
     }
     async function start(){
       if(ready||busy)return;busy=true;retry.hidden=true;
-      try{await connect();if(!active())return;const count=await backend.getCountFromServer(reference('likes'));if(!active())return;total=count.data().count;ready=true;like.disabled=false;await view.account();await loadComments(true);}catch(error){ready=false;like.disabled=true;login.disabled=false;note(errorText(error));retry.hidden=false;}finally{busy=false;}
+      try{await connect();if(!active())return;const count=await backend.getCountFromServer(reference('likes'));if(!active())return;total=count.data().count;ready=true;like.disabled=false;await view.account();if(showComments)await loadComments(true);else note('');}catch(error){ready=false;like.disabled=true;login.disabled=false;note(errorText(error));retry.hidden=false;}finally{busy=false;}
     }
     login.onclick=async()=>{
       const signingOut=login.textContent==='Sign out';login.disabled=true;

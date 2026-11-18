@@ -6,7 +6,7 @@ class Node {
   setAttribute(key,value){this.attributes[key]=value;}
   focus(){this.focused=true;}
 }
-const observers=[];let observerCalls=0,writeFailure=false,storedComments=[],likes=new Set(),authListener,tracked=0;
+const observers=[];let observerCalls=0,writeFailure=false,storedComments=[],likes=new Set(),authListener,tracked=0,commentReads=0;
 const user={uid:'alice',displayName:'Alice',email:'alice@example.com',emailVerified:true};
 const auth={currentUser:null,async authStateReady(){}};
 const ref=(db,...path)=>path.join('/');
@@ -20,6 +20,7 @@ const sdk={
   getCountFromServer:async()=>({data:()=>({count:likes.size})}),
   getDoc:async ref=>({exists:()=>likes.has(ref)}),
   getDocs:async query=>{
+    commentReads++;
     assert(query.constraints.some(c=>c.limit===20),'Comment reads must be bounded');
     return {docs:storedComments.map(row=>({id:row.id,data:()=>row})),size:storedComments.length};
   },
@@ -53,5 +54,7 @@ function find(root,match){if(match(root))return root;for(const child of root.chi
   await button('Sign out').onclick();assert(form.hidden);
   ctx.CuriousDipSocial.reset();assert(observerCalls>=2,'Route cleanup disconnects observers');
   ctx.CURIOUSDIP_FEATURES={showViews:true};const enabled=new Node('main');ctx.CuriousDipSocial.mount(enabled,{type:'blog',id:1});assert.equal(find(enabled,node=>node.className==='social-views').hidden,false,'An explicit feature flag enables the counter');ctx.CuriousDipSocial.reset();
+  const beforeVideo=commentReads,video=new Node('main');ctx.CuriousDipSocial.mount(video,{type:'video',id:1});observers[observers.length-1].fn([{isIntersecting:true}]);await flush();
+  assert(!find(video,node=>node.tag==='form'),'Video rows must not have a comment form');assert(!find(video,node=>node.tag==='ol'),'Video rows must not show comments');assert.equal(commentReads,beforeVideo,'Video rows must not fetch comments');assert(find(video,node=>node.tag==='button'&&node.textContent==='♡ 0 likes'),'Video likes must remain available');ctx.CuriousDipSocial.reset();
   console.log('Social checks passed: anonymous access, account-bound likes/unlikes, safe comment text, retained drafts, delete, sign-out and route cleanup.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
