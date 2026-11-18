@@ -5,9 +5,9 @@
     "subtext": "aastha ka mahaparv",
     "isDeleted": false,
     "isPinned": true,
-    "isSelectedStories": false,
+    "isSelectedStories": true,
     "createdAt": "2026-11-18T17:29:00.000Z",
-    "publishId": "ae1813d3-8436-4c2a-9db0-5d5556cc4057",
+    "publishId": "69fbe564-762c-442f-b05f-bc1248ea4df9",
     "photos": [
       "https://res.cloudinary.com/arghac14/image/upload/v1795022976/curiousdip/photos/d50c4ce7fdf8cdbe105a6952afa39f34c1d702500c063268598a8e238e26e733.webp",
       "https://res.cloudinary.com/arghac14/image/upload/v1795022978/curiousdip/photos/6cc12e449f5e34912aead67db597a80bfed27b29eabccbfddc8fd89d0cfced3b.webp"
@@ -16,6 +16,6 @@
       "Festival"
     ],
     "pinOrder": 1,
-    "selectedStoryOrder": null
+    "selectedStoryOrder": 1
   }
 ]
