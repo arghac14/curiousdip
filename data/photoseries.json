@@ -1,5 +1,37 @@
 [
   {
+    "id": 9,
+    "title": "Diwali 2026",
+    "subtext": "Streets photos from Diwali 2026",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T21:58:00.000Z",
+    "publishId": "0ad5e99d-21c7-4a22-9997-7f85d8015e7b",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039584/curiousdip/photos/e0ada1937e2b55d093e43c125723e4fc9a36b9f27aed684bb538e7c92baaecd8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039586/curiousdip/photos/f97a5472a6a8192963b5be54d8d943061bc3dede4bf51bfeca7f460d86bf98cc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039589/curiousdip/photos/5fef6d2f47da105c62ddb6b5a71ac75707e8ebea5cb8b96b835fd401d87d853f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039591/curiousdip/photos/765b147ab5bddc92dc35762064914f3b879b6d7fe8f9774637e6f4231ea789b6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039593/curiousdip/photos/a976e9d7614625326b00e2f6377e90158e80613db5885a15ec39f743f8b2d090.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039596/curiousdip/photos/2f525fc1459d91b7499a47ff18157bdb3c0bc8e88308ed024ff12b9f9017a4e0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039598/curiousdip/photos/281daa9aa61aa23cb2a1033cf3e3e3e4746b40569d1cbd8b0e6dbda4901d16af.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039601/curiousdip/photos/e8f381b30206a8bcd9d75d27baaf2d0b3be4ec9fd63e9235ab9622fec14b1c08.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039603/curiousdip/photos/e37ce875f311a391ef58687ea1bcdb2dd5a7ca1f8986cf93e1d2546865520ab4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039605/curiousdip/photos/aee8558f0a4a82065d1742933cd45ba77bbe35d42561be448c082df0b2041380.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039608/curiousdip/photos/80a4999a06620a16bb769b07e36ead59bcb08fb42080a54b3b219493e7b45be8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039610/curiousdip/photos/80253570293742c83b6d0f917458bd35170723b8aace51a66391af7a7cbf16a4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039612/curiousdip/photos/62a8b9e93f3b86e725800d643148293c258da172b3d6350a5454cb01d8f9a756.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039614/curiousdip/photos/e82aca7c1afd54570d9f1bc65fefb12f6a581efd35d8efdba0faf581d10d3fb5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039616/curiousdip/photos/d8be1bd579e186f19b14b6918d596bc97f0af73d2cb38377a23073a8a0b0178f.webp"
+    ],
+    "genres": [
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 8,
     "title": "Durga Dashami 2026",
     "subtext": "Frames from Durga Dashami 2-26",
