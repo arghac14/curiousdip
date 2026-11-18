@@ -1,5 +1,36 @@
 [
   {
+    "id": 12,
+    "title": "Faces of Braj Holi",
+    "subtext": "Portraits from Braj Holi",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:09:00.000Z",
+    "publishId": "09c2eb1a-5be0-4ff7-bc52-ff4609c1eef2",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039910/curiousdip/photos/3186770526001092b70cadc516a167f6ff1c8ac4a9c0bf68bd02298eb8541ff1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039912/curiousdip/photos/4c081467c4778faef74b15d634ab3f37bdd1bf1c6600de4eaf94bcf3a68dabca.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039915/curiousdip/photos/5baa6be04eab98febda796a6235490dcc743a0f09a79551b6e35fdcc9c0bf943.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039918/curiousdip/photos/4ada70164adf6a0a38db8e856bc1ef213c856dc48fdcfa64da7ed94a28a5fc9a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039920/curiousdip/photos/290e3e58640797bddb56f4097a3d210d8850b59031b5d47ed81869978b453080.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039922/curiousdip/photos/94f2ebe977567d84ff40db803fcafc8fab74e4b6e8d73613c08ca7b1a0c30919.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031662/curiousdip/photos/2a6b2d31ddc67e9e20e965a0a060b67a622408aa9ac52d0fcdf50e4fa5423ae0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031686/curiousdip/photos/3c0f7cb1323f57eb8f35c5dbcd5f68ec6f39704f5d8cf98b5c7b1b3d22953263.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039929/curiousdip/photos/a9a40b8d240bd25b51b03d37bb39b3f89746ca45453838807930ca3f0d4d4d58.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039931/curiousdip/photos/650dfa110ff732aa6edad310adef1e84d5e0eaeee4cb4d6806e8f913c8553540.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039933/curiousdip/photos/16f60d7e87bf25c8f6ab34b41c013ff031ba2a347cbb832e34ec8fa1a4844a3b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039935/curiousdip/photos/223adce79525e3eba7f11db4d87340b55e2ba35be2d0fc43063500f54c354bb9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795039937/curiousdip/photos/0f01a8ce94e144e3fd029a30488b859a2326021ca336ddef1b0e52431bad9abe.webp"
+    ],
+    "genres": [
+      "Festival",
+      "Portraits"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 11,
     "title": "Varanasi early morning stories",
     "subtext": "Early morning photowalk on the ghats of Varanasi",
