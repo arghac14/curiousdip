@@ -1,5 +1,39 @@
 [
   {
+    "id": 15,
+    "title": "Postcards from Himachal",
+    "subtext": "Frames from my Himachal trip.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:13:00.000Z",
+    "publishId": "6373b998-3880-40c1-a692-8e73e02cfc9f",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040106/curiousdip/photos/0486dfa41585049673193c7453034495d32aca6b6e47f83ab0afa1fca08f8e9e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040108/curiousdip/photos/48b90f28869ecff9d5fdecf1871fc999d34e1b8bc32e8774e9a23f6724aad33b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040110/curiousdip/photos/f3e507211a4da8f8a4e81f9f954a57dffe18f9fb346fa37079e4c34197b72be7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040112/curiousdip/photos/40fa49b640345950a986ea4888177b4e2d19113e69dc1e27fd43321e64d50aa2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031683/curiousdip/photos/bb8de31a1506f073e7e6947c6fcad700170784b2e9dafc330efe9c567525e612.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040116/curiousdip/photos/2d5bcc80dbad9881ba7175357ae8ce2b84703d89cd4abb4ab29e00cda35b361a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040118/curiousdip/photos/78d012317d930e7ff70af275cfc6e7bbc354709f35975523ed26e475303e5088.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040121/curiousdip/photos/b385aa4f09c7a94cda31065d9579daedd1cc045439b5d62c546e113c53fc46db.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040123/curiousdip/photos/df99790e097259b825a67ca606970ef2574488582f2a78f4b803e3e987aabbc7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795031684/curiousdip/photos/3e53c81ece235bfc1d97d7ce3c8bf2b3ea71113094958c4ed4f487534c6c7dcc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040127/curiousdip/photos/00a34edc8c5e6eb7808a4f15a13cb7e1dada415cf8b6d25514c0dd1067e69a74.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040129/curiousdip/photos/28ce436ccd4e8407f3d97f9e5d52f78811c599b0d35722c7256239cf89f7b43f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040132/curiousdip/photos/561c3b344d6d68328e335b1181e18d45bb11e285da9c2784eb7e13db2dec32f4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040134/curiousdip/photos/f71604b0ad58b801f834aec9e363035f19e8ede31281bd34511ee5fbece320fa.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040136/curiousdip/photos/58492ed2edbd76078ab577427e7e710a91c008fee26a458d6bf6a94ae6e8f38a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040138/curiousdip/photos/fd355a131d33f14937f152f3dffbab0ea2adf94b2b2cee80a491a5a3ae98b238.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040141/curiousdip/photos/1cb1777f2809ed5f33beef6a0b08175a503aa708c7d4ddc729d3a939cee8bb85.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 14,
     "title": "Ganesh Chathurthi Bangalore 2026",
     "subtext": "Ganesh Chathurthi celebration across Bangalore.",
