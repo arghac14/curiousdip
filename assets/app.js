@@ -200,7 +200,7 @@ function route(focus=true){
   const backdrop=$('.home-backdrop');
   if(backdrop&&background){const image=backgroundImages.get(background.url);if(image)backdrop.replaceChildren(image);}
   $$('.blog-image-frame img').forEach(fitHomePhoto);
-  document.title=title+' — CuriousDip';
+  document.title='curious.dip | Arghadip';
   $('meta[name="description"]').content=parts.length===2?content.items.find(i=>link(i)==='#'+path)?.description||'CuriousDip — photographs and field notes.':'Photographs, stories, and a little curiosity. A journal by Arghadip Chakraborty.';
   window.scrollTo({top:0,behavior:'instant'});if(focus)main.focus({preventScroll:true});
   CuriousDipDarkroom.refresh();
@@ -211,4 +211,4 @@ $('#year').textContent=new Date().getFullYear();
 const loadData = location.protocol==='file:'
   ? Promise.resolve().then(()=>{if(!window.CURIOUSDIP_PREVIEW)throw Error('Missing direct-file preview data. Run npm run photos.');return window.CURIOUSDIP_PREVIEW;})
   : Promise.all(['profile','photoseries','blog','videos','presets'].map(name=>fetch('./data/'+name+'.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(name+' could not be loaded.');return r.json();}))).then(([profile,photoseries,blog,videos,presets])=>({profile,photoseries,blog,videos,presets}));
-loadData.then(async data=>{content=CuriousDipData.normalize(data);await prepareBackgrounds();const footerEmail=$('footer a[href^="mailto:"]');if(footerEmail)footerEmail.href='mailto:'+content.profile.email;const footerInstagram=$('footer a[href*="instagram.com"]');if(footerInstagram)footerInstagram.href=content.profile.instagram;route(false);await CuriousDipLoader.openingPhotos();window.addEventListener('hashchange',()=>route());}).catch(error=>{console.error('CuriousDip initialization:',error);main.innerHTML='<section class="page-intro wrap"><h1>A brief pause.</h1><p>The data could not load. Run npm run photos, then refresh your preview.</p></section>';}).finally(()=>CuriousDipLoader.finish());
+loadData.then(async data=>{content=CuriousDipData.normalize(data);const tabIcon=$('link[rel="icon"]');if(tabIcon)tabIcon.href=imageURL(content.profile.portrait);await prepareBackgrounds();const footerEmail=$('footer a[href^="mailto:"]');if(footerEmail)footerEmail.href='mailto:'+content.profile.email;const footerInstagram=$('footer a[href*="instagram.com"]');if(footerInstagram)footerInstagram.href=content.profile.instagram;route(false);await CuriousDipLoader.openingPhotos();window.addEventListener('hashchange',()=>route());}).catch(error=>{console.error('CuriousDip initialization:',error);main.innerHTML='<section class="page-intro wrap"><h1>A brief pause.</h1><p>The data could not load. Run npm run photos, then refresh your preview.</p></section>';}).finally(()=>CuriousDipLoader.finish());
