@@ -15,4 +15,5 @@ function copy(source,destination){
 // Allowlist: the local admin, scripts, credentials and repository metadata never deploy.
 for(const file of ['index.html','assets','data'])copy(path.join(root,file),path.join(output,file));
 fs.writeFileSync(path.join(output,'.nojekyll'),'');
+require('./seo-build.cjs')(output);
 console.log('Static portfolio built in dist/ (admin excluded).');

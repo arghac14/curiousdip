@@ -1,10 +1,14 @@
 /* A lens finding its bayonet mount while the journal is prepared. */
 body.is-initializing{overflow:hidden}
-.boot-loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:var(--paper,#151311);color:var(--ink,#f6ecdf);opacity:1;transition:opacity .32s ease;isolation:isolate;overflow:hidden}
-.boot-loader:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 45%,#d38c3120,transparent 52%)}
+.boot-loader{--ink:#fff4e6;--muted:#d1c5b6;--olive:#f0ad52;--line:#ffffff26;position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#14100d;color:var(--ink);opacity:1;transition:opacity .32s ease;isolation:isolate;overflow:hidden}
+.boot-backdrop{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.boot-poster-wall{position:absolute;left:50%;top:50%;display:grid;grid-template-columns:1fr 1fr;width:max(114vw,214svh);aspect-ratio:1.87;transform:translate(-50%,-50%) rotate(-5deg);filter:blur(3px) saturate(.9);background:#14100d}
+.boot-poster-wall img{display:block;width:100%;height:100%;min-width:0;object-fit:cover}
+.boot-loader:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,#100c0940 0%,#100c0980 62%,#080706d9 100%),linear-gradient(180deg,#0b09094d,#0b09098c);pointer-events:none}
 .boot-loader.is-ready{opacity:0;pointer-events:none}
-.boot-content{text-align:center;width:min(440px,90vw);padding:28px}
+.boot-content{box-sizing:border-box;position:relative;text-align:center;width:min(430px,calc(100vw - 40px));padding:30px 32px 32px;border:1px solid #ffffff26;border-radius:28px;background:linear-gradient(135deg,#2b241bc7,#151310df);backdrop-filter:blur(22px) saturate(1.15);-webkit-backdrop-filter:blur(22px) saturate(1.15);box-shadow:0 32px 100px #0009,inset 0 1px 0 #ffffff18}
 .boot-wordmark{font-family:'Outfit',Arial,sans-serif;font-size:26px;letter-spacing:-1px;font-weight:600;margin:0 0 16px}.boot-wordmark span{font-weight:300}.boot-wordmark b{color:var(--olive,#f0ad52)}
+.boot-avatar{display:block;width:88px;height:88px;object-fit:cover;object-position:center;border-radius:50%;margin:0 auto 17px;border:2px solid #ffffff38;box-shadow:0 8px 26px #0006}.boot-avatar[hidden]{display:none}
 .boot-camera{display:block;width:100%;height:auto;overflow:visible;color:var(--ink,#f6ecdf)}
 .camera-ground{fill:#000;opacity:.14}.camera-shell{fill:url(#boot-body-metal);stroke:#696a6d;stroke-width:1.2}.camera-top{fill:#303134;stroke:#626368;stroke-width:.8}.camera-grip{fill:url(#boot-grip-rubber);stroke:#626368;stroke-width:1}.camera-grip-texture{fill:url(#boot-grip-texture)}
 .camera-detail{fill:none;stroke:#65666a;stroke-width:.7}.camera-strap{fill:none;stroke:#9a9ca2;stroke-width:3}.camera-dial{fill:#121315;stroke:#595b60;stroke-width:1}.camera-dial-ribs{fill:none;stroke:#9c9ea2;stroke-width:1}.camera-shutter-base{fill:#252629;stroke:#67696e;stroke-width:.8}.camera-shutter{fill:#3f4145;stroke:#9a9ca2;stroke-width:.8}

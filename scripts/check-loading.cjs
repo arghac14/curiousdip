@@ -11,7 +11,7 @@ const plain=value=>JSON.parse(JSON.stringify(value));
   const requested=[];
   const http=vm.createContext({location:{protocol:'http:'},fetch:async url=>{requested.push(url);return {ok:true,json:async()=>JSON.parse(fs.readFileSync(url.replace('./',''),'utf8'))};}});
   assert.deepStrictEqual(plain(await vm.runInContext(loader,http)),expected);
-  assert.equal(requested.length,5);
+  assert.equal(requested.length,6);
   const missing=vm.createContext({window:{},location:{protocol:'file:'}});
   await assert.rejects(vm.runInContext(loader,missing),/Missing direct-file/);
   const broken=vm.createContext({location:{protocol:'http:'},fetch:async()=>({ok:false})});

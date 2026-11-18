@@ -10,12 +10,15 @@ function fitHomePhoto(image) {
 }
 main.addEventListener('error',event=>{
   const image=event.target;
+  if(image instanceof HTMLImageElement&&image.dataset.thumbnailOriginal){const original=image.dataset.thumbnailOriginal;delete image.dataset.thumbnailOriginal;image.removeAttribute('srcset');image.removeAttribute('sizes');image.src=original;return;}
   if(image instanceof HTMLImageElement&&!image.dataset.fallback){image.dataset.fallback='true';image.src=image.closest('.video-thumbnail')?'assets/dynamic/sample-landscape.svg':'assets/dynamic/sample-portrait.svg';}
 },true);
 main.addEventListener('load',event=>{if(event.target instanceof HTMLImageElement)fitHomePhoto(event.target);},true);
 $('.skip').addEventListener('click', event => { event.preventDefault(); main.focus(); main.scrollIntoView(); });
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let content, slideTimer, slideIndex = 0, slideshowPaused = reducedMotion.matches, gallery = [], photoIndex = 0, lastFocus;
+let seoSource;
+document.addEventListener('click',event=>{const anchor=event.target.closest('a[data-route]');if(!anchor||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();location.hash='#'+anchor.dataset.route;});
 const videoViewStops=[];
 const date = value => new Date(value + 'T12:00:00').toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
 function imageURL(image, width = 1200) {
@@ -30,6 +33,16 @@ function imageURL(image, width = 1200) {
 }
 function picture(image, cls = '', eager = false, width = 1200) {
   return `<img class="${cls}" src="${esc(imageURL(image, width))}" alt="${esc(image.alt)}" loading="${eager?'eager':'lazy'}" decoding="async" ${eager?'fetchpriority="high"':''}>`;
+}
+function blogThumbnail(image){
+  const original=imageURL(image);
+  try{
+    const url=new URL(original);
+    // Keep uploaded originals intact; request high-quality, pre-scaled delivery copies.
+    if(url.hostname!=='res.cloudinary.com'||!/^\/[^/]+\/image\/upload\/v\d+\//.test(url.pathname))return picture(image);
+    const variant=width=>{const copy=new URL(url);copy.pathname=copy.pathname.replace('/image/upload/',`/image/upload/c_limit,w_${width}/q_auto:best/f_auto/`);return copy.href;};
+    return `<img src="${esc(variant(640))}" srcset="${[320,640,960].map(width=>esc(variant(width))+' '+width+'w').join(', ')}" sizes="auto, (max-width:370px) 50vw, (max-width:760px) 25vw, 200px" data-thumbnail-original="${esc(original)}" alt="${esc(image.alt)}" loading="lazy" decoding="async">`;
+  }catch{return picture(image);}
 }
 function profilePhoto(cls='') {
   return `<img class="profile-photo ${cls}" src="${esc(imageURL(content.profile.portrait))}" alt="${esc(content.profile.portrait.alt)}" loading="lazy">`;
@@ -52,7 +65,7 @@ function itemGenres(item){return item.type==='series'?(item.genres||[]):item.tag
 function card(item, index = 0, pinned = false, showCategory = false) {
   if(item.type==='blog') {
     const previews=item.previewImages?.length?item.previewImages:[item.cover,...item.blocks.filter(b=>b.type==='image').map(b=>b.image)].slice(0,2);
-    return `<article class="story-card blog-card"><div class="blog-copy"><div class="blog-author">${profilePhoto()}<div><span>${esc(content.profile.name)}</span><small>${date(item.date)} · ${item.readMinutes} min read${pinned?' · Pinned':''}</small></div></div>${showCategory?`<p class="blog-category">${esc(item.tags[0])}${pinned?' <span>↗ Pinned</span>':''}</p>`:""}<h3><a href="${link(item)}">${esc(item.title)}</a></h3><p class="blog-excerpt">${esc(item.description)}</p><a class="blog-read" href="${link(item)}">Read story <span>↗</span></a></div><a class="blog-visual" href="${link(item)}" aria-label="Read ${esc(item.title)}">${previews.map(img=>`<span class="blog-image-frame">${picture(img,'',index<2)}</span>`).join('')}</a></article>`;
+    return `<article class="story-card blog-card"><div class="blog-copy"><div class="blog-author">${profilePhoto()}<div><span>${esc(content.profile.name)}</span><small>${date(item.date)} · ${item.readMinutes} min read${pinned?' · Pinned':''}</small></div></div>${showCategory?`<p class="blog-category">${esc(item.tags[0])}${pinned?' <span>↗ Pinned</span>':''}</p>`:""}<h3><a href="${link(item)}">${esc(item.title)}</a></h3><p class="blog-excerpt">${esc(item.description)}</p><a class="blog-read" href="${link(item)}">Read story <span>↗</span></a></div><a class="blog-visual" href="${link(item)}" aria-label="Read ${esc(item.title)}">${previews.map(img=>`<span class="blog-image-frame">${blogThumbnail(img)}</span>`).join('')}</a></article>`;
   }
   return `<article class="story-card"><a class="card-image" href="${link(item)}">${picture(item.cover, '', index < 2)}<span class="image-arrow" aria-hidden="true">↗</span>${pinned?'<span class="pin-badge">↗ Pinned</span>':''}</a><div class="card-meta"><span>${esc(itemGenres(item).join(' / '))}</span><span>${item.type==='blog'?item.readMinutes+' min read':'Photo series'}</span></div><h3><a href="${link(item)}">${esc(item.title)}</a></h3><p>${esc(item.description)}</p><span class="card-date">${date(item.date)}</span></article>`;
 }
@@ -220,11 +233,11 @@ function route(focus=true){
   videoViewStops.splice(0).forEach(stop=>stop());
   CuriousDipSocial.reset();
   clearInterval(slideTimer);closeMenu();if($('#lightbox').open)closePhoto();
-  const path=location.hash.slice(1).split('?')[0]||'/';const parts=path.split('/').filter(Boolean);
+  const path=(location.hash.startsWith('#/')?location.hash.slice(1).split('?')[0]:$('meta[name="curiousdip-route"]')?.content)||'/';const parts=path.split('/').filter(Boolean);
 
   document.body.classList.toggle('is-home',parts.length===0);
   document.body.classList.toggle('is-contact',path==='/contact');
-  $$('#navigation a').forEach(a=>{const active=parts[0]?(a.hash==='#/'+parts[0]):a.hash==='#/';if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  $$('#navigation a').forEach(a=>{const navPath=a.dataset.route||a.hash.slice(1);const active=navPath===(parts[0]?'/'+parts[0]:'/');if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   let title='A curious way of seeing';
   if(!parts.length)home();
   else if(path==='/videos'){videosPage();title='Videos';}
@@ -242,6 +255,7 @@ function route(focus=true){
   $$('.blog-image-frame img').forEach(fitHomePhoto);
   document.title='curious.dip | Arghadip';
   $('meta[name="description"]').content=parts.length===2?content.items.find(i=>link(i)==='#'+path)?.description||'CuriousDip — photographs and field notes.':'Photographs, stories, and a little curiosity. A journal by Arghadip Chakraborty.';
+  if(seoSource&&(globalThis.CURIOUSDIP_SEO_CONFIG||seoSource.seo)&&globalThis.CuriousDipSEO)CuriousDipSEO.update(path,seoSource,globalThis.CURIOUSDIP_SEO_CONFIG||seoSource.seo);
   window.scrollTo({top:0,behavior:'instant'});if(focus)main.focus({preventScroll:true});
   CuriousDipDarkroom.refresh();
   if(path==='/videos'){const watch=new URLSearchParams(location.hash.split('?')[1]||'').get('watch');if(watch)document.getElementById('video-'+watch)?.scrollIntoView({behavior:'instant',block:'start'});}
@@ -250,5 +264,5 @@ function notFound(){main.innerHTML='<section class="page-intro wrap"><p class="e
 $('#year').textContent=new Date().getFullYear();
 const loadData = location.protocol==='file:'
   ? Promise.resolve().then(()=>{if(!window.CURIOUSDIP_PREVIEW)throw Error('Missing direct-file preview data. Run npm run photos.');return window.CURIOUSDIP_PREVIEW;})
-  : Promise.all(['profile','photoseries','blog','videos','presets'].map(name=>fetch('./data/'+name+'.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(name+' could not be loaded.');return r.json();}))).then(([profile,photoseries,blog,videos,presets])=>({profile,photoseries,blog,videos,presets}));
-loadData.then(async data=>{content=CuriousDipData.normalize(data);const tabIcon=$('link[rel="icon"]');if(tabIcon)tabIcon.href=imageURL(content.profile.portrait);await prepareBackgrounds();const footerSocials=$('.footer-links');if(footerSocials)footerSocials.innerHTML=socialLinks('footer');const footerEmail=$('footer a[href^="mailto:"]');if(footerEmail)footerEmail.href='mailto:'+content.profile.email;const footerInstagram=$('footer a[href*="instagram.com"]');if(footerInstagram)footerInstagram.href=content.profile.instagram;route(false);await CuriousDipLoader.openingPhotos();window.addEventListener('hashchange',()=>route());}).catch(error=>{console.error('CuriousDip initialization:',error);main.innerHTML='<section class="page-intro wrap"><h1>A brief pause.</h1><p>The data could not load. Run npm run photos, then refresh your preview.</p></section>';}).finally(()=>CuriousDipLoader.finish());
+  : Promise.all(['profile','photoseries','blog','videos','presets','seo'].map(name=>fetch('./data/'+name+'.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(name+' could not be loaded.');return r.json();}))).then(([profile,photoseries,blog,videos,presets,seo])=>({profile,photoseries,blog,videos,presets,seo}));
+loadData.then(async data=>{seoSource=data;content=CuriousDipData.normalize(data);const tabIcon=$('link[rel="icon"]');if(tabIcon)tabIcon.href=imageURL(content.profile.portrait);await prepareBackgrounds();const footerSocials=$('.footer-links');if(footerSocials)footerSocials.innerHTML=socialLinks('footer');const footerEmail=$('footer a[href^="mailto:"]');if(footerEmail)footerEmail.href='mailto:'+content.profile.email;const footerInstagram=$('footer a[href*="instagram.com"]');if(footerInstagram)footerInstagram.href=content.profile.instagram;route(false);await CuriousDipLoader.openingPhotos();window.addEventListener('hashchange',()=>route());}).catch(error=>{console.error('CuriousDip initialization:',error);main.innerHTML='<section class="page-intro wrap"><h1>A brief pause.</h1><p>The data could not load. Run npm run photos, then refresh your preview.</p></section>';}).finally(()=>CuriousDipLoader.finish());

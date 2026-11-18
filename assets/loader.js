@@ -1,5 +1,10 @@
 'use strict';
 globalThis.CuriousDipLoader=(()=>{
+  const avatar=document.querySelector('.boot-avatar');
+  const portrait=globalThis.CURIOUSDIP_PREVIEW?.presets?.displaypictures?.[0];
+  if(avatar&&portrait&&/^assets\/preset\/displaypictures\//.test(portrait)&&!portrait.includes('..')){
+    avatar.onload=()=>{avatar.hidden=false;};avatar.src=portrait;
+  }
   let finished=false;
   async function openingPhotos(){
     const images=[...document.querySelectorAll('#main img')].filter(image=>{
