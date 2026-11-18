@@ -1,5 +1,41 @@
 [
   {
+    "id": 26,
+    "title": "Varanasi After the Dark",
+    "subtext": "Quiet frames from Varanasi after the dark.",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:28:00.000Z",
+    "publishId": "c9e740ad-065c-4066-9734-bbcb4022a7cf",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040997/curiousdip/photos/88fe5c047072da8dead2fed379625de6f4daa2fc29c2e2dc2995cfece1aaa06e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040999/curiousdip/photos/ed86f4472b272754fd52363bdcc477a727fd2279f2241138aca8ce0e1c79ca61.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041002/curiousdip/photos/61cdcb031a8ef765b6b2c134f701244dfc3ed156a6dab6da18932246149b9b13.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041004/curiousdip/photos/b5122399c5118294776306b59939f5eeeac128240a10f1e6bb305f6f4e2db5be.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041006/curiousdip/photos/a3c329091ffd9f84028455d1e4b71d7b4af51ca050fa5c0a3c75a3185b049798.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041009/curiousdip/photos/0298ceb43903648cd1f634fed5b61bc362107a72ca4e6c37cc2c67379cf168bc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041011/curiousdip/photos/dbf4d13d2e1a29229adf54e1722fe66fb30bd4ca17dce2bd6de0fbce1ea0c9f0.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041013/curiousdip/photos/8deb31d52749ceae22d1cfaeb7443e59921576fc939558709706221f395ff273.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041015/curiousdip/photos/be7886038404cf5e084871caf8f4da391567463c71ccf69d959e3c622c6814b8.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041017/curiousdip/photos/ac372824ddae06928d4e183d3ea27202ab5e4f7fd98c647121378ef8d1adef08.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041019/curiousdip/photos/e225547afa6df98438ef63f58efa3159455805d93bd76ead9509d05ac200d4a5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041021/curiousdip/photos/af2fd1a6b40fb03f4dfc5411e80df88b48c6f6a4c954f6c2d94ec848e1ecd0a2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041021/curiousdip/photos/af2fd1a6b40fb03f4dfc5411e80df88b48c6f6a4c954f6c2d94ec848e1ecd0a2.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041025/curiousdip/photos/1b0b83fec69f18171a195062afd275f0d52c1fc697dbcad17cde9a30c7d07839.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041027/curiousdip/photos/024888bc7978eb35be762ba5f60eb9369662f54b94a82dfc3a29223b64b905a7.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041029/curiousdip/photos/fb8923bce403b184ffd877de6452d27c5197e98687278456f7f2cf9ee4064f0a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041031/curiousdip/photos/c34fe3b0f53568309c0347aa9695ce330501e32392df65b8a285738f202e29ca.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795041033/curiousdip/photos/b718a083a6107949c9cd22e92fa1ce2d44085901d7cb935f12fde6c5aa1ac0de.webp"
+    ],
+    "genres": [
+      "Street",
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 25,
     "title": "Taj Mahal, Agra",
     "subtext": "Frames from the Taj.",
