@@ -1,5 +1,30 @@
 [
   {
+    "id": 16,
+    "title": "KR Market, Bangalore",
+    "subtext": "Frames from KR Market, Bangalore",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:14:00.000Z",
+    "publishId": "fba677bb-78ce-4b68-a30b-c28b228c2485",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040145/curiousdip/photos/41f8e4bbd88d9ec44bdec30f595da7e9579d566de782e910d85d024f281b6a10.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040148/curiousdip/photos/56f38df52291fa4002d5acb58f9dd5d2a5a9a694801a560163976f7da1254c53.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040150/curiousdip/photos/c6f90cc16d78e5b9c9b514fa37765ef1248fb79293de7ecd7401b46c008cd56a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040153/curiousdip/photos/0a1d2285e021596d263f555affd4e9c6f48571f7a3e5d8f59691de1cd759b905.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040156/curiousdip/photos/c8792b05dc47aa341bc740ea0dedab7bd329247f0e90a16709f658fbe92fe5b4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040159/curiousdip/photos/e9d40b0ed6d384b5a5b1aa12e21ed272e774b0e16235edfa37e0d9a57ae2352c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040161/curiousdip/photos/be4afbdbb44b34d670cb1e1ae160bb7a832efe64cc24e54ac3c891def81e1b1b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040164/curiousdip/photos/e8f2a916996e2ca219b706fcdc020cacf74272f41918311cf21804d18f91a529.webp"
+    ],
+    "genres": [
+      "Street"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 15,
     "title": "Postcards from Himachal",
     "subtext": "Frames from my Himachal trip.",
