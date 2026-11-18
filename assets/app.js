@@ -16,6 +16,7 @@ main.addEventListener('load',event=>{if(event.target instanceof HTMLImageElement
 $('.skip').addEventListener('click', event => { event.preventDefault(); main.focus(); main.scrollIntoView(); });
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let content, slideTimer, slideIndex = 0, slideshowPaused = reducedMotion.matches, gallery = [], photoIndex = 0, lastFocus;
+const videoViewStops=[];
 const date = value => new Date(value + 'T12:00:00').toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
 function imageURL(image, width = 1200) {
   try {
@@ -42,7 +43,7 @@ function brandIcon(brand){
   return `<svg class="brand-icon brand-icon-${brand}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[brand]}</svg>`;
 }
 function socialLinks(mode='compact',includeEmail=true){
-  const p=content.profile,links=[{brand:'email',name:'Email',detail:p.email,url:'mailto:'+p.email},{brand:'instagram',name:'Instagram',detail:p.handle,url:p.instagram},{brand:'youtube',name:'YouTube',detail:p.youtubeHandle,url:p.youtube}];
+  const p=content.profile,links=[{brand:'instagram',name:'Instagram',detail:p.handle,url:p.instagram},{brand:'youtube',name:'YouTube',detail:p.youtubeHandle,url:p.youtube},{brand:'email',name:'Email',detail:p.email,url:'mailto:'+p.email}];
   return links.filter(link=>(includeEmail||link.brand!=='email')&&link.url).map(link=>`<a class="profile-social-link" href="${esc(link.url)}" aria-label="${esc(link.name+' — '+link.detail)}" title="${esc(link.name+' — '+link.detail)}" ${link.brand==='email'?'':'target="_blank" rel="noopener noreferrer"'}>${brandIcon(link.brand)}<span class="social-label">${esc(link.name)}${mode==='contact'?`<span class="social-handle">${esc(link.detail)}</span>`:''}</span></a>`).join('');
 }
 function link(item) { return `#/${item.type==='series'?'series':'blogs'}/${item.id}`; }
@@ -157,8 +158,7 @@ function about() {
   main.innerHTML=`<div class="listing-intro-surface about-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="page-intro wrap about-intro"><p class="eyebrow">Welcome to my world</p><h1>Always curious. Always <em>looking.</em></h1></section><div class="about-rows about-first-rows wrap">${sections.slice(0,1).map((section,index)=>row(section,index)).join('')}</div></div><div class="about-rows about-remaining wrap">${sections.slice(1).map((section,index)=>row(section,index+1)).join('')}</div>`;
 }
 function contact() {
-  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="contact-page wrap"><p class="eyebrow">GOOD THINGS BEGIN WITH A HELLO</p><h1>Let’s start<br>a <em>conversation.</em></h1><p class="lead">Have a story in mind, a collaboration idea, or a question about a photograph? I’d love to hear from you.</p><div class="contact-method"><div><span class="eyebrow">WRITE TO ME</span><a class="email-address has-brand-icon" href="mailto:${esc(content.profile.email)}">${brandIcon('email')}<span>${esc(content.profile.email)}</span></a></div><button id="copy-email" class="round-button" aria-label="Copy email address">⧉</button></div><div class="contact-method contact-socials"><div><span class="eyebrow">SOCIALS</span><nav class="profile-socials" aria-label="Socials">${socialLinks('contact',false)}</nav></div></div></section></div><section class="email-section wrap"><div><p class="eyebrow">A CONVERSATION STARTS HERE</p><h2>Have something<br>in <em>mind?</em></h2><p>A question, an idea, or simply a hello.<br>I’d love to hear from you.</p><a class="text-link has-brand-icon" href="mailto:${esc(content.profile.email)}">${brandIcon('email')}${esc(content.profile.email)}</a></div><form id="email-form"><div class="form-row"><label>Your name<input name="name" autocomplete="name" required maxlength="100" placeholder="How should I call you?"></label><label>Your email<input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></label></div><label>Subject<input name="subject" required maxlength="150" placeholder="What’s on your mind?"></label><label>Your message<textarea name="message" rows="5" required maxlength="4000" placeholder="Tell me a little about it…"></textarea></label><button class="button" type="submit">Open email draft <span>↗</span></button><p class="form-note">Opens your email app with a prepared message. Review and send it there; this website does not send or store your message.</p><p id="form-status" role="status"></p></form></section>`;
-  $('#copy-email').onclick=e=>copyText(content.profile.email,e.currentTarget,'✓');
+  main.innerHTML=`<div class="listing-intro-surface"><div class="home-backdrop" aria-hidden="true"></div><section class="contact-page wrap"><p class="eyebrow">GOOD THINGS BEGIN WITH A HELLO</p><h1>Let’s start<br>a <em>conversation.</em></h1><p class="lead">Have a story in mind, a collaboration idea, or a question about a photograph? I’d love to hear from you.</p><div class="contact-method contact-socials"><div><span class="eyebrow">SOCIALS</span><nav class="profile-socials" aria-label="Socials">${socialLinks('contact')}</nav></div></div></section></div><section class="email-section wrap"><div><p class="eyebrow">A CONVERSATION STARTS HERE</p><h2>Have something<br>in <em>mind?</em></h2><p>A question, an idea, or simply a hello.<br>I’d love to hear from you.</p><a class="text-link has-brand-icon" href="mailto:${esc(content.profile.email)}">${brandIcon('email')}${esc(content.profile.email)}</a></div><form id="email-form"><div class="form-row"><label>Your name<input name="name" autocomplete="name" required maxlength="100" placeholder="How should I call you?"></label><label>Your email<input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></label></div><label>Subject<input name="subject" required maxlength="150" placeholder="What’s on your mind?"></label><label>Your message<textarea name="message" rows="5" required maxlength="4000" placeholder="Tell me a little about it…"></textarea></label><button class="button" type="submit">Open email draft <span>↗</span></button><p class="form-note">Opens your email app with a prepared message. Review and send it there; this website does not send or store your message.</p><p id="form-status" role="status"></p></form></section>`;
   $('#email-form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.currentTarget);const body=`Hello Arghadip,\n\n${f.get('message')}\n\n${f.get('name')}\nReply to: ${f.get('email')}`;location.href=`mailto:${encodeURIComponent(content.profile.email)}?subject=${encodeURIComponent(f.get('subject'))}&body=${encodeURIComponent(body)}`;$('#form-status').textContent='Your email app should open. If it doesn’t, email 01argha@gmail.com directly. Your message remains here.';};
 }
 async function copyText(text, button, success) { const label=button.textContent;try{await navigator.clipboard.writeText(text);button.textContent=success;$('#announcement').textContent='Copied to clipboard';setTimeout(()=>{if(button.isConnected)button.textContent=label;},2200);}catch{button.textContent='Copy unavailable';$('#announcement').textContent='Clipboard unavailable. Select and copy the address or browser URL manually.';} }
@@ -202,6 +202,7 @@ async function prepareBackgrounds() {
   selected.forEach(image=>{if(!backgroundImages.has(image.url))backgroundImages.set(image.url,fallback);});
 }
 function route(focus=true){
+  videoViewStops.splice(0).forEach(stop=>stop());
   CuriousDipSocial.reset();
   clearInterval(slideTimer);closeMenu();if($('#lightbox').open)closePhoto();
   const path=location.hash.slice(1).split('?')[0]||'/';const parts=path.split('/').filter(Boolean);
@@ -221,7 +222,7 @@ function route(focus=true){
   }
   if(path==='/videos')publishedVideos().forEach(video=>{
     const entry=document.getElementById('video-'+video.id);
-    if(entry){const holder=document.createElement('div');holder.className='video-discussion';entry.after(holder);CuriousDipSocial.mount(holder,{type:'video',id:video.id},entry);}
+    if(entry)videoViewStops.push(CuriousDipViews.track({type:'video',id:video.id},entry));
   });
   const background=content.pageBackgrounds[path]?.[0];
   const backdrop=$('.home-backdrop');

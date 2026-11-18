@@ -39,14 +39,14 @@ globalThis.CuriousDipViews=(()=>{
   }
   function mount(output,item,visibilityTarget){
     let cancelled=false,observer;
-    output.textContent='— views';output.title='Unique browsers. Repeat visits in the same browser count once.'+(preview?' Local previews are not counted.':'');
+    if(output){output.textContent='— views';output.title='Unique browsers. Repeat visits in the same browser count once.'+(preview?' Local previews are not counted.':'');}
     const run=()=>{if(cancelled)return;return count(item).then(total=>{
-      if(cancelled||!output.isConnected)return;
+      if(cancelled||!output?.isConnected)return;
       output.textContent=total+' '+(total===1?'view':'views');output.setAttribute('aria-label',total+' unique '+(total===1?'view':'views'));
-    }).catch(()=>{if(!cancelled)output.title='View count is temporarily unavailable.';});};
+    }).catch(()=>{if(!cancelled&&output)output.title='View count is temporarily unavailable.';});};
     if(visibilityTarget){observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>=.25)){observer.disconnect();run();}},{threshold:.25});observer.observe(visibilityTarget);}
     else run();
     return ()=>{cancelled=true;observer?.disconnect();};
   }
-  return {mount};
+  return {mount,track:(item,visibilityTarget)=>mount(null,item,visibilityTarget)};
 })();

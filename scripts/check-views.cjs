@@ -28,5 +28,6 @@ const flush=async()=>{for(let n=0;n<8;n++)await new Promise(resolve=>setImmediat
   browser.observers[0].fn([{isIntersecting:true,intersectionRatio:.25}]);await flush();assert.equal(writes,4);assert.equal(video.output.textContent,'1 view');
   const cancelled=browser.mount({type:'video',id:2},{});cancelled.stop();browser.observers[1].fn([{isIntersecting:true,intersectionRatio:1}]);await flush();assert.equal(writes,4,'Navigation cleanup prevents queued offscreen counts');
   const before=signins,local=harness('preview','127.0.0.1');const preview=local.mount(story);await flush();assert.equal(writes,4);assert.equal(signins,before,'Local preview must not create anonymous accounts');assert.equal(preview.output.textContent,'2 views');
+  browser.ctx.CuriousDipViews.track({type:'video',id:3},{});browser.observers[2].fn([{isIntersecting:true,intersectionRatio:1}]);await flush();assert.equal(writes,5,'Videos still track views without any engagement DOM');
   console.log('Unique view checks passed: persistent browser identity, duplicate/reload deduplication, separate stories, second browser, video visibility, route cleanup and read-only local previews.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
