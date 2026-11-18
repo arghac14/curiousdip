@@ -1,5 +1,36 @@
 [
   {
+    "id": 19,
+    "title": "Marine Lines Stories",
+    "subtext": "Frames from Marine Lines, Mumbai",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:21:00.000Z",
+    "publishId": "ee00e62f-8a11-4363-9960-a33dc54e67da",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040521/curiousdip/photos/d5bab5a811735dfc298161c6e0d4470ece2e44a6aa0d1cf1fde1df42f30bbd7e.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040523/curiousdip/photos/719de884171aea4bf86cc830658f48918fef6c33de0254f05febe5744e50407b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040524/curiousdip/photos/678928cb7900249542c399eb8c7e1c2dfb13f2b745ba0e4ba2f7599a9bfba50f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040527/curiousdip/photos/6c06ea111fb53f8011f17599c6c09102c9b6dd225987e2d467ca3ed7e2d19d0d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040529/curiousdip/photos/8a3e31bb939e3abc3e066a18ed688c7475a49a594233921d3f98329bb8ab4417.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040531/curiousdip/photos/d08ca440210200bebf1e6733bb201e24eba3c9548a67b3ed1923153353316186.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040533/curiousdip/photos/f9cae55cacba8d50a7e69298aeb43f2fcdff115c2d9d975e8d3bb549da3cfdde.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040535/curiousdip/photos/9a53be50f689c841aa86cfb86f8aea831526a468677ed333b9805d6958dbcbdd.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040536/curiousdip/photos/faf6177f9ee89fde322115f6ec8e07e1356bc083bd09842c1ec4cfb3c2af39c4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040538/curiousdip/photos/55ff869dbca344e0cb6dd61fed514354b68ae0842bcce9587bac742e82705e8b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040540/curiousdip/photos/e370bab9cde576d7fe0efb9aadf244fff153f908d8f09135372c629c8c47ebf9.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040542/curiousdip/photos/1d29f7b1ab581e4e7b0ca095af5043d8711cfdef085114eeb3a6958fa40ca27c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040544/curiousdip/photos/1aed9d7a5f11fbf17c05984b7d3755e817205169b133966df23f4e08a945d427.webp"
+    ],
+    "genres": [
+      "Street",
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 18,
     "title": "Making of Maa Durga | Kumortuli 2026",
     "subtext": "Making of Maa Durga",
