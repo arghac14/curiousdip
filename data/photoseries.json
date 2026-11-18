@@ -1,5 +1,39 @@
 [
   {
+    "id": 23,
+    "title": "Shayan Aarthi, Bengaluru Ganesh Utsava",
+    "subtext": "Shayan Aarthi, Bengaluru Ganesh Utsava",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:26:00.000Z",
+    "publishId": "f87b1480-1b27-4e4f-9e0f-a41a1a590f70",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040814/curiousdip/photos/0a9ad6eee0564f1618a5839e1e9f5ce27bbd8ad4d1a0772b4226d644f1dfacfb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040816/curiousdip/photos/0e7670ed1e529d4ddef5c709b7a9c2883327b6705e8620cfd5abda63d1b971ef.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040818/curiousdip/photos/e229c3a2600e5b590ceb7f476be9661995843b6f3007ffee3f448f0b44ee1363.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040820/curiousdip/photos/9d51214779875df0354640e0ba18c383af397be13e156fa9691a0805b5285786.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040821/curiousdip/photos/4b12860c5d48bfe94d6a9368d61246d6a010cbe837a5e4d0cd3e2f8f87371d97.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040823/curiousdip/photos/249f2fbd2fd93f3435cf07560ae830fdcd2abf1601712a95d579f0c90eb1a8bc.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040825/curiousdip/photos/0e2e00a0399cfb610cf654f6fb4ef9349eecee91dfd3a6e5a4925ef4bb186739.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040827/curiousdip/photos/171d5000e54f6b0bc1757e385e9ed07f1a2ee32b2beb8c8e20f8cbfbbb524790.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040829/curiousdip/photos/39c220885ce5bcdc5c0064e556c1366b458fc0f6752e585099cea5ea7100831f.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040830/curiousdip/photos/af958a38965df45f6c38553a928842b3cc40a710cf1dea2800fc7f4438dbe244.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040833/curiousdip/photos/a0fbc6050b4f09f0d2c27e2164d5461506275dfa99304990cf37214ea12842ed.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040834/curiousdip/photos/77d52eadd89b03b21f654a436cb0568360affd8a9bf8bdb9e23f475e804dbc4c.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040836/curiousdip/photos/7c4f81d9b38dfa99ce5f6eba14fc0cc10ea65a0c7a6e970e8db8286eb8dfb6b6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040838/curiousdip/photos/add18aedb9947a691f042e4be65fb2725313abacb37e0cfab03dc4cfaf4460b1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040840/curiousdip/photos/65f173b22b3e36d492bde23a6662047fc4a5dfeae10c4d4394bd7437833f691b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040842/curiousdip/photos/80f9ae6441e77f10bf4354919ff0570a18c1d10116a2de0bd761b7acfda93d4a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040844/curiousdip/photos/73e4843c2dd32bd6e61bacaf84de76ff3dc2a854f673e560b230f88f89a76426.webp"
+    ],
+    "genres": [
+      "Festival"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 22,
     "title": "Qutub Minar, Delhi",
     "subtext": "Qutub Minar, Delhi 2026",
