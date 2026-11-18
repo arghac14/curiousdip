@@ -1,5 +1,35 @@
 [
   {
+    "id": 22,
+    "title": "Qutub Minar, Delhi",
+    "subtext": "Qutub Minar, Delhi 2026",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T22:23:00.000Z",
+    "publishId": "eb9c3d57-6b9d-4273-a0ad-d2f359bb1eb3",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040777/curiousdip/photos/93f9fdebf87fb1b24fafb1b7b82a6bcbeb0f5d4a9012e6dfd0e3e525baa0edc6.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040779/curiousdip/photos/64a2fbd594b2dabe30c9136ef7ec2a73bd3350d9499cc0c7c1cc0e6f3453ad87.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040781/curiousdip/photos/848cc7bd8c051df4a27194b01346c0b9760a16fa62edc615a6ac46c5bc3da716.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040784/curiousdip/photos/622c8461ae82de3894bcf2ce70234fc93d773c5ebb349a5380512e0594679df4.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040786/curiousdip/photos/b80f25a616cf920102f6f79871b5381bd511f11ebd6889ff02951245ab417ee1.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040788/curiousdip/photos/5cdf35bb6cc65b78dd27d100434aa4e64a53dc34a7b07eddd694a2b5963e17d5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040790/curiousdip/photos/4836d425552e70b180e2841851d1eed282880fba7b6ebc9fc08073cfb4474561.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040792/curiousdip/photos/8c38b1e46a5c857a7d8a0de158759b0d60c495b9445a77fb53778cdec5d21598.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040795/curiousdip/photos/eb0c2591aace037d11fe2dae7fd3c7bc9897101ae31cfea1dbe65223db60ceef.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040797/curiousdip/photos/26206448b7b09a14885d6ec8d3eb9965127e696c7198d1df79d635e408ff5ffa.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040799/curiousdip/photos/3adca3332f068ece91f269d328b29fbd3b8065678da52397cc0fc9297481d29d.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040801/curiousdip/photos/a04de56935fb9110d2268791b188461b4320668168612fdc6f9af1809151e585.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795040803/curiousdip/photos/b49d20eefda3e0658726d4eba059fa02017f6ad46a59f4e22345432a837030ef.webp"
+    ],
+    "genres": [
+      "Travel"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 21,
     "title": "Pottery Town, Bangalore",
     "subtext": "Frames from Pottery Town of Bangalore",
