@@ -1,5 +1,37 @@
 [
   {
+    "id": 7,
+    "title": "CJP Student Protest Bangalore",
+    "subtext": "Frames from the student protest on the Freedom park ground, Bangalore",
+    "isDeleted": false,
+    "isPinned": false,
+    "isSelectedStories": false,
+    "createdAt": "2026-11-18T21:48:00.000Z",
+    "publishId": "722c2ed4-f8b8-4063-936a-b938ea4d00f5",
+    "photos": [
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038907/curiousdip/photos/fbcb3c1b46b1ea5ded509bbfb85e3ec8eb8634520fb825a33b1b2375d7c664cb.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038909/curiousdip/photos/c75808778cfc5fc305931da960381b41f6993634f472b9202d148ddd889d68c3.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038911/curiousdip/photos/9c5781319961230f13e7ff2f7fa79c4deec09d24336485321e5589258a6fd8db.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038912/curiousdip/photos/5bd65352c15fc220b5a9464215e4e1a197ebb6339d8d1f39e1871810849e3300.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038914/curiousdip/photos/b5c34f967911e8ced3e4721fdca3aaceeeff3644885708c8b34be78f472b5683.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038916/curiousdip/photos/e93f35bfbbf2a95b6b4e9ff37f7ad766b727cca7ab08a9abb024143b046e5445.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038918/curiousdip/photos/d394e430d0eadabcb0cdeb0594bf87e0ceab0483a8ac7bc869ff45901d82e89a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038918/curiousdip/photos/d394e430d0eadabcb0cdeb0594bf87e0ceab0483a8ac7bc869ff45901d82e89a.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038921/curiousdip/photos/39deb577640211398227ff2f4735a62349dde7fa0551ecd58fa0427130f3b426.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038923/curiousdip/photos/41cd88025580293f3c89054578e20d5abc0a1f2242e211081eab2ae50df31361.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038925/curiousdip/photos/171030df80d7d307b0be6e07b56ab2bdc53c3ab0d78e4db8c9ab3fd6dcf53226.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038927/curiousdip/photos/ae28624b228efbfd11a5802a95fa7fc0631a061524cca5d7e0ad2fb8042c8bd5.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038929/curiousdip/photos/d1ad6eef4ed13abdb8f298a40882d42acb7dafff67ca92661b19e56a5b85ff88.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038931/curiousdip/photos/a98ea92d5848d06f2361079622aa48497d7e0527a95e5e1aefb3d26565ec971b.webp",
+      "https://res.cloudinary.com/arghac14/image/upload/v1795038932/curiousdip/photos/b5d478f04ab650bcb75e49f934649118f67df535640d5f89cf326d913d900e14.webp"
+    ],
+    "genres": [
+      "Documentary"
+    ],
+    "pinOrder": null,
+    "selectedStoryOrder": null
+  },
+  {
     "id": 6,
     "title": "Adalaj Ni Bav",
     "subtext": "Frames from Adalaj Stepwell in Gurajat, India",
